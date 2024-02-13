@@ -5,7 +5,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 const Login = () => {
   return (
     <View style={styles.container}>
-      <View style={{width: 343, height: 36, marginTop: 44, marginLeft: 16}}>
+      <View style={styles.headercon}>
         <Text style={styles.header}>Log In</Text>
       </View>
       <View>
@@ -28,6 +28,7 @@ const Login = () => {
 
 const styles = StyleSheet.create({
   container: {margin: 16},
+  headercon:{width: 343, height: 36, marginTop: 44, marginLeft: 16},
   header: {
     width: ResponsiveSize(88),
     height: ResponsiveSize(36),

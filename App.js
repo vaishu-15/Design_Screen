@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Login from './src/screen/Login';
+import SignUp from './src/screen/SignUp';
 
 const Stack = createStackNavigator();
 
@@ -11,12 +12,12 @@ const Tab = createBottomTabNavigator();
 const AuthStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Login"
         component={Login}
         options={{headerShown: false}}
-      />
-      {/* <Stack.Screen name='SignUp' component={SignUp}/> */}
+      /> */}
+      <Stack.Screen name='SignUp' options={{headerShown: false}} component={SignUp}/>
     </Stack.Navigator>
   );
 };
