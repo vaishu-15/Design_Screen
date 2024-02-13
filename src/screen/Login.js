@@ -27,10 +27,10 @@ const Login = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {margin: 16},
+  container: {padding: ResponsiveSize(10)},
   headercon:{width: 343, height: 36, marginTop: 44, marginLeft: 16},
   header: {
-    width: ResponsiveSize(88),
+    
     height: ResponsiveSize(36),
     color: 'black',
     alignSelf: 'center',
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
     fontWeight: 600,
   },
   email: {
-    width: ResponsiveSize(343),
+ 
     height: ResponsiveSize(50),
     marginTop: 32,
     borderColor: 'black',
   },
   password: {
-    width: ResponsiveSize(343),
+    
     height: ResponsiveSize(50),
     marginTop: 32,
     borderColor: 'black',
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
     marginTop: 151,
   },
   buttontext: {
-    width: ResponsiveSize(47),
+    
     height: ResponsiveSize(19),
     color: 'white',
   },
   forgot: {
-    width: ResponsiveSize(178),
+   
     heigh: ResponsiveSize(19),
     marginLeft: 83,
     color: '#5DB075',
