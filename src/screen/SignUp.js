@@ -1,94 +1,69 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
+import CheckBox from 'react-native-check-box';
 import ResponsiveSize from '../utils/responsivesSize';
 import {IMAGES} from '../utils/constants';
+import Header from '../common/header';
+import InputField from '../common/InputField';
+import Button from '../common/Button';
+import { useState } from 'react';
 
 const SignUp = () => {
+  const [isSelected, setSelection] = useState(false);
+
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-        <Image 
-        source={IMAGES.cross}/>
-        <Text style={styles.header}>Sign Up</Text>
-        <Text style={styles.log}>Login</Text>
+      <Header textone={'Sign Up'} texttwo={'Login'} image={IMAGES.cross} />
+      <View style={styles.Field}>
+        <InputField field={'Name'} />
+        <InputField field={'Email'} />
+        <InputField field={'Password'} />
       </View>
-
-      <View>
-        <TextInput style={styles.name} placeholder="Name" />
-      </View>
-      <View>
-        <TextInput style={styles.email} placeholder="Email" />
-      </View>
-      <View>
-        <TextInput style={styles.password} placeholder="Password" />
-      </View>
-      <View>
-        <Text style={styles.unkText}>
+      <View style={styles.TextCon}>
+        <CheckBox
+        value={isSelected}
+        onValueChange={setSelection} 
+        style={styles.checkbox} />
+        <Text style={styles.unText}>
           I would like to receive your newsletter and other promotional
-          information
+          information.
         </Text>
       </View>
-      <View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttontext}>Sign Up</Text>
-        </TouchableOpacity>
-      </View>
+      <Button btntext={'Sign Up'} />
       <View style={styles.forgot}>
-        <Text>Forgot your password?</Text>
+        <Text style={styles.fgtext}>Forgot your password?</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {padding: ResponsiveSize(10)},
-  hcontainer: {
+  container: {padding: ResponsiveSize(10),
+     backgroundColor: 'white'},
+  Field: {
+    marginTop: ResponsiveSize(38),
+  },
+  TextCon: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent:"space-between"
+    paddingRight: ResponsiveSize(6),
+    margin:ResponsiveSize(20)
   },
-  cros: {
-    flex: 1,
-    width: 16,
-    height: 16,
-    // transform: rotate(45)
+  checkbox:{         
   },
-  header: {
-   fontSize:ResponsiveSize(30),
-   fontWeight:"700",
-   color:"#000000"
+  unText: {
+    fontFamily: 'Inter Regular Regular',
+    fontWeight: '400',
+    fontSize: 15,
   },
-  log: {
-   
+  forgot: {
+    padding: ResponsiveSize(4),
   },
-  name: {
-    // width: ResponsiveSize(343),
-    height: ResponsiveSize(50),
-    marginTop: 32,
-    borderWidth: 1,
-    borderColor: '#E8E8E8',
-    backgroundColor: '#F6F6F6',
-  },
-  email: {
-    // width: ResponsiveSize(343),
-    height: ResponsiveSize(50),
-    marginTop: 32,
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-  password: {
-    // width: ResponsiveSize(343),
-    height: ResponsiveSize(50),
-    marginTop: 32,
-    borderColor: 'black',
-    borderWidth: 1,
+  fgtext: {
+    fontFamily: 'Inter Regular Regular',
+    color: '#5DB075',
+    fontSize: 16,
+    fontWeight: '600',
+    alignSelf: 'center',
   },
 });
 
