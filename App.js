@@ -9,11 +9,16 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const AuthStack = () => {
-  return(
-  <Stack.Navigator>
-    <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
-    {/* <Stack.Screen name='SignUp' component={SignUp}/> */}
-  </Stack.Navigator>);
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+      {/* <Stack.Screen name='SignUp' component={SignUp}/> */}
+    </Stack.Navigator>
+  );
 };
 
 // const MainStack=()=>{
@@ -30,7 +35,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{headerShown:false}} name="auth" component={AuthStack} />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="auth"
+          component={AuthStack}
+        />
         {/* <Stack.Screen name='main' component={MainStack}/> */}
       </Stack.Navigator>
     </NavigationContainer>
