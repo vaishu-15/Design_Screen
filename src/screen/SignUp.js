@@ -9,16 +9,15 @@ import {
 } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {IMAGES} from '../utils/constants';
+import Header from '../common/header';
 
 const SignUp = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-        <Image 
-        source={IMAGES.cross}/>
-        <Text style={styles.header}>Sign Up</Text>
-        <Text style={styles.log}>Login</Text>
-      </View>
+     <Header
+     textone = {"Signup"}
+     texttwo = {"login"}
+     image = {IMAGES.cross}/>
 
       <View>
         <TextInput style={styles.name} placeholder="Name" />
@@ -52,25 +51,23 @@ const styles = StyleSheet.create({
   hcontainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:"space-between"
+    justifyContent: 'space-between',
   },
   cros: {
-    flex: 1,
     width: 16,
     height: 16,
-    // transform: rotate(45)
   },
   header: {
-   fontSize:ResponsiveSize(30),
-   fontWeight:"700",
-   color:"#000000"
+    fontSize: ResponsiveSize(30),
+    fontWeight: '600',
+    color: '#000000',
   },
   log: {
-   
+    fontSize: 16,
+    fontWeight: 500,
+    color: '#5DB075',
   },
   name: {
-    // width: ResponsiveSize(343),
-    height: ResponsiveSize(50),
     marginTop: 32,
     borderWidth: 1,
     borderColor: '#E8E8E8',
