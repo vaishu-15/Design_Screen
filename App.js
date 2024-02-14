@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -42,88 +42,66 @@ const MainStack = () => {
         tabBarStyle: {
           backgroundColor: '#FAFAFA',
           height: ResponsiveSize(83),
+          paddingBottom: ResponsiveSize(20),
         },
       }}>
       <Tab.Screen
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <View
-              style={{
-                width: ResponsiveSize(32),
-                height: ResponsiveSize(32),
-                borderRadius: 100,
-                backgroundColor: focused ? '#5DB075' : '#E8E8E8'
-              }}></View>
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
+            <View style={styles.tabbar(focused)}></View>
           ),
-        }}
+        })}
         name="Feed"
         component={Feed}
       />
       <Tab.Screen
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <View
-              style={{
-                width: ResponsiveSize(32),
-                height: ResponsiveSize(32),
-                borderRadius: 100,
-                backgroundColor: focused ? '#5DB075' : '#E8E8E8'
-              }}></View>
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
+            <View style={styles.tabbar(focused)}></View>
           ),
-        }}
+        })}
         name="Content"
         component={Content}
       />
       <Tab.Screen
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <View
-              style={{
-                width: ResponsiveSize(32),
-                height: ResponsiveSize(32),
-                borderRadius: 100,
-                backgroundColor: focused ? '#5DB075' : '#E8E8E8'
-              }}></View>
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
+            <View style={styles.tabbar(focused)}></View>
           ),
-        }}
+        })}
         name="Market"
         component={Market}
       />
       <Tab.Screen
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <View
-              style={{
-                width: ResponsiveSize(32),
-                height: ResponsiveSize(32),
-                borderRadius: 100,
-                backgroundColor: focused ? '#5DB075' : '#E8E8E8'
-              }}></View>
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
+            <View style={styles.tabbar(focused)}></View>
           ),
-        }}
+        })}
         name="UserOpt"
         component={UserOpt}
       />
       <Tab.Screen
-        options={{
-          tabBarIcon: ({focused, color}) => (
-            <View
-              style={{
-                width: ResponsiveSize(32),
-                height: ResponsiveSize(32),
-                borderRadius: 100,
-                backgroundColor: focused ? '#5DB075' : '#E8E8E8'
-              }}></View>
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
+            <View style={styles.tabbar(focused)}></View>
           ),
-        }}
+        })}
         name="Profile"
         component={Profile}
       />
     </Tab.Navigator>
- 
-
   );
-}
+};
+
+const styles = StyleSheet.create({
+  tabbar: focused => ({
+    width: ResponsiveSize(32),
+    height: ResponsiveSize(32),
+    borderRadius: 200,
+    backgroundColor: focused ? '#5DB075' : '#E8E8E8',
+  }),
+});
 
 const App = () => {
   return (

@@ -11,6 +11,8 @@ const Feed = () => {
         <Header textone={'Feed'} />
         <Header texttwo={'Filter'} />
       </View>
+      <View>
+      </View>
     </View>
   );
 };
