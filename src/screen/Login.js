@@ -5,7 +5,7 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 
-const LogIn = () => {
+const Login = (props) => {
 
   return (
     <View style={styles.container}>
@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
     color: '#5DB075',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '800',
     alignSelf: 'center',
   },
 });
 
-export default LogIn;
+export default Login;

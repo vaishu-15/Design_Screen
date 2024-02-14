@@ -7,8 +7,9 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 import {useState} from 'react';
+import Login from './Login';
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [isSelected, setSelection] = useState(false);
 
   const toggle = () => {
@@ -17,7 +18,11 @@ const SignUp = () => {
 
   return (
     <View style={styles.container}>
-      <Header textone={'Sign Up'} texttwo={'Login'} image={IMAGES.cross} />
+      <View style={styles.hcontainer}>
+      <Header image={IMAGES.cross} />
+      <Header textone={'Sign Up'} />
+      <Header texttwo={'Login'} onPress={()=>{props.navigation.navigate(Login)}}/>
+      </View>
       <View style={styles.Field}>
         <InputField field={'Name'} />
         <InputField field={'Email'} />
@@ -46,6 +51,12 @@ const SignUp = () => {
 
 const styles = StyleSheet.create({
   container: {padding: ResponsiveSize(10), flex: 1, backgroundColor: 'white'},
+  hcontainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding:ResponsiveSize(10)
+  },
   Field: {
     marginTop: ResponsiveSize(38),
   },
@@ -69,7 +80,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
     color: '#5DB075',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '800',
     alignSelf: 'center',
   },
 });

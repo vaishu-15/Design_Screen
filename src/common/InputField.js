@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   hidentext: {
     color: '#5DB075',
-    paddingRight: ResponsiveSize(10),
+    paddingRight: ResponsiveSize(8),
     fontFamily: 'Inter Regular Regular'
   },
 });
