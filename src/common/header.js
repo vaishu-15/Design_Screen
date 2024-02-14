@@ -1,22 +1,23 @@
-import {Image, Text, View, StyleSheet} from 'react-native';
+import {Image, Text, View, StyleSheet, TouchableNativeFeedbackComponent} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Header = ({textone, texttwo, image, }) => {
+const Header = ({textone, texttwo, image}) => {
   return (
     <View style={styles.hcontainer}>
       <Image source={image} />
       <Text style={styles.header}>{textone}</Text>
+      <TouchableOpacity>
       <Text style={styles.log}>{texttwo}</Text>
-      
+      </TouchableOpacity>
     </View>
   );
 };
 const styles = StyleSheet.create({
-  hcontainer: {
+  hcontainer:{
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding:ResponsiveSize(10)
   },
   cros: {
     width: 16,
