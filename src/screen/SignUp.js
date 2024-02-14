@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import CheckBox from 'react-native-check-box';
 import ResponsiveSize from '../utils/responsivesSize';
 import {IMAGES} from '../utils/constants';
@@ -11,24 +11,30 @@ import { useState } from 'react';
 const SignUp = () => {
   const [isSelected, setSelection] = useState(false);
 
+  const toggle = () => {
+    setSelection(!isSelected);
+  };
+
   return (
     <View style={styles.container}>
       <Header textone={'Sign Up'} texttwo={'Login'} image={IMAGES.cross} />
       <View style={styles.Field}>
         <InputField field={'Name'} />
         <InputField field={'Email'} />
-        <InputField field={'Password'} />
+        <InputField field={'Password'} state/>
       </View>
+      <TouchableOpacity onPress={toggle}>
       <View style={styles.TextCon}>
         <CheckBox
-        value={isSelected}
-        onValueChange={setSelection} 
+         value={isSelected}
+         onValueChange={setSelection} 
         style={styles.checkbox} />
         <Text style={styles.unText}>
           I would like to receive your newsletter and other promotional
           information.
         </Text>
       </View>
+      </TouchableOpacity>
       <Button btntext={'Sign Up'} />
       <View style={styles.forgot}>
         <Text style={styles.fgtext}>Forgot your password?</Text>
@@ -39,7 +45,7 @@ const SignUp = () => {
 
 const styles = StyleSheet.create({
   container: {padding: ResponsiveSize(10),
-     backgroundColor: 'white'},
+     backgroundColor:'white'},
   Field: {
     marginTop: ResponsiveSize(38),
   },
@@ -47,8 +53,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingRight: ResponsiveSize(6),
     margin:ResponsiveSize(20)
-  },
-  checkbox:{         
   },
   unText: {
     fontFamily: 'Inter Regular Regular',
