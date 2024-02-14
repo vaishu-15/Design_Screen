@@ -2,6 +2,7 @@ import { Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
 const Button=({btntext})=>{
+
     return(
         <View>
         <TouchableOpacity style={styles.button}>

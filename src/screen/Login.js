@@ -1,76 +1,45 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
+import Header from '../common/header';
+import InputField from '../common/InputField';
+import Button from '../common/Button';
 
-const Login = () => {
+const LogIn = () => {
+
   return (
     <View style={styles.container}>
-      <View style={styles.headercon}>
-        <Text style={styles.header}>Log In</Text>
+      <Header textone={'Log In'}/>
+      <View style={styles.Field}>
+        <InputField field={'Email'} />
+        <InputField field={'Password'} state/>
       </View>
-      <View>
-        <TextInput style={styles.email} placeholder="Email" />
-      </View>
-      <View>
-        <TextInput style={styles.password}  placeholder="Password" />
-      </View>
-      <View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttontext}>Log In</Text>
-        </TouchableOpacity>
-      </View>
+      <Button btntext={'Log In'} />
       <View style={styles.forgot}>
-        <Text>Forgot your password?</Text>
+        <Text style={styles.fgtext}>Forgot your password?</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {padding: ResponsiveSize(10)},
-  headercon:{width: 343, height: 36, marginTop: 44, marginLeft: 16},
-  header: {
-    
-    height: ResponsiveSize(36),
-    color: 'black',
-    alignSelf: 'center',
-    fontSize: 30,
-    color: 'black',
-    fontWeight: 600,
-  },
-  email: {
- 
-    height: ResponsiveSize(50),
-    marginTop: 32,
-    borderColor: 'black',
-  },
-  password: {
-    
-    height: ResponsiveSize(50),
-    marginTop: 32,
-    borderColor: 'black',
-  },
-  button: {
-    paddingLeft: 32,
-    paddingRight: 32,
-    paddingTop: 16,
-    paddingBottom: 16,
-    borderRadius: 100,
-    backgroundColor: '#5DB075',
-    marginTop: 151,
-  },
-  buttontext: {
-    
-    height: ResponsiveSize(19),
-    color: 'white',
+  container: {padding: ResponsiveSize(10),
+    flex:1,
+     backgroundColor:'white'},
+  Field: {
+    marginTop: ResponsiveSize(38),
+    marginBottom:ResponsiveSize(140)
   },
   forgot: {
-   
-    heigh: ResponsiveSize(19),
-    marginLeft: 83,
+    padding: ResponsiveSize(4),
+  },
+  fgtext: {
+    fontFamily: 'Inter Regular Regular',
     color: '#5DB075',
-    marginTop: 67,
+    fontSize: 16,
+    fontWeight: '600',
+    alignSelf: 'center',
   },
 });
 
-export default Login;
+export default LogIn;
