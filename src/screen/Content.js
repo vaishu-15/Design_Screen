@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
+import InputField from '../common/InputField';
 
 const Content = () => {
   return (
@@ -10,6 +11,9 @@ const Content = () => {
         <Header texttwo={'Back'} />
         <Header textone={'Content'} />
         <Header texttwo={'Filter'} />
+      </View>
+      <View style={styles.searchfield}>
+        <InputField field={'Search'}/>
       </View>
     </View>
   );
@@ -27,5 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: ResponsiveSize(10),
   },
+  searchfield:{
+    marginTop:ResponsiveSize(32),
+  }
 });
 export default Content;
