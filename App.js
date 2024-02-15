@@ -39,6 +39,7 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           backgroundColor: '#FAFAFA',
           height: ResponsiveSize(83),
