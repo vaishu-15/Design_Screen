@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
     fontWeight: '400',
     fontSize: 14,
+    marginRight:ResponsiveSize(8)
   },
   forgot: {
     padding: ResponsiveSize(4),

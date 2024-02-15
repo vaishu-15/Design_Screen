@@ -19,11 +19,11 @@ const Tab = createBottomTabNavigator();
 const AuthStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="SignUp"
         options={{headerShown: false}}
         component={SignUp}
-      />
+      /> */}
       <Stack.Screen
         name="Login"
         component={Login}

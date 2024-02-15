@@ -13,7 +13,7 @@ const Content = () => {
         <Header texttwo={'Filter'} />
       </View>
       <View style={styles.searchfield}>
-        <InputField field={'Search'}/>
+        <InputField field={'Search'} isSearchField={true}/>
       </View>
     </View>
   );

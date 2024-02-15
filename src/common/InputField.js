@@ -3,7 +3,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useState} from 'react';
 
-const InputField = ({field , state}) => {
+const InputField = ({field, state, isSearchField}) => {
   const [isHidden, setIsHidden] = useState(false);
 
   const toggleVisibility = () => {
@@ -11,19 +11,21 @@ const InputField = ({field , state}) => {
   };
 
   return (
-    <View style={styles.namecon}>
+    <View style={[styles.namecon, isSearchField && styles.searchField]}>
       <TextInput
-        style={styles.name}
+        style={[styles.name, isSearchField && styles.search]}
         placeholder={field}
         secureTextEntry={isHidden ? true : false}
       />
-{state &&
-    <TouchableOpacity onPress={toggleVisibility}>
-      <Text style={styles.hidentext}>{isHidden ? 'Show' : 'Hide'}</Text>
-    </TouchableOpacity>}
+      {state && isSearchField && (
+        <TouchableOpacity onPress={toggleVisibility}>
+          <Text style={styles.hidentext}>{isHidden ? 'Show' : 'Hide'}</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   namecon: {
     flexDirection: 'row',
@@ -36,8 +38,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: ResponsiveSize(5),
   },
+  searchField: {
+    borderRadius: 100,
+  },
+  search: {
+    paddingLeft: ResponsiveSize(15),
+    width:ResponsiveSize(100)
+  },
   name: {
     paddingLeft: ResponsiveSize(10),
+    width:ResponsiveSize(100),
     fontWeight: '500',
     fontSize: 16,
     fontFamily: 'Inter Regular Regular',
@@ -45,7 +55,7 @@ const styles = StyleSheet.create({
   hidentext: {
     color: '#5DB075',
     paddingRight: ResponsiveSize(8),
-    fontFamily: 'Inter Regular Regular'
+    fontFamily: 'Inter Regular Regular',
   },
 });
 
