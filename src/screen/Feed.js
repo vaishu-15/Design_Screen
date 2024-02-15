@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(10),
   },
   searchfield: {
-    marginTop: ResponsiveSize(32),
+    marginTop: ResponsiveSize(20),
   },
   chatcon: {
     padding: ResponsiveSize(10),
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: ResponsiveSize(2),
     paddingLeft: ResponsiveSize(10),
+    paddingBottom:ResponsiveSize(10),
     borderBottomWidth: 1,
     borderBottomColor: '#E8E8E8',
   },

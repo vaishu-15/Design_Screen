@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet,TextInput} from 'react-native';
+import {View, StyleSheet, TextInput} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
@@ -13,7 +13,7 @@ const Market = () => {
         <Header texttwo={'Filter'} />
       </View>
       <View style={styles.searchfield}>
-        <InputField field={'Search'} isSearchField={true}/>
+        <InputField field={'Search'} isSearchField={true} />
       </View>
     </View>
   );
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: ResponsiveSize(10),
   },
-  searchfield:{
-    marginTop:ResponsiveSize(32),
-  }
+  searchfield: {
+    marginTop: ResponsiveSize(20),
+  },
 });
 export default Market;
