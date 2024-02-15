@@ -129,11 +129,10 @@ const styles = StyleSheet.create({
   },
   img: {
     flex: 1,
-    padding: ResponsiveSize(120),
+    padding: ResponsiveSize(70),
     backgroundColor: '#F0F0F0',
     borderRadius: 8,
-    marginLeft: ResponsiveSize(10),
-    marginRight: ResponsiveSize(10),
+    margin:ResponsiveSize(10)
   },
 });
 
