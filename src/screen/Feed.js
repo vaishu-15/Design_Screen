@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     marginTop: ResponsiveSize(32),
   },
   chatcon: {
+    padding:ResponsiveSize(10),
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginLeft: ResponsiveSize(3),
@@ -102,12 +103,12 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(35),
     backgroundColor: '#F6F6F6',
     marginRight: ResponsiveSize(5),
-    marginLeft:ResponsiveSize(10),
     borderRadius:8
   },
   boxcon: {
     flexDirection: 'column',
-    padding:ResponsiveSize(10),
+    padding:ResponsiveSize(2),
+    paddingLeft:ResponsiveSize(10),
     borderBottomWidth: 1,
     borderBottomColor: '#E8E8E8',
   },
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   ttext: {
-    marginRight: ResponsiveSize(60),
+    marginRight: ResponsiveSize(70),
     color: '#BDBDBD',
     fontSize: 14,
     fontWeight: '400',
@@ -129,8 +130,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
   },
   chat: {
-    marginTop: ResponsiveSize(9),
-    marginRight: ResponsiveSize(60),
+    marginTop:ResponsiveSize(5),
+    marginRight:ResponsiveSize(60),
+    paddingBottom:ResponsiveSize(10)
   },
   chattext: {
     color: '#000000',
