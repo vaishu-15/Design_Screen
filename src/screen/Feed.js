@@ -53,16 +53,13 @@ const ChatItem = ({header, text, chatText}) => (
 const Feed = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-        <Header texttwo={'Back'} />
-        <Header textone={'Feed'} />
-        <Header texttwo={'Filter'} />
-      </View>
+      <Header textthree={'Back'} textone={'Feed'} texttwo={'Filter'} show />
       <View style={styles.searchfield}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
       <FlatList
         data={data}
+        showsVerticalScrollIndicator={false}
         renderItem={({item}) => (
           <ChatItem
             header={item.header}
@@ -80,70 +77,59 @@ const Feed = () => {
 const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
-    flex: 1,
     backgroundColor: 'white',
-  },
-  hcontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: ResponsiveSize(10),
   },
   searchfield: {
     marginTop: ResponsiveSize(20),
   },
   chatcon: {
-    padding: ResponsiveSize(10),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginLeft: ResponsiveSize(3),
     alignItems: 'center',
+    paddingLeft: ResponsiveSize(10),
   },
   avatr: {
-    padding: ResponsiveSize(35),
+    width: ResponsiveSize(60),
+    height: ResponsiveSize(60),
     backgroundColor: '#F6F6F6',
-    marginRight: ResponsiveSize(5),
     borderRadius: 8,
   },
   boxcon: {
-    flexDirection: 'column',
-    padding: ResponsiveSize(2),
+    padding: ResponsiveSize(7),
     paddingLeft: ResponsiveSize(10),
-    paddingBottom:ResponsiveSize(10),
+    marginRight:ResponsiveSize(60),
     borderBottomWidth: 1,
     borderBottomColor: '#E8E8E8',
   },
   head: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom:ResponsiveSize(10)
   },
   ttext: {
-    marginRight: ResponsiveSize(70),
     color: '#BDBDBD',
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter Regular Regular',
   },
   headtext: {
+    flex: 1,
     color: '#000000',
     fontWeight: '700',
     fontSize: 16,
     fontFamily: 'Inter Regular Regular',
-  },
-  chat: {
-    marginTop: ResponsiveSize(5),
-    marginRight: ResponsiveSize(60),
-    paddingBottom: ResponsiveSize(10),
   },
   chattext: {
     color: '#000000',
     fontWeight: '400',
     fontSize: 14,
     fontFamily: 'Inter Regular Regular',
+    marginBottom:ResponsiveSize(10)
   },
   img: {
     flex: 1,
-    paddingTop: ResponsiveSize(120),
+    padding: ResponsiveSize(120),
     backgroundColor: '#F0F0F0',
     borderRadius: 8,
     marginLeft: ResponsiveSize(10),

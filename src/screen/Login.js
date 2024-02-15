@@ -5,7 +5,7 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 
-const Login = (props) => {
+const Login = () => {
 
   return (
     <View style={styles.container}>
