@@ -7,9 +7,9 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 import {useState} from 'react';
-import Login from './Login';
 
-const SignUp = (props) => {
+
+const SignUp = () => {
   const [isSelected, setSelection] = useState(false);
 
   const toggle = () => {
@@ -21,7 +21,7 @@ const SignUp = (props) => {
       <View style={styles.hcontainer}>
       <Header image={IMAGES.cross} />
       <Header textone={'Sign Up'} />
-      <Header texttwo={'Login'} onPress={()=>{props.navigation.navigate(Login)}}/>
+      <Header texttwo={'Login'} />
       </View>
       <View style={styles.Field}>
         <InputField field={'Name'} />

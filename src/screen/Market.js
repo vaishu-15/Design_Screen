@@ -7,14 +7,11 @@ import InputField from '../common/InputField';
 const Market = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-        <Header texttwo={'Back'} />
-        <Header textone={'Market'} />
-        <Header texttwo={'Filter'} />
-      </View>
+      <Header textthree={'Back'} textone={'Market'} texttwo={'Filter'} show />
       <View style={styles.searchfield}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
+      <View></View>
     </View>
   );
 };
@@ -25,14 +22,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  hcontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: ResponsiveSize(10),
-  },
   searchfield: {
     marginTop: ResponsiveSize(20),
   },
 });
+
 export default Market;

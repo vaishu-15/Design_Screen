@@ -1,9 +1,8 @@
-import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const data = [
   {
@@ -12,6 +11,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
   },
   {
     id: '2',
@@ -19,10 +19,11 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
   },
 ];
 
-const ContentItem = ({header, text, chatText}) => (
+const ContentItem = ({ header, text, chatText, selectedButtonIndex, onPress }) => (
   <View style={styles.contentcon}>
     <View style={styles.imagecon}></View>
     <View style={styles.head}>
@@ -33,34 +34,48 @@ const ContentItem = ({header, text, chatText}) => (
       <Text style={styles.ttext}>{text}</Text>
     </View>
     <View style={styles.bottom}>
-      <TouchableOpacity style={styles.bot}></TouchableOpacity>
-      <TouchableOpacity style={styles.bot}></TouchableOpacity>
-      <TouchableOpacity style={styles.bot}></TouchableOpacity>
+      {['Option 1', 'Option 2', 'Option 3'].map((_, index) => (
+        <TouchableOpacity
+          key={index}
+          style={[
+            styles.bot,
+            selectedButtonIndex === index ? { backgroundColor: '#5DB075' } : { backgroundColor: '#BDBDBD' },
+          ]}
+          onPress={() => onPress(index)}
+        />
+      ))}
     </View>
   </View>
 );
 
 const Content = () => {
+  const [contentData, setContentData] = useState(data);
+
+  const handlePress = (index, dataIndex) => {
+    const newData = [...contentData];
+    newData[dataIndex].selectedButtonIndex = index;
+    setContentData(newData);
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-        <Header texttwo={'Back'} />
-        <Header textone={'Content'} />
-        <Header texttwo={'Filter'} />
-      </View>
+      <Header textthree={'Back'} textone={'Content'} texttwo={'Filter'} show/>    
       <View style={styles.searchfield}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
       <FlatList
-        data={data}
-        renderItem={({item}) => (
+        data={contentData}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item, index }) => (
           <ContentItem
             header={item.header}
             text={item.text}
             chatText={item.chatText}
+            selectedButtonIndex={item.selectedButtonIndex}
+            onPress={(buttonIndex) => handlePress(buttonIndex, index)}
           />
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
@@ -72,12 +87,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  hcontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: ResponsiveSize(10),
-  },
   searchfield: {
     marginTop: ResponsiveSize(20),
   },
@@ -85,6 +94,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     margin: ResponsiveSize(10),
+    overflow: 'hidden',
   },
   imagecon: {
     padding: ResponsiveSize(120),
@@ -116,17 +126,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
   },
   bottom: {
-    width: ResponsiveSize(40),
-    height: ResponsiveSize(8),
     alignSelf: 'flex-end',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   bot: {
-    backgroundColor: '#5DB075',
-    width: ResponsiveSize(8),
-    height: ResponsiveSize(8),
+    padding: ResponsiveSize(4),
+    margin: ResponsiveSize(4),
     borderRadius: 4,
   },
 });
+
 export default Content;
+
