@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const data = [
   {
@@ -32,9 +33,9 @@ const ContentItem = ({header, text, chatText}) => (
       <Text style={styles.ttext}>{text}</Text>
     </View>
     <View style={styles.bottom}>
-      <View style={styles.bot}></View>
-      <View style={styles.bot}></View>
-      <View style={styles.bot}></View>
+      <TouchableOpacity style={styles.bot}></TouchableOpacity>
+      <TouchableOpacity style={styles.bot}></TouchableOpacity>
+      <TouchableOpacity style={styles.bot}></TouchableOpacity>
     </View>
   </View>
 );
