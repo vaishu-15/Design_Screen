@@ -1,22 +1,39 @@
 import React from 'react';
-import {View, Text,StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
-const Deals = () => {
+const Deals = ({dealone}) => {
+  const data = [
+    {id: '1', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '2', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '3', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '4', name: 'Item #1 Name Goes Here', price: '$20.99'},
+  ];
+
+  const renderItem = ({item}) => (
+    <View style={styles.product}>
+      <View style={styles.prodimg}></View>
+      <View style={styles.itemname}>
+        <Text style={styles.itemText}>{item.name}</Text>
+      </View>
+      <View style={styles.amount}>
+        <Text style={styles.amounttext}>{item.price}</Text>
+      </View>
+    </View>
+  );
+
   return (
     <View>
       <View style={styles.Dealcon}>
-        <Text style={styles.DealHeading}>Hot deals</Text>
+        <Text style={styles.DealHeading}>{dealone}</Text>
       </View>
-      <View style={styles.product}>
-        <View style={styles.prodimg}></View>
-        <View style={styles.itemname}>
-          <Text style={styles.itemText}>Item #1 Name Goes Here</Text>
-        </View>
-        <View style={styles.amount}>
-          <Text style={styles.amounttext}>$19.99</Text>
-        </View>
-      </View>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      />
     </View>
   );
 };
@@ -24,7 +41,6 @@ const Deals = () => {
 const styles = StyleSheet.create({
   Dealcon: {
     marginTop: ResponsiveSize(20),
-    marginBottom: ResponsiveSize(12),
     paddingLeft: ResponsiveSize(10),
   },
   DealHeading: {
@@ -34,7 +50,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter Regular Regular',
   },
   product: {
-    paddingLeft: ResponsiveSize(10),
+    padding: ResponsiveSize(10),
+    margin: ResponsiveSize(3),
   },
   prodimg: {
     width: ResponsiveSize(110),
