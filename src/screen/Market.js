@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
+    textAlign:'center',
   },
   modalbutton: {
     marginTop: ResponsiveSize(40),
