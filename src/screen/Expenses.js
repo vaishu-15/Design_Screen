@@ -24,6 +24,7 @@ const Expenses = () => {
     {id: '7', item: 'Item ', statistic: 'Statistic '},
   ];
 
+  
   const renderItem = ({item}) => (
     <View style={styles.expenseList}>
       <View style={styles.itemNo}>
