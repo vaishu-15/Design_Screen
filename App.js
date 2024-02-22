@@ -9,7 +9,7 @@ import Feed from './src/screen/Feed';
 import Content from './src/screen/Content';
 import Market from './src/screen/Market';
 import Profile from './src/screen/Profile';
-import UserOpt from './src/screen/UserOpt';
+import UserOpt from './src/screen/Expenses';
 import ResponsiveSize from './src/utils/responsivesSize';
 
 const Stack = createStackNavigator();
