@@ -11,7 +11,7 @@ const InputField = ({field, state, isSearchField }) => {
   };
 
   return (
-    <View style={[styles.namecon, isSearchField && styles.searchField]}>
+    <View style={[styles.nameCon, isSearchField && styles.searchField]}>
       <TextInput
         style={[styles.name, isSearchField && styles.search]}
         placeholder={field}
@@ -19,7 +19,7 @@ const InputField = ({field, state, isSearchField }) => {
       />
       {state  && (
         <TouchableOpacity onPress={toggleVisibility}>
-          <Text style={styles.hidentext}>{isHidden ? 'Show' : 'Hide'}</Text>
+          <Text style={styles.hidenText}>{isHidden ? 'Show' : 'Hide'}</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -27,7 +27,7 @@ const InputField = ({field, state, isSearchField }) => {
 };
 
 const styles = StyleSheet.create({
-  namecon: {
+  nameCon: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
     paddingLeft: ResponsiveSize(10),
   },
-  hidentext: {
+  hidenText: {
     color: '#5DB075',
     paddingRight: ResponsiveSize(8),
     fontFamily: 'Inter',

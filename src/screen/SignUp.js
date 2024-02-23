@@ -30,12 +30,12 @@ const SignUp = (props) => {
         <InputField field={'Email'} />
         <InputField field={'Password'} state />
       </View>
-      <View style={styles.TextCon}>
+      <View style={styles.textCon}>
         <TouchableOpacity onPress={toggle}>
           <CheckBox
             value={isSelected}
             onValueChange={setSelection}
-            style={styles.checkbox}
+            style={styles.checkBox}
           />
         </TouchableOpacity>
         <Text style={styles.unText}>
@@ -46,7 +46,7 @@ const SignUp = (props) => {
 
       <Button onPress={navigateToLogin} btntext={'Sign Up'} />
       <View style={styles.forgot}>
-        <Text style={styles.fgtext}>Forgot your password?</Text>
+        <Text style={styles.fgText}>Forgot your password?</Text>
       </View>
     </View>
   );
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
   Field: {
     marginTop: ResponsiveSize(38),
   },
-  TextCon: {
+  textCon: {
     flexDirection: 'row',
     margin: ResponsiveSize(9),
     marginTop: ResponsiveSize(25),
   },
-  checkbox: {
+  checkBox: {
     marginRight: ResponsiveSize(6),
   },
   unText: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   forgot: {
     padding: ResponsiveSize(4),
   },
-  fgtext: {
+  fgText: {
     fontFamily: 'Inter-SemiBold',
     color: '#5DB075',
     fontSize: 16,

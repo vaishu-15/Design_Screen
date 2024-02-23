@@ -12,19 +12,19 @@ const Deals = ({dealone}) => {
 
   const renderItem = ({item}) => (
     <View style={styles.product}>
-      <View style={styles.prodimg}></View>
-      <View style={styles.itemname}>
+      <View style={styles.prodImg}></View>
+      <View style={styles.itemName}>
         <Text style={styles.itemText}>{item.name}</Text>
       </View>
       <View style={styles.amount}>
-        <Text style={styles.amounttext}>{item.price}</Text>
+        <Text style={styles.amountText}>{item.price}</Text>
       </View>
     </View>
   );
 
   return (
     <View>
-      <View style={styles.Dealcon}>
+      <View style={styles.DealCon}>
         <Text style={styles.DealHeading}>{dealone}</Text>
       </View>
       <FlatList
@@ -39,7 +39,7 @@ const Deals = ({dealone}) => {
 };
 
 const styles = StyleSheet.create({
-  Dealcon: {
+  DealCon: {
     marginTop: ResponsiveSize(20),
     paddingLeft: ResponsiveSize(10),
   },
@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(10),
     margin: ResponsiveSize(3),
   },
-  prodimg: {
+  prodImg: {
     width: ResponsiveSize(110),
     height: ResponsiveSize(110),
     backgroundColor: '#F6F6F6',
     borderRadius: 8,
   },
-  itemname: {
+  itemName: {
     width: ResponsiveSize(110),
     marginTop: ResponsiveSize(3),
   },
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   amount: {
     marginTop: ResponsiveSize(5),
   },
-  amounttext: {
+  amountText: {
     color: '#000000',
     fontSize: 14,
     fontWeight: '700',

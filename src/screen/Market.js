@@ -15,7 +15,7 @@ const Market = () => {
         texttwo={'Filter'} 
         show
       />
-      <View style={styles.searchfield}>
+      <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
       <Deals dealone={'Hot deals'} />
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  searchfield: {
+  searchField: {
     marginTop: ResponsiveSize(20),
   },
   
