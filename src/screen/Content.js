@@ -45,14 +45,14 @@ const ContentItem = ({
   selectedButtonIndex,
   onPress,
 }) => (
-  <View style={styles.contentcon}>
-    <View style={styles.imagecon}></View>
+  <View style={styles.contentCon}>
+    <View style={styles.imageCon}></View>
     <View style={styles.head}>
-      <Text style={styles.headtext}>{header}</Text>
+      <Text style={styles.headText}>{header}</Text>
     </View>
-    <View style={styles.boxcon}>
-      <Text style={styles.chattext}>{chatText}</Text>
-      <Text style={styles.ttext}>{text}</Text>
+    <View style={styles.boxCon}>
+      <Text style={styles.chatText}>{chatText}</Text>
+      <Text style={styles.tText}>{text}</Text>
     </View>
     <View style={styles.bottom}>
       {['Option 1', 'Option 2', 'Option 3'].map((_, index) => (
@@ -83,8 +83,8 @@ const Content = () => {
 
   return (
     <View style={styles.container}>
-      <Header textthree={'Back'} textone={'Content'} texttwo={'Filter'} show />
-      <View style={styles.searchfield}>
+      <Header textThree={'Back'} textOne={'Content'} textTwo={'Filter'} show />
+      <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
       {!isSearching && (                 //for the content
@@ -121,16 +121,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  searchfield: {
+  searchField: {
     marginTop: ResponsiveSize(20),
   },
-  contentcon: {
+  contentCon: {
     flexDirection: 'column',
     justifyContent: 'space-between',
     margin: ResponsiveSize(10),
     overflow: 'hidden',
   },
-  imagecon: {
+  imageCon: {
     padding: ResponsiveSize(120),
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
@@ -140,20 +140,20 @@ const styles = StyleSheet.create({
     paddingTop: ResponsiveSize(6),
     paddingBottom: ResponsiveSize(6),
   },
-  headtext: {
+  headText: {
     color: '#000000',
     fontSize: 16,
     fontWeight: '700',
     fontFamily: 'Inter-SemiBold',
   },
-  chattext: {
+  chatText: {
     color: '#000000',
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter Regular Regular',
     paddingBottom: ResponsiveSize(5),
   },
-  ttext: {
+  tText: {
     color: '#BDBDBD',
     fontSize: 14,
     fontWeight: '400',

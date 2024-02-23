@@ -19,11 +19,11 @@ const Login = (props) => {
         <InputField field={'Email'} />
         <InputField field={'Password'} state/>
       </View>
-      <Button btntext={'Log In'} />
+      <Button btnText={'Log In'} />
       <View style={styles.forgot}>
-        <Text style={styles.fgtext}>Forgot your password? </Text>
+        <Text style={styles.fgText}>Forgot your password? </Text>
         <TouchableOpacity onPress={navigateToSignUp}>
-          <Text style={styles.signupbtn}>Signup</Text>
+          <Text style={styles.signUpBtn}>Signup</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: ResponsiveSize(15),
   },
-  fgtext: {
+  fgText: {
     fontFamily: 'Inter-SemiBold',
     color: 'grey',
     fontSize: 16,
     fontWeight: '600',
   },
-  signupbtn: {
+  signUpBtn: {
     fontFamily: 'Inter-SemiBold',
     color: '#5DB075',
     fontSize: 16,

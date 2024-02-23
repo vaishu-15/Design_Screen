@@ -6,7 +6,7 @@ import ResponsiveSize from "../utils/responsivesSize";
 const Profile=() =>{
     return(
         <View style={styles.container}>
-        <Header textthree={'Settings'} textone={'Profile'} texttwo={'Logout'} show />
+        <Header textThree={'Settings'} textOne={'Profile'} textTwo={'Logout'} show />
         </View>
     )
 }

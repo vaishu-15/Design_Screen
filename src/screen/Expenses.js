@@ -64,7 +64,7 @@ const Expenses = () => {
 
   return (
     <View style={styles.container}>
-      <Header textthree={'Back'} textone={'Expenses'} texttwo={'New'} show />
+      <Header textThree={'Back'} textOne={'Expenses'} textTwo={'New'} show />
       <View style={styles.graphContainer}>
         <BarChart
           data={data}

@@ -1,11 +1,11 @@
 import { Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
-const Button=({btntext ,onPress})=>{
+const Button=({btnText ,onPress})=>{
     return(
         <View>
         <TouchableOpacity onPress={onPress} style={styles.button} >
-          <Text style={styles.buttontext}>{btntext}</Text>
+          <Text style={styles.buttonText}>{btnText}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -18,7 +18,7 @@ button:{
     margin:ResponsiveSize(11),
     borderRadius:100
   },
-  buttontext:{
+  buttonText:{
     fontWeight:'600',
     fontSize:16,
     alignSelf:'center',

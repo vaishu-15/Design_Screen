@@ -9,7 +9,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Header = (props) => {
   return (
-    <View style={styles.hcontainer}>
+    <View style={styles.hContainer}>
       {!props.show && (
         <TouchableOpacity onPress={props.onPress}>
           <Image source={props.image} />
@@ -17,18 +17,18 @@ const Header = (props) => {
       )}
       {props.show && (
         <TouchableOpacity >
-          <Text style={styles.back}>{props.textthree}</Text>
+          <Text style={styles.back}>{props.textThree}</Text>
         </TouchableOpacity>
       )}
-      <Text style={styles.header}>{props.textone}</Text>
+      <Text style={styles.header}>{props.textOne}</Text>
       <TouchableOpacity onPress={props.onpress}>
-        <Text style={styles.log}>{props.texttwo}</Text>
+        <Text style={styles.log}>{props.textTwo}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 const styles = StyleSheet.create({
-  hcontainer: {
+  hContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
