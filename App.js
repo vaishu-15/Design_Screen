@@ -8,7 +8,7 @@ import SignUp from './src/screen/SignUp';
 import Feed from './src/screen/Feed';
 import Content from './src/screen/Content';
 import Market from './src/screen/Market';
-import UserOptions from './src/screen/UserOptions';
+import Profile from './src/screen/Profile';
 import ResponsiveSize from './src/utils/responsivesSize';
 import Expenses from './src/screen/Expenses';
 
@@ -88,8 +88,8 @@ const MainStack = () => {
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
-        name="userOptions"
-        component={UserOptions}
+        name="Profile"
+        component={Profile}
       />
     </Tab.Navigator>
   );
@@ -108,11 +108,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           options={{headerShown: false}}
           name="auth"
           component={AuthStack}
-        />
+        /> */}
         <Stack.Screen
           name="main"
           options={{headerShown: false}}

@@ -67,10 +67,27 @@ const Feed = () => {
         textthree={'Back'}
         textone={'Feed'}
         texttwo={'Filter'}
-        onpress={() => {
-          setModalVisible(true);
-        }}
         show
+      />
+      <View style={styles.searchfield}>
+        <InputField field={'Search'} isSearchField={true} />
+      </View>
+      
+      <FlatList
+        data={data}
+        showsVerticalScrollIndicator={false}
+        renderItem={({item}) => (
+          <TouchableOpacity onpress={() => {
+            setModalVisible(true);
+          }}>
+          <ChatItem
+            header={item.header}
+            text={item.text}
+            chatText={item.chatText}
+          />
+          </TouchableOpacity>
+        )}
+        keyExtractor={item => item.id}
       />
       <Modal
         animationType="fade"
@@ -82,21 +99,7 @@ const Feed = () => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <AirbnbRating
-              type="star"
-              ratingCount={5}
-              size={25}
-              onFinishRating={this.ratingCompleted}
-              selectedColor="#FFB84E"
-              starContainerStyle={{
-                width: ResponsiveSize(180),
-                justifyContent: 'space-between',
-              }}
-              reviews={false}
-              ratingContainerStyle={{height: 10, marginBottom: 35}}
-            />
-
-            <Text style={styles.modalheading}>Rate our app</Text>
+            <Text style={styles.modalheading}>Congratulations!</Text>
             <Text style={styles.modalcontent}>
               Consequat velit qui adipisicing sunt do reprehenderit ad laborum
               tempor ullamco exercitation. Ullamco tempor adipisicing et
@@ -106,29 +109,12 @@ const Feed = () => {
             <TouchableOpacity
               style={styles.modalbutton}
               onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.btntext}>I love it!</Text>
+              <Text style={styles.btntext}>Click Me</Text>
             </TouchableOpacity>
-            <Text style={styles.modalaction}>
-              Don’t like the app? Let us know.
-            </Text>
+            <Text style={styles.modalaction}>Secondary Action</Text>
           </View>
         </View>
       </Modal>
-      <View style={styles.searchfield}>
-        <InputField field={'Search'} isSearchField={true} />
-      </View>
-      <FlatList
-        data={data}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item}) => (
-          <ChatItem
-            header={item.header}
-            text={item.text}
-            chatText={item.chatText}
-          />
-        )}
-        keyExtractor={item => item.id}
-      />
       <View style={styles.img}></View>
     </View>
   );
@@ -226,7 +212,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
-    textAlign: 'center',
+    textAlign:'center',
   },
   modalbutton: {
     marginTop: ResponsiveSize(40),
@@ -241,15 +227,118 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: 'Inter Regular Regular',
     alignSelf: 'center',
   },
   modalaction: {
     color: '#5DB075',
     fontSize: 16,
-    fontWeight: '600',
-    fontFamily: 'Inter-SemiBold',
+    fontWeight: '700',
+    fontFamily: 'Inter-Bold',
   },
 });
 
 export default Feed;
+
+
+
+// centeredView: {
+//   flex: 1,
+//   justifyContent: 'center',
+//   alignItems: 'center',
+//   backgroundColor: '#5DB075',
+// },
+// modalView: {
+//   margin: ResponsiveSize(20),
+//   padding: ResponsiveSize(30),
+//   backgroundColor: '#FFFFFF',
+//   borderRadius: 8,
+//   alignItems: 'center',
+//   shadowColor: '#262483',
+//   shadowOffset: {
+//     width: 0,
+//     height: 2,
+//   },
+//   shadowOpacity: 0.25,
+//   elevation: 10,
+// },
+// modalheading: {
+//   color: '#000000',
+//   fontSize: 30,
+//   fontWeight: '700',
+//   fontFamily: 'Inter-SemiBold',
+// },
+// modalcontent: {
+//   color: '#666666',
+//   marginTop: ResponsiveSize(20),
+//   fontSize: 16,
+//   fontWeight: '500',
+//   fontFamily: 'Inter-Medium',
+//   textAlign: 'center',
+// },
+// modalbutton: {
+//   marginTop: ResponsiveSize(40),
+//   marginBottom: ResponsiveSize(20),
+//   backgroundColor: '#5DB075',
+//   width: ResponsiveSize(311),
+//   height: ResponsiveSize(51),
+//   borderRadius: 100,
+//   justifyContent: 'center',
+// },
+// btntext: {
+//   color: '#FFFFFF',
+//   fontSize: 16,
+//   fontWeight: '600',
+//   fontFamily: 'Inter-SemiBold',
+//   alignSelf: 'center',
+// },
+// modalaction: {
+//   color: '#5DB075',
+//   fontSize: 16,
+//   fontWeight: '600',
+//   fontFamily: 'Inter-SemiBold',
+// },
+
+
+// <Modal
+//         animationType="fade"
+//         transparent={true}
+//         visible={modalVisible}
+//         onRequestClose={() => {
+//           Alert.alert('Modal has been closed.');
+//           setModalVisible(!modalVisible);
+//         }}>
+//         <View style={styles.centeredView}>
+//           <View style={styles.modalView}>
+//             <AirbnbRating
+//               type="star"
+//               ratingCount={5}
+//               size={25}
+//               onFinishRating={this.ratingCompleted}
+//               selectedColor="#FFB84E"
+//               starContainerStyle={{
+//                 width: ResponsiveSize(180),
+//                 justifyContent: 'space-between',
+//               }}
+//               reviews={false}
+//               ratingContainerStyle={{height: 10, marginBottom: 35}}
+//             />
+
+//             <Text style={styles.modalheading}>Rate our app</Text>
+//             <Text style={styles.modalcontent}>
+//               Consequat velit qui adipisicing sunt do reprehenderit ad laborum
+//               tempor ullamco exercitation. Ullamco tempor adipisicing et
+//               voluptate duis sit esse aliqua esse ex dolore esse. Consequat
+//               velit qui adipisicing sunt.
+//             </Text>
+//             <TouchableOpacity
+//               style={styles.modalbutton}
+//               onPress={() => setModalVisible(!modalVisible)}>
+//               <Text style={styles.btntext}>I love it!</Text>
+//             </TouchableOpacity>
+//             <Text style={styles.modalaction}>
+//               Don’t like the app? Let us know.
+//             </Text>
+//           </View>
+//         </View>
+//       </Modal>

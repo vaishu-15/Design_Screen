@@ -7,7 +7,7 @@ import {
 import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Header = props => {
+const Header = (props) => {
   return (
     <View style={styles.hcontainer}>
       {!props.show && (
@@ -16,7 +16,7 @@ const Header = props => {
         </TouchableOpacity>
       )}
       {props.show && (
-        <TouchableOpacity onPress={props.navigation.navigate('/')}>
+        <TouchableOpacity >
           <Text style={styles.back}>{props.textthree}</Text>
         </TouchableOpacity>
       )}
