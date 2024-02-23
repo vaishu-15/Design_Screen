@@ -8,9 +8,9 @@ import SignUp from './src/screen/SignUp';
 import Feed from './src/screen/Feed';
 import Content from './src/screen/Content';
 import Market from './src/screen/Market';
-import Profile from './src/screen/Profile';
-import UserOpt from './src/screen/Expenses';
+import UserOptions from './src/screen/UserOptions';
 import ResponsiveSize from './src/utils/responsivesSize';
+import Expenses from './src/screen/Expenses';
 
 const Stack = createStackNavigator();
 
@@ -79,8 +79,8 @@ const MainStack = () => {
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
-        name="UserOpt"
-        component={UserOpt}
+        name="expenses"
+        component={Expenses}
       />
       <Tab.Screen
         options={({focused}) => ({
@@ -88,8 +88,8 @@ const MainStack = () => {
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
-        name="Profile"
-        component={Profile}
+        name="userOptions"
+        component={UserOptions}
       />
     </Tab.Navigator>
   );
