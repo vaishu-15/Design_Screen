@@ -73,7 +73,7 @@ const ContentItem = ({
 
 const Content = () => {
   const [contentData, setContentData] = useState(data);
-  const [isSearching, setIsSearching] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handlePress = (index, dataIndex) => {
     const newData = [...contentData];
@@ -87,23 +87,23 @@ const Content = () => {
       <View style={styles.searchfield}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
-      {!isSearching && (
-      <FlatList
-        data={contentData}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item, index}) => (
-          <ContentItem
-            header={item.header}
-            text={item.text}
-            chatText={item.chatText}
-            selectedButtonIndex={item.selectedButtonIndex}
-            onPress={buttonIndex => handlePress(buttonIndex, index)}
-          />
-        )}
-        keyExtractor={item => item.id}
-      />
+      {!isSearching && (                 //for the content
+        <FlatList
+          data={contentData}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item, index}) => (
+            <ContentItem
+              header={item.header}
+              text={item.text}
+              chatText={item.chatText}
+              selectedButtonIndex={item.selectedButtonIndex}
+              onPress={buttonIndex => handlePress(buttonIndex, index)}
+            />
+          )}
+          keyExtractor={item => item.id}
+        />
       )}
-      {isSearching && (
+      {isSearching && (          //for the search history
         <FlatList
           data={searchData}
           renderItem={({item}) => <SearchItem result={item.result} />}
@@ -167,19 +167,19 @@ const styles = StyleSheet.create({
     margin: ResponsiveSize(4),
     borderRadius: 4,
   },
-  searchCon:{
+  searchCon: {
     margin: ResponsiveSize(10),
-    paddingLeft:ResponsiveSize(10),
-    paddingBottom:ResponsiveSize(10),
-    borderBottomColor:'#E8E8E8',
-    borderBottomWidth:1
+    paddingLeft: ResponsiveSize(10),
+    paddingBottom: ResponsiveSize(10),
+    borderBottomColor: '#E8E8E8',
+    borderBottomWidth: 1,
   },
-  searchText:{
+  searchText: {
     color: '#000000',
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
-  }
+  },
 });
 
 export default Content;
