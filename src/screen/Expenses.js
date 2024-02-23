@@ -24,7 +24,6 @@ const Expenses = () => {
     {id: '7', item: 'Item ', statistic: 'Statistic '},
   ];
 
-  
   const renderItem = ({item}) => (
     <View style={styles.expenseList}>
       <View style={styles.itemNo}>
@@ -43,10 +42,10 @@ const Expenses = () => {
     backgroundGradientFrom: 'white',
     backgroundGradientFromOpacity: 'white',
     backgroundGradientTo: 'white',
-    color: () => '#4B9460', 
+    color: () => '#4B9460',
     fillShadowGradientOpacity: 1,
-    fillShadowGradientFrom: '#4B9460', 
-    fillShadowGradientTo: '#4B9460', 
+    fillShadowGradientFrom: '#4B9460',
+    fillShadowGradientTo: '#4B9460',
     labelColor: () => 'black',
     propsForVerticalLabels: {
       fontSize: 10,
@@ -62,7 +61,6 @@ const Expenses = () => {
       strokeWidth: 0,
     },
   };
-  
 
   return (
     <View style={styles.container}>
