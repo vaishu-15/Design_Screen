@@ -92,6 +92,7 @@ const Content = () => {
           data={contentData}
           showsVerticalScrollIndicator={false}
           renderItem={({item, index}) => (
+            <TouchableOpacity>
             <ContentItem
               header={item.header}
               text={item.text}
@@ -99,6 +100,7 @@ const Content = () => {
               selectedButtonIndex={item.selectedButtonIndex}
               onPress={buttonIndex => handlePress(buttonIndex, index)}
             />
+            </TouchableOpacity>
           )}
           keyExtractor={item => item.id}
         />

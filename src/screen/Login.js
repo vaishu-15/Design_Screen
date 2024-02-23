@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   fgtext: {
     fontFamily: 'Inter-SemiBold',
-    color: '#5DB075',
+    color: 'grey',
     fontSize: 16,
     fontWeight: '600',
   },
