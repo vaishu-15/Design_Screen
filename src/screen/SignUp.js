@@ -19,9 +19,7 @@ const SignUp = () => {
   return (
     <View style={styles.container}>
       <View style={styles.hcontainer}>
-      <Header image={IMAGES.cross} />
-      <Header textone={'Sign Up'} />
-      <Header texttwo={'Login'} />
+      <Header image={IMAGES.cross} textone={'Sign Up'} texttwo={'Login'}/>      
       </View>
       <View style={styles.Field}>
         <InputField field={'Name'} />
@@ -51,12 +49,6 @@ const SignUp = () => {
 
 const styles = StyleSheet.create({
   container: {padding: ResponsiveSize(10), flex: 1, backgroundColor: 'white'},
-  hcontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding:ResponsiveSize(10)
-  },
   Field: {
     marginTop: ResponsiveSize(38),
   },
