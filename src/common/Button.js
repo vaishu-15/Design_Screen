@@ -1,10 +1,10 @@
 import { Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
-const Button=({btntext})=>{
+const Button=({btntext ,onPress})=>{
     return(
         <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={onPress} style={styles.button} >
           <Text style={styles.buttontext}>{btntext}</Text>
         </TouchableOpacity>
       </View>
@@ -23,7 +23,7 @@ button:{
     fontSize:16,
     alignSelf:'center',
     color:'#FFFFFF',
-    fontFamily:'Inter Regular Regular',
+    fontFamily:'Inter-SemiBold',
   }
 })
 export default Button;

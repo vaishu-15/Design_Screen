@@ -7,10 +7,14 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 import {useState} from 'react';
+import Login from './Login';
 
-
-const SignUp = () => {
+const SignUp = (props) => {
   const [isSelected, setSelection] = useState(false);
+
+  const navigateToLogin = () => {
+    props.navigation.navigate('Login'); 
+  };
 
   const toggle = () => {
     setSelection(!isSelected);
@@ -18,28 +22,29 @@ const SignUp = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.hcontainer}>
-      <Header image={IMAGES.cross} textone={'Sign Up'} texttwo={'Login'}/>      
+      <View>
+        <Header image={IMAGES.cross} onPress={navigateToLogin} textone={'Sign Up'} />
       </View>
       <View style={styles.Field}>
         <InputField field={'Name'} />
         <InputField field={'Email'} />
         <InputField field={'Password'} state />
       </View>
-      <TouchableOpacity onPress={toggle}>
-        <View style={styles.TextCon}>
+      <View style={styles.TextCon}>
+        <TouchableOpacity onPress={toggle}>
           <CheckBox
             value={isSelected}
             onValueChange={setSelection}
             style={styles.checkbox}
           />
-          <Text style={styles.unText}>
-            I would like to receive your newsletter and other promotional
-            information.
-          </Text>
-        </View>
-      </TouchableOpacity>
-      <Button btntext={'Sign Up'} />
+        </TouchableOpacity>
+        <Text style={styles.unText}>
+          I would like to receive your newsletter and other promotional
+          information.
+        </Text>
+      </View>
+
+      <Button onPress={navigateToLogin} btntext={'Sign Up'} />
       <View style={styles.forgot}>
         <Text style={styles.fgtext}>Forgot your password?</Text>
       </View>
@@ -61,19 +66,20 @@ const styles = StyleSheet.create({
     marginRight: ResponsiveSize(6),
   },
   unText: {
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: 'Inter-Regular',
+    color: '#666666',
     fontWeight: '400',
     fontSize: 14,
-    marginRight:ResponsiveSize(8)
+    marginRight: ResponsiveSize(8),
   },
   forgot: {
     padding: ResponsiveSize(4),
   },
   fgtext: {
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: 'Inter-SemiBold',
     color: '#5DB075',
     fontSize: 16,
-    fontWeight: '800',
+    fontWeight: '600',
     alignSelf: 'center',
   },
 });
