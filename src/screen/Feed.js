@@ -63,7 +63,7 @@ const Feed = () => {
 
   return (
     <View style={styles.container}>
-      <Header textthree={'Back'} textone={'Feed'} texttwo={'Filter'} show />
+      <Header textThree={'Back'} textOne={'Feed'} textTwo={'Filter'} show />
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>

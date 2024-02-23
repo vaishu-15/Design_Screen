@@ -1,11 +1,11 @@
 import { Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
-const Button=({btntext ,onPress})=>{
+const Button=({btnText ,onPress})=>{
     return(
         <View>
         <TouchableOpacity onPress={onPress} style={styles.button} >
-          <Text style={styles.buttonText}>{btntext}</Text>
+          <Text style={styles.buttonText}>{btnText}</Text>
         </TouchableOpacity>
       </View>
     );

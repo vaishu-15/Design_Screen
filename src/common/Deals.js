@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 
-const Deals = ({dealone}) => {
+const Deals = ({dealOne}) => {
   const data = [
     {id: '1', name: 'Item #1 Name Goes Here', price: '$19.99'},
     {id: '2', name: 'Item #1 Name Goes Here', price: '$19.99'},
@@ -25,7 +25,7 @@ const Deals = ({dealone}) => {
   return (
     <View>
       <View style={styles.DealCon}>
-        <Text style={styles.DealHeading}>{dealone}</Text>
+        <Text style={styles.DealHeading}>{dealOne}</Text>
       </View>
       <FlatList
         data={data}

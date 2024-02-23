@@ -25,7 +25,7 @@ const SignUp = (props) => {
       <View>
         <Header image={IMAGES.cross} onPress={navigateToLogin} textone={'Sign Up'} />
       </View>
-      <View style={styles.Field}>
+      <View style={styles.field}>
         <InputField field={'Name'} />
         <InputField field={'Email'} />
         <InputField field={'Password'} state />
@@ -44,7 +44,7 @@ const SignUp = (props) => {
         </Text>
       </View>
 
-      <Button onPress={navigateToLogin} btntext={'Sign Up'} />
+      <Button onPress={navigateToLogin} btnText={'Sign Up'} />
       <View style={styles.forgot}>
         <Text style={styles.fgText}>Forgot your password?</Text>
       </View>
@@ -54,7 +54,7 @@ const SignUp = (props) => {
 
 const styles = StyleSheet.create({
   container: {padding: ResponsiveSize(10), flex: 1, backgroundColor: 'white'},
-  Field: {
+  field: {
     marginTop: ResponsiveSize(38),
   },
   textCon: {

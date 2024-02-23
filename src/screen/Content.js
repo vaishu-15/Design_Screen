@@ -83,7 +83,7 @@ const Content = () => {
 
   return (
     <View style={styles.container}>
-      <Header textthree={'Back'} textone={'Content'} texttwo={'Filter'} show />
+      <Header textThree={'Back'} textOne={'Content'} textTwo={'Filter'} show />
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
