@@ -1,11 +1,16 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
+import SignUp from './SignUp';
 
-const Login = () => {
+const Login = (props) => {
+
+  const navigateToSignUp = () => {
+    props.navigation.navigate('SignUp'); 
+  };
 
   return (
     <View style={styles.container}>
@@ -16,29 +21,42 @@ const Login = () => {
       </View>
       <Button btntext={'Log In'} />
       <View style={styles.forgot}>
-        <Text style={styles.fgtext}>Forgot your password?</Text>
+        <Text style={styles.fgtext}>Forgot your password? </Text>
+        <TouchableOpacity onPress={navigateToSignUp}>
+          <Text style={styles.signupbtn}>Signup</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {padding: ResponsiveSize(10),
-    flex:1,
-     backgroundColor:'white'},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    padding: ResponsiveSize(10),
+  },
   Field: {
     marginTop: ResponsiveSize(38),
-    marginBottom:ResponsiveSize(140)
   },
   forgot: {
-    padding: ResponsiveSize(4),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: ResponsiveSize(15),
   },
   fgtext: {
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: 'Inter-SemiBold',
     color: '#5DB075',
     fontSize: 16,
-    fontWeight: '800',
-    alignSelf: 'center',
+    fontWeight: '600',
+  },
+  signupbtn: {
+    fontFamily: 'Inter-SemiBold',
+    color: '#5DB075',
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 5,
   },
 });
 

@@ -20,14 +20,14 @@ const AuthStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="SignUp"
-        options={{headerShown: false}}
-        component={SignUp}
-      />
-      <Stack.Screen
         name="Login"
         component={Login}
         options={{headerShown: false}}
+      />
+       <Stack.Screen
+        name="SignUp"
+        options={{headerShown: false}}
+        component={SignUp}
       />
     </Stack.Navigator>
   );
@@ -113,11 +113,11 @@ const App = () => {
           name="auth"
           component={AuthStack}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="main"
           options={{headerShown: false}}
           component={MainStack}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
