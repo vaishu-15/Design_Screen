@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
+import { COLORS } from '../utils/constants';
 
 const Expenses = () => {
   const data = {
@@ -39,14 +40,14 @@ const Expenses = () => {
   );
 
   const chartConfig = {
-    backgroundGradientFrom: 'white',
-    backgroundGradientFromOpacity: 'white',
-    backgroundGradientTo: 'white',
-    color: () => '#4B9460',
+    backgroundGradientFrom: COLORS.white,
+    backgroundGradientFromOpacity: COLORS.white,
+    backgroundGradientTo: COLORS.white,
+    color: () => COLORS.dGreen,
     fillShadowGradientOpacity: 1,
-    fillShadowGradientFrom: '#4B9460',
-    fillShadowGradientTo: '#4B9460',
-    labelColor: () => 'black',
+    fillShadowGradientFrom: COLORS.dGreen,
+    fillShadowGradientTo:COLORS.dGreen ,
+    labelColor: () => COLORS.black,
     propsForVerticalLabels: {
       fontSize: 10,
       fontWeight: '400',
@@ -99,10 +100,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   graphContainer: {
-    backgroundColor: '#FFFFFF',
-    borderColor: '#E8E8E8',
+    backgroundColor: COLORS.white,
     borderWidth: 1,
-    borderColor: '#E8E8E8',
+    borderColor: COLORS.lGrey,
     borderRadius: 4,
     margin: ResponsiveSize(10),
   },
@@ -110,13 +110,13 @@ const styles = StyleSheet.create({
     margin: ResponsiveSize(10),
   },
   expenseText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 24,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
   },
   expenseList: {
-    borderBottomColor: '#E8E8E8',
+    borderBottomColor: COLORS.lGrey,
     borderBottomWidth: 1,
     margin: ResponsiveSize(10),
     paddingBottom: ResponsiveSize(10),
@@ -132,17 +132,17 @@ const styles = StyleSheet.create({
   expenseSymbol: {
     width: ResponsiveSize(15),
     height: ResponsiveSize(15),
-    backgroundColor: '#5DB075',
+    backgroundColor: COLORS.green,
     borderRadius: 7,
   },
   expenseItemText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
   },
   statText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter-Regular',

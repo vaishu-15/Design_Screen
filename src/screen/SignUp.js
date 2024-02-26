@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import CheckBox from 'react-native-check-box';
 import ResponsiveSize from '../utils/responsivesSize';
-import {IMAGES} from '../utils/constants';
+import {COLORS, IMAGES} from '../utils/constants';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   unText: {
     fontFamily: 'Inter-Regular',
-    color: '#666666',
+    color: COLORS.dGrey,
     fontWeight: '400',
     fontSize: 14,
     marginRight: ResponsiveSize(8),
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   fgText: {
     fontFamily: 'Inter-SemiBold',
-    color: '#5DB075',
+    color: COLORS.green,
     fontSize: 16,
     fontWeight: '600',
     alignSelf: 'center',

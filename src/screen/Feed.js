@@ -11,6 +11,8 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import {AirbnbRating} from 'react-native-ratings';
+import { COLORS } from '../utils/constants';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const data = [
   {
@@ -150,14 +152,14 @@ const styles = StyleSheet.create({
     marginBottom: ResponsiveSize(10),
   },
   tText: {
-    color: '#BDBDBD',
+    color: COLORS.grey,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter Regular Regular',
   },
   headText: {
     flex: 1,
-    color: '#000000',
+    color: COLORS.black,
     fontWeight: '700',
     fontSize: 16,
     fontFamily: 'Inter Regular Regular',
@@ -180,15 +182,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#5DB075',
+    backgroundColor: COLORS.green,
   },
   modalView: {
     margin: ResponsiveSize(20),
     padding: ResponsiveSize(30),
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.dGrey ,
     borderRadius: 8,
     alignItems: 'center',
-    shadowColor: '#262483',
+    
     shadowOffset: {
       width: 0,
       height: 2,
@@ -197,13 +199,13 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   modalHeading: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 30,
     fontWeight: '700',
     fontFamily: 'Inter-SemiBold',
   },
   modalContent: {
-    color: '#666666',
+    color:COLORS.dGrey ,
     marginTop: ResponsiveSize(20),
     fontSize: 16,
     fontWeight: '500',
@@ -213,21 +215,21 @@ const styles = StyleSheet.create({
   modalButton: {
     marginTop: ResponsiveSize(40),
     marginBottom: ResponsiveSize(20),
-    backgroundColor: '#5DB075',
+    backgroundColor: COLORS.green,
     width: ResponsiveSize(311),
     height: ResponsiveSize(51),
     borderRadius: 100,
     justifyContent: 'center',
   },
   btnText: {
-    color: '#FFFFFF',
+    color: COLORS.white,
     fontSize: 16,
     fontWeight: '600',
     fontFamily: 'Inter Regular Regular',
     alignSelf: 'center',
   },
   modalAction: {
-    color: '#5DB075',
+    color: COLORS.green,
     fontSize: 16,
     fontWeight: '700',
     fontFamily: 'Inter-Bold',

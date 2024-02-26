@@ -5,6 +5,7 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 import SignUp from './SignUp';
+import { COLORS } from '../utils/constants';
 
 const Login = (props) => {
 
@@ -47,13 +48,13 @@ const styles = StyleSheet.create({
   },
   fgText: {
     fontFamily: 'Inter-SemiBold',
-    color: 'grey',
+    color: COLORS.grey,
     fontSize: 16,
     fontWeight: '600',
   },
   signUpBtn: {
     fontFamily: 'Inter-SemiBold',
-    color: '#5DB075',
+    color: COLORS.green,
     fontSize: 16,
     fontWeight: '600',
     marginLeft: 5,
