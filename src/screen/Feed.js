@@ -11,8 +11,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import {AirbnbRating} from 'react-native-ratings';
-import { COLORS } from '../utils/constants';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const data = [
   {

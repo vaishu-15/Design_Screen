@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Button=({btnText ,onPress})=>{
     return(
@@ -12,7 +13,7 @@ const Button=({btnText ,onPress})=>{
 }
 const styles = StyleSheet.create({
 button:{
-    backgroundColor:'#5DB075',
+    backgroundColor:COLORS.green,
     padding:ResponsiveSize(16),
     marginTop:ResponsiveSize(35),
     margin:ResponsiveSize(11),
@@ -22,7 +23,7 @@ button:{
     fontWeight:'600',
     fontSize:16,
     alignSelf:'center',
-    color:'#FFFFFF',
+    color:COLORS.white,
     fontFamily:'Inter-SemiBold',
   }
 })

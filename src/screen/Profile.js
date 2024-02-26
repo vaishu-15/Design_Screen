@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text,StyleSheet } from "react-native";
 import Header from "../common/header";
 import ResponsiveSize from "../utils/responsivesSize";
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Profile=() =>{
     return(

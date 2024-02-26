@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import CheckBox from 'react-native-check-box';
 import ResponsiveSize from '../utils/responsivesSize';
-import {COLORS, IMAGES} from '../utils/constants';
+import {COLORS, IMAGES,FONTS} from '../utils/constants';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';

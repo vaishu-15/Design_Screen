@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
-import { COLORS } from '../utils/constants';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const data = [
   {

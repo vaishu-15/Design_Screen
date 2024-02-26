@@ -2,6 +2,7 @@ import {View, StyleSheet, TextInput, Text} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useState} from 'react';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const InputField = ({field, state, isSearchField }) => {
   const [isHidden, setIsHidden] = useState(true);
