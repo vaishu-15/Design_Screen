@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: ResponsiveSize(30),
     fontWeight: '600',
     color: COLORS.black,
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: FONTS.interSemi,
   },
   log: {
     fontSize: 16,
