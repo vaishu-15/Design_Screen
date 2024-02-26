@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
+import { COLORS } from '../utils/constants';
 
 const data = [
   {
@@ -61,8 +62,8 @@ const ContentItem = ({
           style={[
             styles.bot,
             selectedButtonIndex === index
-              ? {backgroundColor: '#5DB075'}
-              : {backgroundColor: '#BDBDBD'},
+              ? {backgroundColor: COLORS.green}
+              : {backgroundColor: COLORS.white},
           ]}
           onPress={() => onPress(index)}
         />
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.white,
   },
   searchField: {
     marginTop: ResponsiveSize(20),
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
   imageCon: {
     padding: ResponsiveSize(120),
     borderRadius: 8,
-    backgroundColor: '#F6F6F6',
+    backgroundColor: COLORS.lWhite,
   },
   head: {
     paddingRight: ResponsiveSize(6),
@@ -141,20 +142,20 @@ const styles = StyleSheet.create({
     paddingBottom: ResponsiveSize(6),
   },
   headText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 16,
     fontWeight: '700',
     fontFamily: 'Inter-SemiBold',
   },
   chatText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter Regular Regular',
     paddingBottom: ResponsiveSize(5),
   },
   tText: {
-    color: '#BDBDBD',
+    color: COLORS.grey,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: 'Inter Regular Regular',
@@ -173,11 +174,11 @@ const styles = StyleSheet.create({
     margin: ResponsiveSize(10),
     paddingLeft: ResponsiveSize(10),
     paddingBottom: ResponsiveSize(10),
-    borderBottomColor: '#E8E8E8',
+    borderBottomColor: COLORS.lGrey,
     borderBottomWidth: 1,
   },
   searchText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Inter-Medium',
