@@ -1,5 +1,6 @@
 export const IMAGES = {
-    cross: require("../../assets/images/cross.png")
+    cross: require("../../assets/images/cross.png"),
+    profilePic: require("../../assets/images/profilePic.png")
 }
 
 export const FONTS ={

@@ -74,10 +74,14 @@ const ContentItem = ({
 
 const Content = (props) => {
   const [contentData, setContentData] = useState(data);
-  const [isSearching, setIsSearching] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearchClick = () => {
+    setIsSearching(true); 
+  };
 
   const navigateToPostPage = () => {
-    props.navigation.navigate('postPage');
+    navigation.navigate('PostPage');
   };
 
   const handlePress = (index, dataIndex) => {
@@ -90,14 +94,14 @@ const Content = (props) => {
     <View style={styles.container}>
       <Header textThree={'Back'} textOne={'Content'} textTwo={'Filter'} show />
       <View style={styles.searchField}>
-        <InputField field={'Search'} isSearchField={true} />
+        <InputField field={'Search'} isSearchField={true} onPress={handleSearchClick} />
       </View>
       {!isSearching && (
         <FlatList
           data={contentData}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.navigate('PostPage')}>
               <ContentItem
                 header={item.header}
                 text={item.text}
@@ -124,6 +128,7 @@ const Content = (props) => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),

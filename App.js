@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { AuthStack, MainStack } from './Navigation';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {AuthStack, MainStack} from './src/routes/Navigation';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ const App = () => {
         /> */}
         <Stack.Screen
           name="main"
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
           component={MainStack}
         />
       </Stack.Navigator>

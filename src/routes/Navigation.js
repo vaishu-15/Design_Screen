@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Login from './src/screen/Login';
-import SignUp from './src/screen/SignUp';
-import Feed from './src/screen/Feed';
-import Content from './src/screen/Content';
-import Market from './src/screen/Market';
-import Profile from './src/screen/Profile';
-import ResponsiveSize from './src/utils/responsivesSize';
-import Expenses from './src/screen/Expenses';
+import {View, StyleSheet} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Login from '../screen/Login';
+import SignUp from '../screen/SignUp';
+import Feed from '../screen/Feed';
+import Content from '../screen/Content';
+import Market from '../screen/Market';
+import Profile from '../screen/Profile';
+import ResponsiveSize from '../utils/responsivesSize';
+import Expenses from '../screen/Expenses';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,11 +20,11 @@ const AuthStack = () => {
       <Stack.Screen
         name="Login"
         component={Login}
-        options={{ headerShown: false }}
+        options={{headerShown: false}}
       />
       <Stack.Screen
         name="SignUp"
-        options={{ headerShown: false }}
+        options={{headerShown: false}}
         component={SignUp}
       />
     </Stack.Navigator>
@@ -46,8 +45,8 @@ const MainStack = () => {
         },
       }}>
       <Tab.Screen
-        options={({ focused }) => ({
-          tabBarIcon: ({ focused }) => (
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
@@ -55,8 +54,8 @@ const MainStack = () => {
         component={Feed}
       />
       <Tab.Screen
-        options={({ focused }) => ({
-          tabBarIcon: ({ focused }) => (
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
@@ -64,8 +63,8 @@ const MainStack = () => {
         component={Content}
       />
       <Tab.Screen
-        options={({ focused }) => ({
-          tabBarIcon: ({ focused }) => (
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
@@ -73,8 +72,8 @@ const MainStack = () => {
         component={Market}
       />
       <Tab.Screen
-        options={({ focused }) => ({
-          tabBarIcon: ({ focused }) => (
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
@@ -82,8 +81,8 @@ const MainStack = () => {
         component={Expenses}
       />
       <Tab.Screen
-        options={({ focused }) => ({
-          tabBarIcon: ({ focused }) => (
+        options={({focused}) => ({
+          tabBarIcon: ({focused}) => (
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
@@ -95,7 +94,7 @@ const MainStack = () => {
 };
 
 const styles = StyleSheet.create({
-  tabbar: (focused) => ({
+  tabbar: focused => ({
     width: ResponsiveSize(32),
     height: ResponsiveSize(32),
     borderRadius: 200,
@@ -103,4 +102,4 @@ const styles = StyleSheet.create({
   }),
 });
 
-export { AuthStack, MainStack };
+export {AuthStack, MainStack};
