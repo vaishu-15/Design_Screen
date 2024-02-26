@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Header = (props) => {
   return (
@@ -41,19 +42,19 @@ const styles = StyleSheet.create({
   header: {
     fontSize: ResponsiveSize(30),
     fontWeight: '600',
-    color: '#000000',
-    fontFamily: 'Inter-SemiBold',
+    color: COLORS.black,
+    fontFamily: FONTS.interSemi,
   },
   log: {
     fontSize: 16,
     fontFamily: 'Inter-Medium',
     fontWeight: '500',
-    color: '#5DB075',
+    color: COLORS.green,
   },
   back: {
     fontSize: 16,
     fontWeight: '500',
-    color: '#5DB075',
+    color: COLORS.green,
   },
 });
 

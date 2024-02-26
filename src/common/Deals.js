@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Deals = ({dealOne}) => {
   const data = [

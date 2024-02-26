@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
-import { COLORS } from '../utils/constants';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const data = [
   {
@@ -72,9 +72,17 @@ const ContentItem = ({
   </View>
 );
 
-const Content = () => {
+const Content = (props) => {
   const [contentData, setContentData] = useState(data);
   const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearchClick = () => {
+    setIsSearching(true); 
+  };
+
+  const navigateToPostPage = () => {
+    navigation.navigate('PostPage');
+  };
 
   const handlePress = (index, dataIndex) => {
     const newData = [...contentData];
@@ -86,36 +94,41 @@ const Content = () => {
     <View style={styles.container}>
       <Header textThree={'Back'} textOne={'Content'} textTwo={'Filter'} show />
       <View style={styles.searchField}>
-        <InputField field={'Search'} isSearchField={true} />
+        <InputField field={'Search'} isSearchField={true} onPress={handleSearchClick} />
       </View>
-      {!isSearching && (                 //for the content
+      {!isSearching && (
         <FlatList
           data={contentData}
           showsVerticalScrollIndicator={false}
-          renderItem={({item, index}) => (
-            <TouchableOpacity>
-            <ContentItem
-              header={item.header}
-              text={item.text}
-              chatText={item.chatText}
-              selectedButtonIndex={item.selectedButtonIndex}
-              onPress={buttonIndex => handlePress(buttonIndex, index)}
-            />
+          renderItem={({ item, index }) => (
+            <TouchableOpacity onPress={() => navigation.navigate('PostPage')}>
+              <ContentItem
+                header={item.header}
+                text={item.text}
+                chatText={item.chatText}
+                selectedButtonIndex={item.selectedButtonIndex}
+                onPress={(buttonIndex) => handlePress(buttonIndex, index)}
+              />
             </TouchableOpacity>
           )}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       )}
-      {isSearching && (          //for the search history
+      {isSearching && (
         <FlatList
           data={searchData}
-          renderItem={({item}) => <SearchItem result={item.result} />}
-          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={navigateToPostPage}>
+              <SearchItem result={item.result} />
+            </TouchableOpacity>
+          )}
+          keyExtractor={(item) => item.id}
         />
       )}
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),

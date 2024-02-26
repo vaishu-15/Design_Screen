@@ -2,8 +2,9 @@ import {View, StyleSheet, TextInput, Text} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useState} from 'react';
+import { COLORS ,FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField }) => {
+const InputField = ({field, state, isSearchField, onPress}) => {
   const [isHidden, setIsHidden] = useState(true);
 
   const toggleVisibility = () => {
@@ -13,7 +14,7 @@ const InputField = ({field, state, isSearchField }) => {
   return (
     <View style={[styles.nameCon, isSearchField && styles.searchField]}>
       <TextInput
-        style={[styles.name, isSearchField && styles.search]}
+        style={[styles.name, isSearchField   && styles.search]}
         placeholder={field}
         secureTextEntry={isHidden ? true : false}
       />

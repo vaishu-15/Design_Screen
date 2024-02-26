@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
-import { COLORS } from '../utils/constants';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Expenses = () => {
   const data = {

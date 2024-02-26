@@ -5,7 +5,7 @@ import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
 import SignUp from './SignUp';
-import { COLORS } from '../utils/constants';
+import { COLORS ,FONTS} from '../utils/constants';
 
 const Login = (props) => {
 
