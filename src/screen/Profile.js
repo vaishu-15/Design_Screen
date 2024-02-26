@@ -8,33 +8,12 @@ import ResponsiveSize from '../utils/responsivesSize';
 const Profile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const openImagePicker = () => {
-    const options = {
-      mediaType: 'photo',
-      includeBase64: false,
-      maxHeight: 2000,
-      maxWidth: 2000,
-    };
-
-    launchImageLibrary(options, response => {
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('Image picker error: ', response.error);
-      } else {
-        let imageUri = response.uri || response.assets?.[0]?.uri;
-        setSelectedImage(imageUri);
-        console.log(imageUri);
-      }
-    });
-  };
-
   const handleCameraLaunch = () => {
     const options = {
       mediaType: 'photo',
       includeBase64: false,
-      maxHeight: 200,
-      maxWidth: 200,
+      maxHeight: 158,
+      maxWidth: 158,
     };
 
     launchCamera(options, response => {
@@ -52,34 +31,36 @@ const Profile = () => {
   };
 
   return (
-    <View>
-      <View style={styles.halfCon}>
-        <View style={styles.container}>
+    <View style={styles.container}>
+      <View style={styles.firstContainer}>
+        <View style={styles.head}>
           <TouchableOpacity>
             <Text style={styles.setting}>Settings</Text>
           </TouchableOpacity>
           <Text style={styles.profile}>Profile</Text>
           <Text style={styles.logOut}>Logout</Text>
         </View>
-        <View style={{flex: 1, justifyContent: 'center',}}>
+        <View style={styles.image}>
           {selectedImage ? (
+            <TouchableOpacity onPress={handleCameraLaunch}>
             <Image
-              source={{uri: IMAGES.profilePic}}
-              style={{flex: 1,width:200,height:200}}
+              source={{uri: selectedImage}}
+              style={styles.pImg}
               resizeMode="contain"
               onError={error => console.error('Image loading error:', error)}
             />
+            </TouchableOpacity>
           ) : (
-            <Text>No image selected</Text>
+            <TouchableOpacity onPress={handleCameraLaunch}>
+              <Image source={IMAGES.profilePic} style={styles.pImg} />
+            </TouchableOpacity>
           )}
-          <View style={styles.buttons}>
-          <View style={{marginTop: 20}}>
-            <Button title="Device" onPress={openImagePicker} />
-          </View>
-          <View style={{marginTop: 20}}>
-            <Button title="Camera" onPress={handleCameraLaunch} />
-          </View>
-          </View>
+        </View>
+      </View>
+      <View style={styles.secondContainer}>
+        <View style={styles.profileDetails}>
+          <Text style={styles.profileName}>Victoria Robertson</Text>
+          <Text style={styles.bio}>A mantra goes here</Text>
         </View>
       </View>
     </View>
@@ -87,16 +68,24 @@ const Profile = () => {
 };
 
 const styles = StyleSheet.create({
-  halfCon: {
+  container: {
+    flexDirection: 'column',
+  },
+  firstContainer: {
     padding: ResponsiveSize(10),
     backgroundColor: COLORS.green,
     height: ResponsiveSize(245),
   },
-  container: {
+  head: {
     padding: ResponsiveSize(10),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  image: {
+    flex: 1,
+    alignSelf:'center',
+    padding: ResponsiveSize(10),
   },
   profile: {
     fontSize: ResponsiveSize(30),
@@ -122,10 +111,21 @@ const styles = StyleSheet.create({
     borderColor: COLORS.white,
     marginTop: ResponsiveSize(50),
   },
-  buttons:{
-    flexDirection:'row',
-    justifyContent:'space-between'
-  }
+  secondContainer: {},
+  profileDetails: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop:60
+  },
+  profileName: {
+    color: COLORS.black,
+    fontFamily: FONTS.interSemi,
+    fontSize: 30,
+    fontWeight: '600',
+  },
+  bio: {
+    color: COLORS.black,
+  },
 });
 
 export default Profile;
