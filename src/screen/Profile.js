@@ -168,11 +168,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-  optionText: {
-    fontSize: 16,
-    fontWeight: '600',
-    fontFamily: FONTS.interSemi,
-  },
+ 
   toggle: {
     flexDirection: 'row',
     width: ResponsiveSize(346),
@@ -187,9 +183,16 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(171),
     height: ResponsiveSize(46),
     borderRadius: 100,
+    justifyContent:'center'
   },
   activeOption: {
     backgroundColor: COLORS.white,
+  },
+  optionText: {
+    fontSize: 16,
+    fontWeight: '600',
+    fontFamily: FONTS.interSemi,
+  textAlign:'center'
   },
   activeText: {
     color: COLORS.green,
