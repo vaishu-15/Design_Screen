@@ -10,6 +10,7 @@ import Market from '../screen/Market';
 import Profile from '../screen/Profile';
 import ResponsiveSize from '../utils/responsivesSize';
 import Expenses from '../screen/Expenses';
+import { COLORS } from '../utils/constants';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -39,7 +40,7 @@ const MainStack = () => {
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          backgroundColor: '#FAFAFA',
+          backgroundColor: COLORS.white,
           height: ResponsiveSize(83),
           paddingBottom: ResponsiveSize(20),
         },
