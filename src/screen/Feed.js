@@ -81,7 +81,11 @@ const Feed = () => {
               text={item.text}
               chatText={item.chatText}
             />
-            <Modal
+          </TouchableOpacity>
+        )}
+        keyExtractor={item => item.id}
+      />
+      <Modal
               animationType="fade"
               transparent={true}
               visible={modalVisible}
@@ -107,10 +111,6 @@ const Feed = () => {
                 </View>
               </View>
             </Modal>
-          </TouchableOpacity>
-        )}
-        keyExtractor={item => item.id}
-      />
       <View style={styles.img}></View>
     </View>
   );

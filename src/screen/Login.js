@@ -12,6 +12,10 @@ const Login = (props) => {
     props.navigation.navigate('SignUp'); 
   };
 
+  const handleLogin = () => {
+    props.navigation.navigate('MainStack', { screen: 'Feed' });
+  };
+
   return (
     <View style={styles.container}>
       <Header textOne={'Log In'}/>
@@ -19,7 +23,7 @@ const Login = (props) => {
         <InputField field={'Email'} />
         <InputField field={'Password'} state/>
       </View>
-      <Button btnText={'Log In'} />
+      <Button onPress={handleLogin} btnText={'Log In'} />
       <View style={styles.forgot}>
         <Text style={styles.fgText}>Forgot your password? </Text>
         <TouchableOpacity onPress={navigateToSignUp}>
