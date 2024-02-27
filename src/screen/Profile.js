@@ -1,41 +1,19 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Switch} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
-// import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
-import PostsRoute from './PostRoute';
-import PhotosRoute from './PhotosRoute';
+import Posts from './Posts';
+import Photos from './Photos';
 
 const Profile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showPosts, setShowPosts] = useState(true);
 
-  // const initialLayout = {width: Dimensions.get('window').width};
-
-  // const [index, setIndex] = useState(0);
-  // const [routes] = useState([
-  //   {key: 'posts', title: 'Posts'},
-  //   {key: 'photos', title: 'Photos'},
-  // ]);
-
-  // const renderScene = SceneMap({
-  //   posts: PostsRoute,
-  //   photos: PhotosRoute,
-  // });
-
-  // const renderTabBar = props => (
-  //   <TabBar
-  //     {...props}
-  //     indicatorStyle={{backgroundColor: COLORS.white}}
-  //     style={{backgroundColor: COLORS.green}}
-  //     renderLabel={({route, focused, color}) => (
-  //       <Text style={{color: focused ? COLORS.black : COLORS.gray}}>
-  //         {route.title}
-  //       </Text>
-  //     )}
-  //   />
-  // );
+  const toggleSwitch = value => {
+    setShowPosts(value === 'Posts');
+  };
 
   const handleCameraLaunch = () => {
     const options = {
@@ -70,20 +48,18 @@ const Profile = () => {
           <Text style={styles.logOut}>Logout</Text>
         </View>
         <View style={styles.image}>
-          {selectedImage ? (
-            <TouchableOpacity onPress={handleCameraLaunch}>
+          <TouchableOpacity onPress={handleCameraLaunch}>
+            {selectedImage ? (
               <Image
                 source={{uri: selectedImage}}
                 style={styles.pImg}
                 resizeMode="contain"
                 onError={error => console.error('Image loading error:', error)}
               />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity onPress={handleCameraLaunch}>
+            ) : (
               <Image source={IMAGES.profilePic} style={styles.pImg} />
-            </TouchableOpacity>
-          )}
+            )}
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.secondContainer}>
@@ -91,26 +67,50 @@ const Profile = () => {
           <Text style={styles.profileName}>Victoria Robertson</Text>
           <Text style={styles.bio}>A mantra goes here</Text>
         </View>
-        {/* <TabView
-          navigationState={{index, routes}}
-          renderScene={renderScene}
-          onIndexChange={setIndex}
-          initialLayout={initialLayout}
-          renderTabBar={renderTabBar}
-        /> */}
+        <View style={styles.toggle}>
+          <TouchableOpacity
+            onPress={() => toggleSwitch('Posts')}
+            style={[
+              styles.toggleOption,
+              showPosts ? styles.activeOption : null,
+            ]}>
+            <Text
+              style={[styles.optionText, showPosts ? styles.activeText : null]}>
+              Posts
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => toggleSwitch('Photos')}
+            style={[
+              styles.toggleOption,
+              !showPosts ? styles.activeOption : null,
+            ]}>
+            <Text
+              style={[
+                styles.optionText,
+                !showPosts ? styles.activeText : null,
+              ]}>
+              Photos
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          {showPosts && <Posts />}
+          {!showPosts && <Photos />}
+        </View>
       </View>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
+    backgroundColor:COLORS.white
   },
   firstContainer: {
     padding: ResponsiveSize(10),
     backgroundColor: COLORS.green,
-    height: ResponsiveSize(245),
+    height: ResponsiveSize(200),
   },
   head: {
     padding: ResponsiveSize(10),
@@ -145,9 +145,12 @@ const styles = StyleSheet.create({
     height: ResponsiveSize(158),
     borderWidth: 4,
     borderColor: COLORS.white,
-    marginTop: ResponsiveSize(50),
+    marginTop: ResponsiveSize(5),
+    borderRadius: ResponsiveSize(158 / 2),
   },
-  secondContainer: {},
+  secondContainer: {
+    flexDirection: 'column',
+  },
   profileDetails: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -165,8 +168,33 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-  scene: {
-    flex: 1,
+  optionText: {
+    fontSize: 16,
+    fontWeight: '600',
+    fontFamily: FONTS.interSemi,
+  },
+  toggle: {
+    flexDirection: 'row',
+    width: ResponsiveSize(346),
+    height: ResponsiveSize(51),
+    margin: ResponsiveSize(20),
+    backgroundColor: COLORS.lGrey,
+    borderRadius: 100,
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+  toggleOption: {
+    width: ResponsiveSize(171),
+    height: ResponsiveSize(46),
+    borderRadius: 100,
+  },
+  activeOption: {
+    backgroundColor: COLORS.white,
+  },
+  activeText: {
+    color: COLORS.green,
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
 
