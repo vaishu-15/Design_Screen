@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, Switch} from 'react-native';
+import {View, Text, StyleSheet, Image, Modal} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
+import {AirbnbRating} from 'react-native-ratings';
 import Posts from './Posts';
 import Photos from './Photos';
 
 const Profile = () => {
+  const [modalVisible, setModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showPosts, setShowPosts] = useState(true);
 
@@ -41,9 +43,54 @@ const Profile = () => {
     <View style={styles.container}>
       <View style={styles.firstContainer}>
         <View style={styles.head}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onpress={() => {
+              setModalVisible(true);
+            }}>
             <Text style={styles.setting}>Settings</Text>
           </TouchableOpacity>
+          <Modal
+            animationType="fade"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert('Modal has been closed.');
+              setModalVisible(!modalVisible);
+            }}>
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <AirbnbRating
+                  type="star"
+                  ratingCount={5}
+                  size={25}
+                  onFinishRating={this.ratingCompleted}
+                  selectedColor="COLORS.yellow"
+                  starContainerStyle={{
+                    width: ResponsiveSize(180),
+                    justifyContent: 'space-between',
+                  }}
+                  reviews={false}
+                  ratingContainerStyle={{height: 10, marginBottom: 35}}
+                />
+
+                <Text style={styles.modalheading}>Rate our app</Text>
+                <Text style={styles.modalcontent}>
+                  Consequat velit qui adipisicing sunt do reprehenderit ad
+                  laborum tempor ullamco exercitation. Ullamco tempor
+                  adipisicing et voluptate duis sit esse aliqua esse ex dolore
+                  esse. Consequat velit qui adipisicing sunt.
+                </Text>
+                <TouchableOpacity
+                  style={styles.modalbutton}
+                  onPress={() => setModalVisible(!modalVisible)}>
+                  <Text style={styles.btntext}>I love it!</Text>
+                </TouchableOpacity>
+                <Text style={styles.modalaction}>
+                  Don’t like the app? Let us know.
+                </Text>
+              </View>
+            </View>
+          </Modal>
           <Text style={styles.profile}>Profile</Text>
           <Text style={styles.logOut}>Logout</Text>
         </View>
@@ -105,7 +152,7 @@ const Profile = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    backgroundColor:COLORS.white
+    backgroundColor: COLORS.white,
   },
   firstContainer: {
     padding: ResponsiveSize(10),
@@ -168,7 +215,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
- 
+
   toggle: {
     flexDirection: 'row',
     width: ResponsiveSize(346),
@@ -183,7 +230,7 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(171),
     height: ResponsiveSize(46),
     borderRadius: 100,
-    justifyContent:'center'
+    justifyContent: 'center',
   },
   activeOption: {
     backgroundColor: COLORS.white,
@@ -192,12 +239,68 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     fontFamily: FONTS.interSemi,
-  textAlign:'center'
+    textAlign: 'center',
   },
   activeText: {
     color: COLORS.green,
     alignSelf: 'center',
     justifyContent: 'center',
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.green,
+  },
+  modalView: {
+    margin: ResponsiveSize(20),
+    padding: ResponsiveSize(30),
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    alignItems: 'center',
+    shadowColor: COLORS.blue,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    elevation: 10,
+  },
+  modalheading: {
+    color: COLORS.black,
+    fontSize: 30,
+    fontWeight: '700',
+    fontFamily: FONTS.interSemi,
+  },
+  modalcontent: {
+    color: COLORS.dGrey,
+    marginTop: ResponsiveSize(20),
+    fontSize: 16,
+    fontWeight: '500',
+    fontFamily: FONTS.interMedium,
+    textAlign: 'center',
+  },
+  modalbutton: {
+    marginTop: ResponsiveSize(40),
+    marginBottom: ResponsiveSize(20),
+    backgroundColor: COLORS.green,
+    width: ResponsiveSize(311),
+    height: ResponsiveSize(51),
+    borderRadius: 100,
+    justifyContent: 'center',
+  },
+  btntext: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: '600',
+    fontFamily: FONTS.interSemi,
+    alignSelf: 'center',
+  },
+  modalaction: {
+    color: COLORS.green,
+    fontSize: 16,
+    fontWeight: '600',
+    fontFamily: FONTS.interSemi,
   },
 });
 
