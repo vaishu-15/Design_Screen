@@ -45,10 +45,10 @@ const styles = StyleSheet.create({
     paddingLeft: ResponsiveSize(10),
   },
   DealHeading: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 24,
     fontWeight: '600',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
   product: {
     padding: ResponsiveSize(10),
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   prodImg: {
     width: ResponsiveSize(110),
     height: ResponsiveSize(110),
-    backgroundColor: '#F6F6F6',
+    backgroundColor: COLORS.lWhite,
     borderRadius: 8,
   },
   itemName: {
@@ -65,19 +65,19 @@ const styles = StyleSheet.create({
     marginTop: ResponsiveSize(3),
   },
   itemText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
   amount: {
     marginTop: ResponsiveSize(5),
   },
   amountText: {
-    color: '#000000',
+    color: COLORS.black,
     fontSize: 14,
     fontWeight: '700',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
 });
 

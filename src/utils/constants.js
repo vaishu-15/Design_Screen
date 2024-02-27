@@ -25,4 +25,6 @@ export const COLORS = {
     white:'#ffffff',
     lWhite:'#F6F6F6',
     black:'#000000',
+    yellow:'#FFB84E',
+    blue:'#262483'
   }

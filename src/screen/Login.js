@@ -4,7 +4,6 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
-import SignUp from './SignUp';
 import { COLORS ,FONTS} from '../utils/constants';
 
 const Login = (props) => {
@@ -15,7 +14,7 @@ const Login = (props) => {
 
   return (
     <View style={styles.container}>
-      <Header textone={'Log In'}/>
+      <Header textOne={'Log In'}/>
       <View style={styles.Field}>
         <InputField field={'Email'} />
         <InputField field={'Password'} state/>
@@ -47,13 +46,13 @@ const styles = StyleSheet.create({
     marginTop: ResponsiveSize(15),
   },
   fgText: {
-    fontFamily: 'Inter-SemiBold',
-    color: COLORS.grey,
+    fontFamily: FONTS.interSemi,
+    color: COLORS.dGrey,
     fontSize: 16,
     fontWeight: '600',
   },
   signUpBtn: {
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: FONTS.interSemi,
     color: COLORS.green,
     fontSize: 16,
     fontWeight: '600',

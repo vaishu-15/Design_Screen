@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 24,
     fontWeight: '500',
-    fontFamily: 'Inter-Medium',
+    fontFamily: FONTS.interMedium,
   },
   expenseList: {
     borderBottomColor: COLORS.lGrey,
@@ -139,13 +139,13 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'Inter-Medium',
+    fontFamily: FONTS.interMedium,
   },
   statText: {
     color: COLORS.black,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: 'Inter-Regular',
+    fontFamily: FONTS.interRegular,
   },
 });
 

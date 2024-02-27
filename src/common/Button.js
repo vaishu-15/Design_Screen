@@ -24,7 +24,7 @@ button:{
     fontSize:16,
     alignSelf:'center',
     color:COLORS.white,
-    fontFamily:'Inter-SemiBold',
+    fontFamily:FONTS.interSemi,
   }
 })
 export default Button;

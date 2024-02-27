@@ -8,6 +8,7 @@ import InputField from '../common/InputField';
 import Button from '../common/Button';
 import {useState} from 'react';
 
+
 const SignUp = (props) => {
   const [isSelected, setSelection] = useState(false);
 
@@ -22,7 +23,7 @@ const SignUp = (props) => {
   return (
     <View style={styles.container}>
       <View>
-        <Header image={IMAGES.cross} onPress={navigateToLogin} textone={'Sign Up'} />
+        <Header image={IMAGES.cross} onPress={navigateToLogin} textOne={'Sign Up'} />
       </View>
       <View style={styles.field}>
         <InputField field={'Name'} />
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     marginRight: ResponsiveSize(6),
   },
   unText: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: FONTS.interRegular,
     color: COLORS.dGrey,
     fontWeight: '400',
     fontSize: 14,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(4),
   },
   fgText: {
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: FONTS.interSemi,
     color: COLORS.green,
     fontSize: 16,
     fontWeight: '600',
