@@ -158,20 +158,20 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 16,
     fontWeight: '700',
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: FONTS.interSemi,
   },
   chatText: {
     color: COLORS.black,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
     paddingBottom: ResponsiveSize(5),
   },
   tText: {
     color: COLORS.grey,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
   bottom: {
     alignSelf: 'flex-end',
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'Inter-Medium',
+    fontFamily: FONTS.interMedium,
   },
 });
 

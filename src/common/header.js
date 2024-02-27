@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   log: {
     fontSize: 16,
-    fontFamily: 'Inter-Medium',
+    fontFamily: FONTS.interMedium,
     fontWeight: '500',
     color: COLORS.green,
   },

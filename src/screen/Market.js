@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor:COLORS.white,
   },
   searchField: {
     marginTop: ResponsiveSize(20),

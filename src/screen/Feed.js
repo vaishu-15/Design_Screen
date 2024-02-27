@@ -68,7 +68,6 @@ const Feed = () => {
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
-
       <FlatList
         data={data}
         showsVerticalScrollIndicator={false}
@@ -120,7 +119,7 @@ const Feed = () => {
 const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
-    backgroundColor: 'white',
+    backgroundColor: COLORS.white,
   },
   searchField: {
     marginTop: ResponsiveSize(20),
@@ -154,20 +153,20 @@ const styles = StyleSheet.create({
     color: COLORS.grey,
     fontSize: 14,
     fontWeight: '400',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
   headText: {
     flex: 1,
     color: COLORS.black,
     fontWeight: '700',
     fontSize: 16,
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
   },
   chatText: {
-    color: '#000000',
+    color: COLORS.black,
     fontWeight: '400',
     fontSize: 14,
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
     marginBottom: ResponsiveSize(10),
   },
   img: {
@@ -201,14 +200,14 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 30,
     fontWeight: '700',
-    fontFamily: 'Inter-SemiBold',
+    fontFamily: FONTS.interSemi,
   },
   modalContent: {
     color:COLORS.dGrey ,
     marginTop: ResponsiveSize(20),
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'Inter-Medium',
+    fontFamily: FONTS.interMedium,
     textAlign: 'center',
   },
   modalButton: {
@@ -224,14 +223,14 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontSize: 16,
     fontWeight: '600',
-    fontFamily: 'Inter Regular Regular',
+    fontFamily: FONTS.interRegular,
     alignSelf: 'center',
   },
   modalAction: {
     color: COLORS.green,
     fontSize: 16,
     fontWeight: '700',
-    fontFamily: 'Inter-Bold',
+    fontFamily: FONTS.interBold,
   },
 });
 
@@ -241,15 +240,15 @@ export default Feed;
 //   flex: 1,
 //   justifyContent: 'center',
 //   alignItems: 'center',
-//   backgroundColor: '#5DB075',
+//   backgroundColor:  COLORS.green,
 // },
 // modalView: {
 //   margin: ResponsiveSize(20),
 //   padding: ResponsiveSize(30),
-//   backgroundColor: '#FFFFFF',
+//   backgroundColor:  COLORS.white,
 //   borderRadius: 8,
 //   alignItems: 'center',
-//   shadowColor: '#262483',
+//   shadowColor: COLORS.blue,
 //   shadowOffset: {
 //     width: 0,
 //     height: 2,
@@ -258,40 +257,40 @@ export default Feed;
 //   elevation: 10,
 // },
 // modalheading: {
-//   color: '#000000',
+//  color: COLORS.black,
 //   fontSize: 30,
 //   fontWeight: '700',
-//   fontFamily: 'Inter-SemiBold',
+//   fontFamily: FONTS.interSemi,
 // },
 // modalcontent: {
-//   color: '#666666',
+//   color:  COLORS.dGrey,
 //   marginTop: ResponsiveSize(20),
 //   fontSize: 16,
 //   fontWeight: '500',
-//   fontFamily: 'Inter-Medium',
+//   fontFamily: FONTS.interMedium,
 //   textAlign: 'center',
 // },
 // modalbutton: {
 //   marginTop: ResponsiveSize(40),
 //   marginBottom: ResponsiveSize(20),
-//   backgroundColor: '#5DB075',
+//   backgroundColor: COLORS.green,
 //   width: ResponsiveSize(311),
 //   height: ResponsiveSize(51),
 //   borderRadius: 100,
 //   justifyContent: 'center',
 // },
 // btntext: {
-//   color: '#FFFFFF',
+//   color: COLORS.white,
 //   fontSize: 16,
 //   fontWeight: '600',
-//   fontFamily: 'Inter-SemiBold',
+//   fontFamily: FONTS.interSemi,
 //   alignSelf: 'center',
 // },
 // modalaction: {
-//   color: '#5DB075',
+//   color:  COLORS.green,
 //   fontSize: 16,
 //   fontWeight: '600',
-//   fontFamily: 'Inter-SemiBold',
+//   fontFamily: FONTS.interSemi,
 // },
 
 // <Modal
@@ -309,7 +308,7 @@ export default Feed;
 //               ratingCount={5}
 //               size={25}
 //               onFinishRating={this.ratingCompleted}
-//               selectedColor="#FFB84E"
+//               selectedColor=COLORS.yellow
 //               starContainerStyle={{
 //                 width: ResponsiveSize(180),
 //                 justifyContent: 'space-between',

@@ -1,12 +1,41 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, Button} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
+import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
+// import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
+import PostsRoute from './PostRoute';
+import PhotosRoute from './PhotosRoute';
 
 const Profile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // const initialLayout = {width: Dimensions.get('window').width};
+
+  // const [index, setIndex] = useState(0);
+  // const [routes] = useState([
+  //   {key: 'posts', title: 'Posts'},
+  //   {key: 'photos', title: 'Photos'},
+  // ]);
+
+  // const renderScene = SceneMap({
+  //   posts: PostsRoute,
+  //   photos: PhotosRoute,
+  // });
+
+  // const renderTabBar = props => (
+  //   <TabBar
+  //     {...props}
+  //     indicatorStyle={{backgroundColor: COLORS.white}}
+  //     style={{backgroundColor: COLORS.green}}
+  //     renderLabel={({route, focused, color}) => (
+  //       <Text style={{color: focused ? COLORS.black : COLORS.gray}}>
+  //         {route.title}
+  //       </Text>
+  //     )}
+  //   />
+  // );
 
   const handleCameraLaunch = () => {
     const options = {
@@ -43,12 +72,12 @@ const Profile = () => {
         <View style={styles.image}>
           {selectedImage ? (
             <TouchableOpacity onPress={handleCameraLaunch}>
-            <Image
-              source={{uri: selectedImage}}
-              style={styles.pImg}
-              resizeMode="contain"
-              onError={error => console.error('Image loading error:', error)}
-            />
+              <Image
+                source={{uri: selectedImage}}
+                style={styles.pImg}
+                resizeMode="contain"
+                onError={error => console.error('Image loading error:', error)}
+              />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={handleCameraLaunch}>
@@ -62,6 +91,13 @@ const Profile = () => {
           <Text style={styles.profileName}>Victoria Robertson</Text>
           <Text style={styles.bio}>A mantra goes here</Text>
         </View>
+        {/* <TabView
+          navigationState={{index, routes}}
+          renderScene={renderScene}
+          onIndexChange={setIndex}
+          initialLayout={initialLayout}
+          renderTabBar={renderTabBar}
+        /> */}
       </View>
     </View>
   );
@@ -84,7 +120,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    alignSelf:'center',
+    alignSelf: 'center',
     padding: ResponsiveSize(10),
   },
   profile: {
@@ -115,7 +151,7 @@ const styles = StyleSheet.create({
   profileDetails: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop:60
+    marginTop: 60,
   },
   profileName: {
     color: COLORS.black,
@@ -125,6 +161,12 @@ const styles = StyleSheet.create({
   },
   bio: {
     color: COLORS.black,
+    fontFamily: FONTS.interSemi,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  scene: {
+    flex: 1,
   },
 });
 
