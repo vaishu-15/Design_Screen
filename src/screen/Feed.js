@@ -10,7 +10,6 @@ import {
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
-import {AirbnbRating} from 'react-native-ratings';
 import { COLORS ,FONTS} from '../utils/constants';
 
 const data = [
@@ -236,102 +235,5 @@ const styles = StyleSheet.create({
 
 export default Feed;
 
-// centeredView: {
-//   flex: 1,
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   backgroundColor:  COLORS.green,
-// },
-// modalView: {
-//   margin: ResponsiveSize(20),
-//   padding: ResponsiveSize(30),
-//   backgroundColor:  COLORS.white,
-//   borderRadius: 8,
-//   alignItems: 'center',
-//   shadowColor: COLORS.blue,
-//   shadowOffset: {
-//     width: 0,
-//     height: 2,
-//   },
-//   shadowOpacity: 0.25,
-//   elevation: 10,
-// },
-// modalheading: {
-//  color: COLORS.black,
-//   fontSize: 30,
-//   fontWeight: '700',
-//   fontFamily: FONTS.interSemi,
-// },
-// modalcontent: {
-//   color:  COLORS.dGrey,
-//   marginTop: ResponsiveSize(20),
-//   fontSize: 16,
-//   fontWeight: '500',
-//   fontFamily: FONTS.interMedium,
-//   textAlign: 'center',
-// },
-// modalbutton: {
-//   marginTop: ResponsiveSize(40),
-//   marginBottom: ResponsiveSize(20),
-//   backgroundColor: COLORS.green,
-//   width: ResponsiveSize(311),
-//   height: ResponsiveSize(51),
-//   borderRadius: 100,
-//   justifyContent: 'center',
-// },
-// btntext: {
-//   color: COLORS.white,
-//   fontSize: 16,
-//   fontWeight: '600',
-//   fontFamily: FONTS.interSemi,
-//   alignSelf: 'center',
-// },
-// modalaction: {
-//   color:  COLORS.green,
-//   fontSize: 16,
-//   fontWeight: '600',
-//   fontFamily: FONTS.interSemi,
-// },
 
-// <Modal
-//         animationType="fade"
-//         transparent={true}
-//         visible={modalVisible}
-//         onRequestClose={() => {
-//           Alert.alert('Modal has been closed.');
-//           setModalVisible(!modalVisible);
-//         }}>
-//         <View style={styles.centeredView}>
-//           <View style={styles.modalView}>
-//             <AirbnbRating
-//               type="star"
-//               ratingCount={5}
-//               size={25}
-//               onFinishRating={this.ratingCompleted}
-//               selectedColor=COLORS.yellow
-//               starContainerStyle={{
-//                 width: ResponsiveSize(180),
-//                 justifyContent: 'space-between',
-//               }}
-//               reviews={false}
-//               ratingContainerStyle={{height: 10, marginBottom: 35}}
-//             />
-
-//             <Text style={styles.modalheading}>Rate our app</Text>
-//             <Text style={styles.modalcontent}>
-//               Consequat velit qui adipisicing sunt do reprehenderit ad laborum
-//               tempor ullamco exercitation. Ullamco tempor adipisicing et
-//               voluptate duis sit esse aliqua esse ex dolore esse. Consequat
-//               velit qui adipisicing sunt.
-//             </Text>
-//             <TouchableOpacity
-//               style={styles.modalbutton}
-//               onPress={() => setModalVisible(!modalVisible)}>
-//               <Text style={styles.btntext}>I love it!</Text>
-//             </TouchableOpacity>
-//             <Text style={styles.modalaction}>
-//               Don’t like the app? Let us know.
-//             </Text>
-//           </View>
-//         </View>
-//       </Modal>
+// 
