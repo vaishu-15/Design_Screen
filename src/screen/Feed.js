@@ -18,7 +18,7 @@ const data = [
     header: 'Header',
     text: '8m ago',
     chatText:
-      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      "He'll want to use your yacht, and I don't want this thing smelling like fish.",
   },
   {
     id: '2',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   avatr: {
     width: ResponsiveSize(60),
     height: ResponsiveSize(60),
-    backgroundColor: '#F6F6F6',
+    backgroundColor: COLORS.lWhite,
     borderRadius: 8,
   },
   boxCon: {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     paddingLeft: ResponsiveSize(10),
     marginRight: ResponsiveSize(60),
     borderBottomWidth: 1,
-    borderBottomColor: '#E8E8E8',
+    borderBottomColor: COLORS.lGrey,
   },
   head: {
     flexDirection: 'row',
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   img: {
     flex: 1,
     padding: ResponsiveSize(70),
-    backgroundColor: '#F0F0F0',
+    backgroundColor: COLORS.bGrey,
     borderRadius: 8,
     margin: ResponsiveSize(10),
   },
@@ -234,6 +234,3 @@ const styles = StyleSheet.create({
 });
 
 export default Feed;
-
-
-// 
