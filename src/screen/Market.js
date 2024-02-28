@@ -4,7 +4,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import Deals from '../common/Deals';
-import { COLORS ,FONTS} from '../utils/constants';
+import { COLORS } from '../utils/constants';
 
 const Market = () => {
   return (

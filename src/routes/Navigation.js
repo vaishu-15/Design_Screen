@@ -14,6 +14,9 @@ import { COLORS } from '../utils/constants';
 import UserOptions from '../screen/UserOptions';
 import Messages from '../screen/Messages';
 import PostPage from '../screen/PostPage';
+import Photos from '../screen/Photos';
+import Images from '../screen/Images';
+import Insights from '../screen/Insights';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -60,6 +63,21 @@ const AuthStack = () => {
         name="Market"
         options={{headerShown: false}}
         component={Market}
+      />
+      <Stack.Screen
+        name="Photos"
+        options={{headerShown: false}}
+        component={Photos}
+      />
+      <Stack.Screen
+        name="Images"
+        options={{headerShown: false}}
+        component={Images}
+      />
+      <Stack.Screen
+        name="Insights"
+        options={{headerShown: false}}
+        component={Insights}
       />
     </Stack.Navigator>
   );
