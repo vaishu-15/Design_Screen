@@ -81,7 +81,7 @@ const Content = (props) => {
   };
 
   const navigateToPostPage = () => {
-    navigation.navigate('PostPage');
+    props.navigation.navigate('PostPage');
   };
 
   const handlePress = (index, dataIndex) => {
@@ -101,7 +101,7 @@ const Content = (props) => {
           data={contentData}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
-            <TouchableOpacity onPress={() => navigation.navigate('PostPage')}>
+            <TouchableOpacity>
               <ContentItem
                 header={item.header}
                 text={item.text}

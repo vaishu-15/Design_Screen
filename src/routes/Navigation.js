@@ -13,6 +13,7 @@ import Expenses from '../screen/Expenses';
 import { COLORS } from '../utils/constants';
 import UserOptions from '../screen/UserOptions';
 import Messages from '../screen/Messages';
+import PostPage from '../screen/PostPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,6 +45,21 @@ const AuthStack = () => {
         name="Messages"
         options={{headerShown: false}}
         component={Messages}
+      />
+      <Stack.Screen
+        name="Content"
+        options={{headerShown: false}}
+        component={Content}
+      />
+      <Stack.Screen
+        name="PostPage"
+        options={{headerShown: false}}
+        component={PostPage}
+      />
+      <Stack.Screen
+        name="Market"
+        options={{headerShown: false}}
+        component={Market}
       />
     </Stack.Navigator>
   );
