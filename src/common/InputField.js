@@ -3,7 +3,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import React, {useState} from 'react';
 import { COLORS ,FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField, onPress}) => {
+const InputField = ({field, state, isSearchField}) => {
   const [isHidden, setIsHidden] = useState(true);
 
   const toggleVisibility = () => {
@@ -59,5 +59,3 @@ const styles = StyleSheet.create({
 });
 
 export default InputField;
-
-

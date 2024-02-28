@@ -62,7 +62,7 @@ const ContentItem = ({
   </View>
 );
 
-const Photos = () => {
+const Photos = (props) => {
   const [contentData, setContentData] = useState(data);
   return (
     <View>
@@ -70,7 +70,7 @@ const Photos = () => {
         data={contentData}
         showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> props.navigation.navigate("Images")}>
             <ContentItem
               header={item.header}
               text={item.text}

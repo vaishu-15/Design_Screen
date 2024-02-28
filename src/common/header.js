@@ -1,14 +1,9 @@
-import {
-  Image,
-  Text,
-  View,
-  StyleSheet,
-} from 'react-native';
+import {Image, Text, View, StyleSheet} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import { COLORS ,FONTS} from '../utils/constants';
+import {COLORS, FONTS} from '../utils/constants';
 
-const Header = (props) => {
+const Header = props => {
   return (
     <View style={styles.hContainer}>
       {!props.show && (
@@ -17,7 +12,7 @@ const Header = (props) => {
         </TouchableOpacity>
       )}
       {props.show && (
-        <TouchableOpacity >
+        <TouchableOpacity>
           <Text style={styles.back}>{props.textThree}</Text>
         </TouchableOpacity>
       )}

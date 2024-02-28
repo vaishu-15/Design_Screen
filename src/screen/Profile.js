@@ -152,7 +152,7 @@ const Profile = props => {
         </View>
         <View>
           {showPosts && <Posts navigation={props.navigation} />}
-          {!showPosts && <Photos />}
+          {!showPosts && <Photos navigation={props.navigation} />}
         </View>
       </View>
     </View>
