@@ -3,6 +3,7 @@ import { View, StyleSheet, FlatList, Text, TouchableOpacity } from 'react-native
 import Header from '../common/header';
 import ResponsiveSize from '../utils/responsivesSize';
 import { COLORS, FONTS } from '../utils/constants';
+import Button from '../common/Button';
 
 const userData = [
   { id: '1', details: 'Radio option here...' },
@@ -23,7 +24,8 @@ const UserDataList = ({ details, onPress, isSelected }) => (
   </View>
 );
 
-const UserOptions = () => {
+const UserOptions = (props) => {
+
   const [selectedItems, setSelectedItems] = useState([]);
 
   const toggleSelection = (id) => {
@@ -49,10 +51,10 @@ const UserOptions = () => {
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.FlatList}
       />
+      <Button btnText={'I Love it!'} />
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {

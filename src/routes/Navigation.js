@@ -12,6 +12,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Expenses from '../screen/Expenses';
 import { COLORS } from '../utils/constants';
 import UserOptions from '../screen/UserOptions';
+import Messages from '../screen/Messages';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -38,6 +39,11 @@ const AuthStack = () => {
         name="Profile"
         options={{headerShown: false}}
         component={Profile}
+      />
+      <Stack.Screen
+        name="Messages"
+        options={{headerShown: false}}
+        component={Messages}
       />
     </Stack.Navigator>
   );
@@ -101,6 +107,7 @@ const MainStack = () => {
         name="Profile"
         component={Profile}
       />
+     
     </Tab.Navigator>
   );
 };

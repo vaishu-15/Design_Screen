@@ -151,7 +151,7 @@ const Profile = props => {
           </TouchableOpacity>
         </View>
         <View>
-          {showPosts && <Posts />}
+          {showPosts && <Posts navigation={props.navigation} />}
           {!showPosts && <Photos />}
         </View>
       </View>
