@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View,StyleSheet } from 'react-native';
 import Header from '../common/header';
 
 const Messages = ({props}) => {
   return (
-    <View>
+    <View >
         <Header textThree={'Back'} textOne={'Messages'} textTwo={'Next'} show />
         <View>
 
@@ -12,5 +12,9 @@ const Messages = ({props}) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+
+})
 
 export default Messages;

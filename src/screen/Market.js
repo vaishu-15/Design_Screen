@@ -12,7 +12,7 @@ const Market = () => {
       <Header
         textThree={'Back'}
         textOne={'Market'}
-        textTwo={'Filter'} 
+        textTwo={'Filter'}
         show
       />
       <View style={styles.searchField}>
