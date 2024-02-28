@@ -13,7 +13,7 @@ const Login = (props) => {
   };
 
   const handleLogin = () => {
-    props.navigation.navigate('MainStack', { screen: 'Feed' });
+    props.navigation.navigate("MainStack");
   };
 
   return (

@@ -7,7 +7,6 @@ import Deals from '../common/Deals';
 import { COLORS ,FONTS} from '../utils/constants';
 
 const Market = () => {
-
   return (
     <View style={styles.container}>
       <Header

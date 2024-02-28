@@ -10,7 +10,7 @@ import {
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
-import { COLORS ,FONTS} from '../utils/constants';
+import {COLORS, FONTS} from '../utils/constants';
 
 const data = [
   {
@@ -43,7 +43,7 @@ const data = [
   },
 ];
 
-const ChatItem = ({header, text, chatText, setModalVisible, modalVisible}) => (
+const ChatItem = ({header, text, chatText}) => (
   <View style={styles.chatCon}>
     <View style={styles.avatr}></View>
     <View style={styles.boxCon}>
@@ -63,7 +63,43 @@ const Feed = () => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Feed'} textTwo={'Filter'} show />
+      <Header
+        textThree={'Back'}
+        textOne={'Feed'}
+        textTwo={'Filter'}
+        onPress={() => {
+          setModalVisible(true);
+        }}
+        show
+      />
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalHeading}>Congratulations!</Text>
+            <Text style={styles.modalContent}>
+              Consequat velit qui adipisicing sunt do reprehenderit ad laborum
+              tempor ullamco exercitation. Ullamco tempor adipisicing et
+              voluptate duis sit esse aliqua esse ex dolore esse. Consequat
+              velit qui adipisicing sunt.
+            </Text>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={styles.btnText}>Click Me</Text>
+            </TouchableOpacity >
+            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <Text style={styles.modalAction}>Secondary Action</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
@@ -71,10 +107,7 @@ const Feed = () => {
         data={data}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => (
-          <TouchableOpacity
-            onpress={() => {
-              setModalVisible(true);
-            }}>
+          <TouchableOpacity>
             <ChatItem
               header={item.header}
               text={item.text}
@@ -84,32 +117,7 @@ const Feed = () => {
         )}
         keyExtractor={item => item.id}
       />
-      <Modal
-              animationType="fade"
-              transparent={true}
-              visible={modalVisible}
-              onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-                setModalVisible(!modalVisible);
-              }}>
-              <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalHeading}>Congratulations!</Text>
-                  <Text style={styles.modalContent}>
-                    Consequat velit qui adipisicing sunt do reprehenderit ad
-                    laborum tempor ullamco exercitation. Ullamco tempor
-                    adipisicing et voluptate duis sit esse aliqua esse ex dolore
-                    esse. Consequat velit qui adipisicing sunt.
-                  </Text>
-                  <TouchableOpacity
-                    style={styles.modalButton}
-                    onPress={() => setModalVisible(!modalVisible)}>
-                    <Text style={styles.btnText}>Click Me</Text>
-                  </TouchableOpacity>
-                  <Text style={styles.modalAction}>Secondary Action</Text>
-                </View>
-              </View>
-            </Modal>
+
       <View style={styles.img}></View>
     </View>
   );
@@ -184,10 +192,10 @@ const styles = StyleSheet.create({
   modalView: {
     margin: ResponsiveSize(20),
     padding: ResponsiveSize(30),
-    backgroundColor: COLORS.dGrey ,
+    backgroundColor: COLORS.white,
     borderRadius: 8,
     alignItems: 'center',
-    
+
     shadowOffset: {
       width: 0,
       height: 2,
@@ -202,7 +210,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.interSemi,
   },
   modalContent: {
-    color:COLORS.dGrey ,
+    color: COLORS.dGrey,
     marginTop: ResponsiveSize(20),
     fontSize: 16,
     fontWeight: '500',
