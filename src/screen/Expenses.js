@@ -23,6 +23,7 @@ const Expenses = () => {
     {id: '5', item: 'Item ', statistic: 'Statistic '},
     {id: '6', item: 'Item ', statistic: 'Statistic '},
     {id: '7', item: 'Item ', statistic: 'Statistic '},
+    {id: '8', item: 'Item ', statistic: 'Statistic '},
   ];
 
   const renderItem = ({item}) => (
@@ -73,7 +74,7 @@ const Expenses = () => {
           height={240}
           chartConfig={chartConfig}
           showBarTops={false}
-          yAxisLabel={''}
+          
           fromZero={true}
           segments={2}
           verticalLabelRotation={120}
@@ -127,13 +128,15 @@ const styles = StyleSheet.create({
   itemNo: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
   },
   expenseSymbol: {
     width: ResponsiveSize(15),
     height: ResponsiveSize(15),
     backgroundColor: COLORS.green,
     borderRadius: 7,
+  },
+  expenseItem:{
+    paddingLeft:ResponsiveSize(15),
   },
   expenseItemText: {
     color: COLORS.black,
