@@ -34,6 +34,11 @@ const AuthStack = () => {
         options={{headerShown: false}}
         component={UserOptions}
       />
+      <Stack.Screen
+        name="Profile"
+        options={{headerShown: false}}
+        component={Profile}
+      />
     </Stack.Navigator>
   );
 };
