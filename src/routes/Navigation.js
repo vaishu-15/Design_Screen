@@ -11,6 +11,7 @@ import Profile from '../screen/Profile';
 import ResponsiveSize from '../utils/responsivesSize';
 import Expenses from '../screen/Expenses';
 import { COLORS } from '../utils/constants';
+import UserOptions from '../screen/UserOptions';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,6 +28,11 @@ const AuthStack = () => {
         name="SignUp"
         options={{headerShown: false}}
         component={SignUp}
+      />
+      <Stack.Screen
+        name="UserOptions"
+        options={{headerShown: false}}
+        component={UserOptions}
       />
     </Stack.Navigator>
   );
@@ -78,7 +84,7 @@ const MainStack = () => {
             <View style={styles.tabbar(focused)}></View>
           ),
         })}
-        name="expenses"
+        name="Expenses"
         component={Expenses}
       />
       <Tab.Screen

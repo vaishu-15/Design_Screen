@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, Modal} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Modal,
+  TouchableOpacity,
+} from 'react-native';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
@@ -8,10 +14,15 @@ import {AirbnbRating} from 'react-native-ratings';
 import Posts from './Posts';
 import Photos from './Photos';
 
-const Profile = () => {
+const Profile = props => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showPosts, setShowPosts] = useState(true);
+
+  const handleUserOptions = () => {
+    setModalVisible(false);
+    props.navigation.navigate('UserOptions');
+  };
 
   const toggleSwitch = value => {
     setShowPosts(value === 'Posts');
@@ -43,54 +54,52 @@ const Profile = () => {
     <View style={styles.container}>
       <View style={styles.firstContainer}>
         <View style={styles.head}>
-          <TouchableOpacity
-            onpress={() => {
-              setModalVisible(true);
-            }}>
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
+            <Modal
+              animationType="fade"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+                setModalVisible(!modalVisible);
+              }}>
+              <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                  <AirbnbRating
+                    type="star"
+                    ratingCount={5}
+                    size={25}
+                    onFinishRating={this.ratingCompleted}
+                    selectedColor="#FFB84E"
+                    starContainerStyle={{
+                      width: ResponsiveSize(180),
+                      justifyContent: 'space-between',
+                    }}
+                    reviews={false}
+                    ratingContainerStyle={{height: 10, marginBottom: 35}}
+                  />
+
+                  <Text style={styles.modalheading}>Rate our app</Text>
+                  <Text style={styles.modalcontent}>
+                    Consequat velit qui adipisicing sunt do reprehenderit ad
+                    laborum tempor ullamco exercitation. Ullamco tempor
+                    adipisicing et voluptate duis sit esse aliqua esse ex dolore
+                    esse. Consequat velit qui adipisicing sunt.
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.modalbutton}
+                    onPress={handleUserOptions}>
+                    <Text style={styles.btntext}>I love it!</Text>
+                  </TouchableOpacity>
+                  <Text style={styles.modalaction}>
+                    Don’t like the app? Let us know.
+                  </Text>
+                </View>
+              </View>
+            </Modal>
             <Text style={styles.setting}>Settings</Text>
           </TouchableOpacity>
-          <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.');
-              setModalVisible(!modalVisible);
-            }}>
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <AirbnbRating
-                  type="star"
-                  ratingCount={5}
-                  size={25}
-                  onFinishRating={this.ratingCompleted}
-                  selectedColor="COLORS.yellow"
-                  starContainerStyle={{
-                    width: ResponsiveSize(180),
-                    justifyContent: 'space-between',
-                  }}
-                  reviews={false}
-                  ratingContainerStyle={{height: 10, marginBottom: 35}}
-                />
 
-                <Text style={styles.modalheading}>Rate our app</Text>
-                <Text style={styles.modalcontent}>
-                  Consequat velit qui adipisicing sunt do reprehenderit ad
-                  laborum tempor ullamco exercitation. Ullamco tempor
-                  adipisicing et voluptate duis sit esse aliqua esse ex dolore
-                  esse. Consequat velit qui adipisicing sunt.
-                </Text>
-                <TouchableOpacity
-                  style={styles.modalbutton}
-                  onPress={() => setModalVisible(!modalVisible)}>
-                  <Text style={styles.btntext}>I love it!</Text>
-                </TouchableOpacity>
-                <Text style={styles.modalaction}>
-                  Don’t like the app? Let us know.
-                </Text>
-              </View>
-            </View>
-          </Modal>
           <Text style={styles.profile}>Profile</Text>
           <Text style={styles.logOut}>Logout</Text>
         </View>
@@ -149,6 +158,7 @@ const Profile = () => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',

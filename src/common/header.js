@@ -22,7 +22,7 @@ const Header = (props) => {
         </TouchableOpacity>
       )}
       <Text style={styles.header}>{props.textOne}</Text>
-      <TouchableOpacity onPress={props.onpress}>
+      <TouchableOpacity onPress={props.onPress}>
         <Text style={styles.log}>{props.textTwo}</Text>
       </TouchableOpacity>
     </View>
