@@ -12,7 +12,7 @@ const Header = props => {
         </TouchableOpacity>
       )}
       {props.show && (
-        <TouchableOpacity>
+        <TouchableOpacity >
           <Text style={styles.back}>{props.textThree}</Text>
         </TouchableOpacity>
       )}
