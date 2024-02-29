@@ -5,9 +5,9 @@ import {COLORS, FONTS} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
 
 const expenseData = [
-  {id: '1', item: 'Item', time: '30min. '},
-  {id: '2', item: 'Item', time: '60min. '},
-  {id: '3', item: 'Item', time: '30min. '},
+  {id: '1', item: 'Item', time: '30min.'},
+  {id: '2', item: 'Item', time: '60min.'},
+  {id: '3', item: 'Item', time: '30min.'},
   {id: '4', item: 'Item', time: '15min.'},
 ];
 
@@ -46,8 +46,9 @@ const Calender = props => {
         previousTitle="&larr;"
         nextTitle="&rarr;"
         todayBackgroundColor='white'
-        textStyle={{color:COLORS.black, fontFamily:FONTS.interRegular}}
-        todayTextStyle={{color:COLORS.green, fontFamily:FONTS.interBold}}
+        yearTitleStyle={{fontFamily:FONTS.interSemi,fontWeight:'600'}}
+        textStyle={{color:COLORS.black, fontFamily:FONTS.interRegular,fontWeight:'400'}}
+        todayTextStyle={{color:COLORS.green, fontFamily:FONTS.interSemi}}
         monthYearHeaderWrapperStyle={styles.header}
         monthTitleStyle={{fontSize:40}}
         selectYearTitle={false}
