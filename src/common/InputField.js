@@ -3,7 +3,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import React, {useState} from 'react';
 import { COLORS ,FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField}) => {
+const InputField = ({field, state, isSearchField,onPress}) => {
   const [isHidden, setIsHidden] = useState(true);
 
   const toggleVisibility = () => {
@@ -16,6 +16,7 @@ const InputField = ({field, state, isSearchField}) => {
         style={[styles.name, isSearchField && styles.search  ]}
         placeholder={field}
         secureTextEntry={state ? isHidden : false}
+        onPress={onPress}
       />
       {state && (
         <TouchableOpacity onPress={toggleVisibility}>

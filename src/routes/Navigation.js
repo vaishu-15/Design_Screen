@@ -17,6 +17,8 @@ import PostPage from '../screen/PostPage';
 import Photos from '../screen/Photos';
 import Images from '../screen/Images';
 import Insights from '../screen/Insights';
+import InputField from '../common/InputField';
+import Calender from '../screen/Calender';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -78,6 +80,21 @@ const AuthStack = () => {
         name="Insights"
         options={{headerShown: false}}
         component={Insights}
+      />
+      <Stack.Screen
+        name="InputField"
+        options={{headerShown: false}}
+        component={InputField}
+      />
+      <Stack.Screen
+        name="Calender"
+        options={{headerShown: false}}
+        component={Calender}
+      />
+      <Stack.Screen
+        name="Expenses"
+        options={{headerShown: false}}
+        component={Expenses}
       />
     </Stack.Navigator>
   );

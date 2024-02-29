@@ -58,7 +58,7 @@ const ChatItem = ({header, text, chatText}) => (
   </View>
 );
 
-const Feed = () => {
+const Feed = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
