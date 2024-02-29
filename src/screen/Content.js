@@ -72,9 +72,9 @@ const ContentItem = ({
   </View>
 );
 
-const Content = (props) => {
+const Content = () => {
   const [contentData, setContentData] = useState(data);
-  const [isSearching, setIsSearching] = useState(false);
+  const [isSearching, setIsSearching] = useState(true);
 
   const handleSearchClick = () => {
     setIsSearching(true); 
@@ -96,7 +96,7 @@ const Content = (props) => {
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} onPress={handleSearchClick} />
       </View>
-      {!isSearching && (
+      {!isSearching ? (
         <FlatList
           data={contentData}
           showsVerticalScrollIndicator={false}
@@ -113,8 +113,8 @@ const Content = (props) => {
           )}
           keyExtractor={(item) => item.id}
         />
-      )}
-      {isSearching && (
+      )
+      :(
         <FlatList
           data={searchData}
           renderItem={({ item }) => (

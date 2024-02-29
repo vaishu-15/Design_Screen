@@ -11,9 +11,9 @@ const InputField = ({field, state, isSearchField}) => {
   };
 
   return (
-    <View style={[styles.nameCon, isSearchField && styles.searchField]}>
+    <View style={[styles.nameCon, isSearchField && styles.searchField ]}>
       <TextInput
-        style={[styles.name, isSearchField && styles.search]}
+        style={[styles.name, isSearchField && styles.search  ]}
         placeholder={field}
         secureTextEntry={state ? isHidden : false}
       />
@@ -59,3 +59,4 @@ const styles = StyleSheet.create({
 });
 
 export default InputField;
+
