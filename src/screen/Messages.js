@@ -29,7 +29,6 @@ const Messages = ({props}) => {
   }, []);
 
   renderBubble = props => {
-    
     return (
       <Bubble
         {...props}

@@ -33,6 +33,7 @@ const data = [
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
+  
 ];
 
 const ChatItem = ({header, text, chatText}) => (
@@ -56,8 +57,7 @@ const Posts = ({navigation}) => {
     navigation.navigate("Messages"); 
    
   };
-return(
-  <View>
+return( 
     <FlatList
       data={data}
       showsVerticalScrollIndicator={false}
@@ -72,11 +72,12 @@ return(
       )}
       keyExtractor={item => item.id}
     />
-  </View>
+ 
 );
       }
 const styles = StyleSheet.create({
   chatCon: {
+    flex:1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

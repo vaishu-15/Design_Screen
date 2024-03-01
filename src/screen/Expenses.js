@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
@@ -66,7 +66,14 @@ const Expenses = props => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Expenses'} textFour={'New'} onPress={()=> props.navigation.navigate('Calender')} new show />
+      <Header
+        textThree={'Back'}
+        textOne={'Expenses'}
+        textFour={'New'}
+        onPress={() => props.navigation.navigate('Calender')}
+        new
+        show
+      />
       <View style={styles.graphContainer}>
         <BarChart
           data={data}
@@ -79,15 +86,16 @@ const Expenses = props => {
           verticalLabelRotation={120}
         />
       </View>
-
       <View style={styles.expenses}>
         <View style={styles.expenseHead}>
           <Text style={styles.expenseText}>Expenses</Text>
         </View>
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={expenseData}
           renderItem={renderItem}
           keyExtractor={item => item.id}
+          // style={{marginBottom:ResponsiveSize(200)}}
         />
       </View>
     </View>
@@ -99,6 +107,7 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(10),
     flex: 1,
     backgroundColor: 'white',
+    height:'100%'
   },
   graphContainer: {
     backgroundColor: COLORS.white,
@@ -106,6 +115,9 @@ const styles = StyleSheet.create({
     borderColor: COLORS.lGrey,
     borderRadius: 4,
     margin: ResponsiveSize(10),
+  },
+  expenses:{
+flex:1
   },
   expenseHead: {
     margin: ResponsiveSize(10),

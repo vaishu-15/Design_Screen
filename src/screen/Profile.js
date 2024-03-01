@@ -6,7 +6,6 @@ import {
   Image,
   Modal,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
@@ -33,8 +32,6 @@ const Profile = props => {
     const options = {
       mediaType: 'photo',
       includeBase64: false,
-      maxHeight: 158,
-      maxWidth: 158,
     };
 
     launchCamera(options, response => {
@@ -110,7 +107,7 @@ const Profile = props => {
               <Image
                 source={{uri: selectedImage}}
                 style={styles.pImg}
-                resizeMode="contain"
+                resizeMode="cover"
                 onError={error => console.error('Image loading error:', error)}
               />
             ) : (
@@ -163,6 +160,7 @@ const Profile = props => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'column',
     backgroundColor: COLORS.white,
   },
@@ -178,7 +176,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    flex: 1,
     alignSelf: 'center',
     padding: ResponsiveSize(10),
   },
@@ -227,10 +224,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-
   toggle: {
     flexDirection: 'row',
-    width: ResponsiveSize(346),
+    width: ResponsiveSize(343),
     height: ResponsiveSize(51),
     margin: ResponsiveSize(20),
     backgroundColor: COLORS.lGrey,
@@ -239,7 +235,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   toggleOption: {
-    width: ResponsiveSize(171),
+    flex:1,
     height: ResponsiveSize(46),
     borderRadius: 100,
     justifyContent: 'center',

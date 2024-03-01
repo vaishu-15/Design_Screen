@@ -72,10 +72,6 @@ const styles = StyleSheet.create({
     marginRight: ResponsiveSize(5),
     marginTop: ResponsiveSize(3),
   },
-  checkIcon: {
-    color: COLORS.green,
-    fontSize: 14,
-  },
   unText: {
     fontFamily: FONTS.interRegular,
     color: COLORS.dGrey,
