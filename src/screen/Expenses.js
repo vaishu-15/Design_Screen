@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
-import { COLORS ,FONTS} from '../utils/constants';
+import {COLORS, FONTS} from '../utils/constants';
 
-const Expenses = () => {
+const Expenses = props => {
   const data = {
     labels: ['item', 'item', 'item', 'item', 'item', 'item'],
     datasets: [
@@ -47,7 +47,7 @@ const Expenses = () => {
     color: () => COLORS.dGreen,
     fillShadowGradientOpacity: 1,
     fillShadowGradientFrom: COLORS.dGreen,
-    fillShadowGradientTo:COLORS.dGreen ,
+    fillShadowGradientTo: COLORS.dGreen,
     labelColor: () => COLORS.black,
     propsForVerticalLabels: {
       fontSize: 10,
@@ -66,7 +66,7 @@ const Expenses = () => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Expenses'} textTwo={'New'} show />
+      <Header textThree={'Back'} textOne={'Expenses'} textFour={'New'} onPress={()=> props.navigation.navigate('Calender')} new show />
       <View style={styles.graphContainer}>
         <BarChart
           data={data}
@@ -74,12 +74,12 @@ const Expenses = () => {
           height={240}
           chartConfig={chartConfig}
           showBarTops={false}
-          
           fromZero={true}
           segments={2}
           verticalLabelRotation={120}
         />
       </View>
+
       <View style={styles.expenses}>
         <View style={styles.expenseHead}>
           <Text style={styles.expenseText}>Expenses</Text>
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.green,
     borderRadius: 7,
   },
-  expenseItem:{
-    paddingLeft:ResponsiveSize(15),
+  expenseItem: {
+    paddingLeft: ResponsiveSize(15),
   },
   expenseItemText: {
     color: COLORS.black,

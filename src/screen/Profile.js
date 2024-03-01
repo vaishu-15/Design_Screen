@@ -6,6 +6,7 @@ import {
   Image,
   Modal,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
@@ -135,6 +136,7 @@ const Profile = props => {
               Posts
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity
             onPress={() => toggleSwitch('Photos')}
             style={[

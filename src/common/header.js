@@ -12,14 +12,21 @@ const Header = props => {
         </TouchableOpacity>
       )}
       {props.show && (
-        <TouchableOpacity>
+        <TouchableOpacity >
           <Text style={styles.back}>{props.textThree}</Text>
         </TouchableOpacity>
       )}
       <Text style={styles.header}>{props.textOne}</Text>
-      <TouchableOpacity onPress={props.onPress}>
-        <Text style={styles.log}>{props.textTwo}</Text>
-      </TouchableOpacity>
+      {!props.new && (
+        <TouchableOpacity onPress={props.onPress}>
+          <Text style={styles.log}>{props.textTwo}</Text>
+        </TouchableOpacity>
+      )}
+      {props.new && (
+        <TouchableOpacity onPress={props.onPress}>
+          <Text style={styles.new}>{props.textFour}</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -47,6 +54,11 @@ const styles = StyleSheet.create({
     color: COLORS.green,
   },
   back: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: COLORS.green,
+  },
+  new: {
     fontSize: 16,
     fontWeight: '500',
     color: COLORS.green,

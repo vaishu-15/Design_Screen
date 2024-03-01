@@ -1,6 +1,7 @@
 export const IMAGES = {
     cross: require("../../assets/images/cross.png"),
-    profilePic: require("../../assets/images/profilePic.png")
+    profilePic: require("../../assets/images/profilePic.png"),
+    send: require("../../assets/images/arrow.png")
 }
 
 export const FONTS ={
@@ -19,6 +20,7 @@ export const COLORS = {
     dGreen:'#4B9460',
     green: '#5DB075',
     grey: '#BDBDBD',
+    darkGrey:'#C4C4C4',
     dGrey:'#666666',
     lGrey:'#E8E8E8',
     bGrey:'#F0F0F0',

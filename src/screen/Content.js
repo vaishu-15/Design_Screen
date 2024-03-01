@@ -72,7 +72,7 @@ const ContentItem = ({
   </View>
 );
 
-const Content = () => {
+const Content = (props) => {
   const [contentData, setContentData] = useState(data);
   const [isSearching, setIsSearching] = useState(true);
 
