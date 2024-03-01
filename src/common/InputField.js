@@ -40,6 +40,7 @@ const InputField = ({field, state, isSearchField, onPress}) => {
 
 const styles = StyleSheet.create({
   nameCon: {
+    
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     paddingLeft: ResponsiveSize(15),
   },
   name: {
+    flex:1,
     fontWeight: '500',
     fontSize: 16,
     fontFamily: FONTS.interMedium,
