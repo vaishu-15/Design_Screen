@@ -53,6 +53,7 @@ const Messages = ({props}) => {
     </InputToolbar>
     );
   };
+
   renderSend = props => {
     return (
       <Send {...props}>
@@ -72,6 +73,8 @@ const Messages = ({props}) => {
       />
       <GiftedChat
         renderAvatar={() => null}
+        placeholder="Message here..."
+        renderTime={()=>null}
         renderSend={this.renderSend}
         renderInputToolbar={this.renderInputToolbar}
         renderBubble={this.renderBubble}
@@ -96,7 +99,6 @@ const styles = StyleSheet.create({
     marginLeft: ResponsiveSize(10),
     marginRight: ResponsiveSize(10),
     marginBottom: ResponsiveSize(5),
-    borderWidth: 1,
     borderColor: COLORS.lGrey,
     borderRadius: ResponsiveSize(25),
     backgroundColor: COLORS.lWhite,
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
   send: {
     width: ResponsiveSize(60),
     height: ResponsiveSize(60),
-    margin:-10
+    margin:ResponsiveSize(-10)
   },
 });
 

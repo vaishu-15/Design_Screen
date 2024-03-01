@@ -5,7 +5,6 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
@@ -62,15 +61,14 @@ const ContentItem = ({
   </View>
 );
 
-const Photos = (props) => {
+const Photos = props => {
   const [contentData, setContentData] = useState(data);
   return (
-    <View>
       <FlatList
         data={contentData}
         showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => (
-          <TouchableOpacity onPress={()=> props.navigation.navigate("Images")}>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Images')}>
             <ContentItem
               header={item.header}
               text={item.text}
@@ -82,7 +80,7 @@ const Photos = (props) => {
         )}
         keyExtractor={item => item.id}
       />
-    </View>
+   
   );
 };
 

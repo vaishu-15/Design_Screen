@@ -16,7 +16,7 @@ const PostPage = props => {
       <View style={Styles.postContent}>
         <Text style={Styles.postTitle}>Post Title Here...</Text>
         <Text style={Styles.postAuthor}>Author</Text>
-
+<ScrollView showsVerticalScrollIndicator={false}>
         <Text style={Styles.postData}>
           Labore sunt veniam amet est. Minim nisi dolor eu ad incididunt cillum
           elit ex ut. Dolore exercitation nulla tempor consequat aliquip
@@ -50,6 +50,7 @@ const PostPage = props => {
           labore. Sunt non sint in Lorem occaecat dolore tempor ipsum et
           proident sit Lorem ipsum officia.
         </Text>
+        </ScrollView>
       </View>
     </View>
   );
@@ -62,10 +63,14 @@ const Styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   poster: {
+    
     padding: ResponsiveSize(120),
     backgroundColor: COLORS.lWhite,
     marginBottom: ResponsiveSize(30),
     borderRadius: 8,
+  },
+  postContent:{
+    flex:1,
   },
   postTitle: {
     color: COLORS.black,
@@ -81,6 +86,7 @@ const Styles = StyleSheet.create({
   },
   postData: {
     marginTop: ResponsiveSize(10),
+    marginBottom: ResponsiveSize(10),
     color: COLORS.dGrey,
     fontSize: 16,
     fontWeight: '500',

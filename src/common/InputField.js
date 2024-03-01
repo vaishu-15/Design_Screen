@@ -1,20 +1,31 @@
-import {View, StyleSheet, TextInput, Text, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import React, {useState} from 'react';
-import { COLORS ,FONTS} from '../utils/constants';
+import {COLORS, FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField,onPress}) => {
+const InputField = ({field, state, isSearchField, onPress}) => {
   const [isHidden, setIsHidden] = useState(true);
+  const [value, onChangeText] = useState('');
 
   const toggleVisibility = () => {
     setIsHidden(!isHidden);
   };
 
   return (
-    <View style={[styles.nameCon, isSearchField && styles.searchField ]}>
+    <View style={[styles.nameCon, isSearchField && styles.searchField]}>
       <TextInput
-        style={[styles.name, isSearchField && styles.search  ]}
+        style={[styles.name, isSearchField && styles.search]}
         placeholder={field}
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        maxLength={40}
+        numberOfLines={1}
         secureTextEntry={state ? isHidden : false}
         onPress={onPress}
       />
@@ -48,7 +59,7 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: '500',
     fontSize: 16,
-    fontFamily: FONTS.interRegular,
+    fontFamily: FONTS.interMedium,
     paddingLeft: ResponsiveSize(10),
   },
   hidenText: {
@@ -60,4 +71,3 @@ const styles = StyleSheet.create({
 });
 
 export default InputField;
-
