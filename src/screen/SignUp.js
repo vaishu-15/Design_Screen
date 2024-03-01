@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import CheckBox from 'react-native-check-box';
+import CheckBox from '@react-native-community/checkbox';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, IMAGES, FONTS} from '../utils/constants';
 import Header from '../common/header';
@@ -9,14 +9,10 @@ import Button from '../common/Button';
 import {useState} from 'react';
 
 const SignUp = props => {
-  const [checked, setChecked] = useState(false);
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
   const navigateToLogin = () => {
     props.navigation.navigate('Login');
-  };
-
-  const toggleCheckBox = () => {
-    setChecked(!checked);
   };
 
   return (
@@ -34,13 +30,13 @@ const SignUp = props => {
         <InputField field={'Password'} state />
       </View>
       <View style={styles.textCon}>
-        <TouchableOpacity onPress={toggleCheckBox}>
-          <View style={styles.checkBoxContainer}>
-            <View style={styles.checkBox}>
-              {checked && <Text style={styles.checkIcon}>✓</Text>}
-            </View>
-          </View>
-        </TouchableOpacity>
+        <CheckBox
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={newValue => setToggleCheckBox(newValue)}
+          tintColor={COLORS.grey}
+          onFillColor={COLORS.green}
+        />
         <Text style={styles.unText}>
           I would like to receive your newsletter and other promotional
           information.
