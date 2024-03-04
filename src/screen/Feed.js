@@ -125,6 +125,7 @@ const Feed = (props) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     padding: ResponsiveSize(10),
     backgroundColor: COLORS.white,
   },

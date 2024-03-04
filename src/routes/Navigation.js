@@ -19,6 +19,7 @@ import Images from '../screen/Images';
 import Insights from '../screen/Insights';
 import InputField from '../common/InputField';
 import Calender from '../screen/Calender';
+import Compose from '../screen/Compose';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -95,6 +96,11 @@ const AuthStack = () => {
         name="Expenses"
         options={{headerShown: false}}
         component={Expenses}
+      />
+      <Stack.Screen
+        name="Compose"
+        options={{headerShown: false}}
+        component={Compose}
       />
     </Stack.Navigator>
   );

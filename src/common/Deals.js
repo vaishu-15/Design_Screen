@@ -9,6 +9,22 @@ const Deals = ({dealOne}) => {
     {id: '2', name: 'Item #1 Name Goes Here', price: '$19.99'},
     {id: '3', name: 'Item #1 Name Goes Here', price: '$19.99'},
     {id: '4', name: 'Item #1 Name Goes Here', price: '$20.99'},
+    {id: '5', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '6', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '7', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '8', name: 'Item #1 Name Goes Here', price: '$20.99'},
+    {id: '9', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '10', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '11', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '12', name: 'Item #1 Name Goes Here', price: '$20.99'},
+    {id: '13', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '14', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '15', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '16', name: 'Item #1 Name Goes Here', price: '$20.99'},
+    {id: '17', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '18', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '19', name: 'Item #1 Name Goes Here', price: '$19.99'},
+    {id: '20', name: 'Item #1 Name Goes Here', price: '$20.99'},
   ];
 
   const renderItem = ({item}) => (

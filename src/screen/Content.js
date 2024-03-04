@@ -74,7 +74,7 @@ const ContentItem = ({
 
 const Content = (props) => {
   const [contentData, setContentData] = useState(data);
-  const [isSearching, setIsSearching] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleSearchClick = () => {
     setIsSearching(true); 
