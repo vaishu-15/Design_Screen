@@ -52,7 +52,7 @@ const Expenses = props => {
     propsForVerticalLabels: {
       fontSize: 10,
       fontWeight: '400',
-      fontFamily: 'Inter-Regular',
+      fontFamily:FONTS.interRegular,
     },
     propsForHorizontalLabels: {
       fontSize: 0,
@@ -95,7 +95,6 @@ const Expenses = props => {
           data={expenseData}
           renderItem={renderItem}
           keyExtractor={item => item.id}
-          // style={{marginBottom:ResponsiveSize(200)}}
         />
       </View>
     </View>
@@ -106,8 +105,8 @@ const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
     flex: 1,
-    backgroundColor: 'white',
-    height:'100%'
+    backgroundColor: COLORS.white,
+    height: '100%',
   },
   graphContainer: {
     backgroundColor: COLORS.white,
@@ -116,8 +115,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     margin: ResponsiveSize(10),
   },
-  expenses:{
-flex:1
+  expenses: {
+    flex: 1,
   },
   expenseHead: {
     margin: ResponsiveSize(10),

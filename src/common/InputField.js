@@ -22,6 +22,7 @@ const InputField = ({field, state, isSearchField, onPress}) => {
       <TextInput
         style={[styles.name, isSearchField && styles.search]}
         placeholder={field}
+        placeholderTextColor='#BDBDBD'
         onChangeText={text => onChangeText(text)}
         value={value}
         maxLength={40}

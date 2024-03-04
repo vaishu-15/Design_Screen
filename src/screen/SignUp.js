@@ -34,8 +34,8 @@ const SignUp = props => {
           disabled={false}
           value={toggleCheckBox}
           onValueChange={newValue => setToggleCheckBox(newValue)}
-          tintColor={COLORS.grey}
-          onFillColor={COLORS.green}
+          tintColor='#BDBDBD'
+          onFillColor='#5DB075'
         />
         <Text style={styles.unText}>
           I would like to receive your newsletter and other promotional
