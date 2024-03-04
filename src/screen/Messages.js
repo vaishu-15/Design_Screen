@@ -46,6 +46,11 @@ const Messages = ({props}) => {
     );
   };
 
+  const handleChatBubblePress = (messages) => {
+    props.navigation.navigate('Compose',messages);
+  };
+  console.log ("compose",props);
+
   renderInputToolbar = props => {
     return (
     <InputToolbar {...props} 
@@ -66,7 +71,6 @@ const Messages = ({props}) => {
     <View style={styles.container}>
       <Header
         textThree={'Back'}
-        onPress={() => props.navigation.goBack()}
         textOne={'Messages'}
         textTwo={'Filter'}
         show
@@ -80,6 +84,7 @@ const Messages = ({props}) => {
         renderBubble={this.renderBubble}
         alwaysShowSend
         messages={messages}
+        onPress={(context,messages) => handleChatBubblePress(messages)}
         onSend={messages => onSend(messages)}
         user={{
           _id: 1,

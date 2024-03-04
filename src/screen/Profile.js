@@ -76,7 +76,6 @@ const Profile = props => {
                     reviews={false}
                     ratingContainerStyle={{height: 10, marginBottom: 35}}
                   />
-
                   <Text style={styles.modalheading}>Rate our app</Text>
                   <Text style={styles.modalcontent}>
                     Consequat velit qui adipisicing sunt do reprehenderit ad
@@ -133,7 +132,6 @@ const Profile = props => {
               Posts
             </Text>
           </TouchableOpacity>
-
           <TouchableOpacity
             onPress={() => toggleSwitch('Photos')}
             style={[
@@ -205,6 +203,7 @@ const styles = StyleSheet.create({
     borderRadius: ResponsiveSize(158 / 2),
   },
   secondContainer: {
+    flex: 1,
     flexDirection: 'column',
   },
   profileDetails: {
@@ -235,7 +234,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   toggleOption: {
-    flex:1,
+    flex: 1,
     height: ResponsiveSize(46),
     borderRadius: 100,
     justifyContent: 'center',

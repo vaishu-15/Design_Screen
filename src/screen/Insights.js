@@ -5,7 +5,7 @@ import Header from '../common/header';
 const Insights = ({props}) => {
   return (
     <View >
-        <Header textThree={'Back'} textOne={'Insights'} textTwo={'Next'} show /> 
+        <Header textThree={'Back'} textOne={'Insights'} show /> 
     </View>
   );
 };
