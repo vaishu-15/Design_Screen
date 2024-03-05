@@ -26,6 +26,86 @@ const data = [
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
   },
+  {
+    id: '3',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '4',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '5',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '6',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '7',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '8',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '9',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '10',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '11',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
+  {
+    id: '12',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+    selectedButtonIndex: null,
+  },
 ];
 
 const ContentItem = ({

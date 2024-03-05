@@ -13,7 +13,6 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 import PieChart from 'react-native-pie-chart';
 import Button from '../common/Button';
-// import BottomSheet from '@gorhom/bottom-sheet';
 
 const Insights = ({props}) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
@@ -24,6 +23,7 @@ const Insights = ({props}) => {
 
   const handleCloseBottomSheet = () => {
     setIsBottomSheetOpen(false);
+    // props.navigation.navigate('Profile');
   };
 
   const widthAndHeight = 196;
@@ -88,19 +88,21 @@ const Insights = ({props}) => {
             visible={isBottomSheetOpen}
             onRequestClose={handleCloseBottomSheet}>
             <View style={[styles.bottomSheet, {height: ResponsiveSize(295)}]}>
+              <View style={styles.icon1}></View>
               <Text style={styles.modalHeading}>Drawer Header</Text>
               <Text style={styles.modalContent}>
                 Consequat velit qui adipisicing sunt do reprehenderit ad laborum
                 tempor ullamco exercitation.
               </Text>
-              <Button
+              <TouchableOpacity
                 onPress={handleCloseBottomSheet}
-                btnText={'Click Me'}
-                style={styles.btnText}
-              />
+                style={styles.button}>
+                <Text style={styles.buttonText}>Click me</Text>
+              </TouchableOpacity>
               <TouchableOpacity onPress={handleCloseBottomSheet}>
                 <Text style={styles.modalAction}>Secondary Action</Text>
               </TouchableOpacity>
+              <View style={styles.icon2}></View>
             </View>
           </Modal>
           <Text style={styles.centerText}>{`${greenPercentage}%`}spent</Text>
@@ -213,6 +215,12 @@ const styles = StyleSheet.create({
     bottom: 0,
     borderWidth: 1,
   },
+  icon1: {
+    paddingHorizontal: ResponsiveSize(10),
+    paddingVertical: ResponsiveSize(2),
+    backgroundColor: COLORS.lGrey,
+    borderRadius:ResponsiveSize(10),
+  },
   modalHeading: {
     color: COLORS.black,
     fontSize: 24,
@@ -248,6 +256,29 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     fontFamily: FONTS.interBold,
+  },
+  icon2:{
+    paddingHorizontal: ResponsiveSize(65),
+    paddingVertical: ResponsiveSize(4),
+    borderRadius:ResponsiveSize(10),
+    backgroundColor: COLORS.black,
+    marginTop:ResponsiveSize(20),
+    marginBottom:ResponsiveSize(-15)
+  },
+  button: {
+    backgroundColor: COLORS.green,
+    padding: ResponsiveSize(16),
+    paddingHorizontal: ResponsiveSize(130),
+    marginTop: ResponsiveSize(35),
+    margin: ResponsiveSize(11),
+    borderRadius: 100,
+  },
+  buttonText: {
+    fontWeight: '600',
+    fontSize: 16,
+    alignSelf: 'center',
+    color: COLORS.white,
+    fontFamily: FONTS.interSemi,
   },
 });
 
