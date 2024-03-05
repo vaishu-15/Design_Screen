@@ -21,7 +21,12 @@ const Insights = ({props}) => {
 
   const handleCloseBottomSheet = () => {
     setIsBottomSheetOpen(false);
-    // props.navigation.navigate('Profile');
+  };
+
+  const handleBackgroundClick = () => {
+    if (isBottomSheetOpen) {
+      handleCloseBottomSheet();
+    }
   };
 
   const widthAndHeight = 196;
@@ -85,27 +90,29 @@ const Insights = ({props}) => {
             transparent={true}
             visible={isBottomSheetOpen}
             onRequestClose={handleCloseBottomSheet}>
-              <View style={styles.modalBackground}>
-            <View style={[styles.bottomSheet, {height: ResponsiveSize(310)}]}>
-              <TouchableOpacity onPress={handleCloseBottomSheet}>
-                <View style={styles.icon1}></View>
-              </TouchableOpacity>
-              <Text style={styles.modalHeading}>Drawer Header</Text>
-              <Text style={styles.modalContent}>
-                Consequat velit qui adipisicing sunt do reprehenderit ad laborum
-                tempor ullamco exercitation.
-              </Text>
-              <TouchableOpacity
-                onPress={handleCloseBottomSheet}
-                style={styles.button}>
-                <Text style={styles.buttonText}>Click Me</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={handleCloseBottomSheet}>
-                <Text style={styles.modalAction}>Secondary Action</Text>
-              </TouchableOpacity>
-              <View style={styles.icon2}></View>
-            </View>
-            </View>
+            <TouchableOpacity
+              style={styles.modalBackground}
+              onPress={handleBackgroundClick}>
+              <View style={[styles.bottomSheet, {height: ResponsiveSize(310)}]}>
+                <TouchableOpacity onPress={handleCloseBottomSheet}>
+                  <View style={styles.icon1}></View>
+                </TouchableOpacity>
+                <Text style={styles.modalHeading}>Drawer Header</Text>
+                <Text style={styles.modalContent}>
+                  Consequat velit qui adipisicing sunt do reprehenderit ad
+                  laborum tempor ullamco exercitation.
+                </Text>
+                <TouchableOpacity
+                  onPress={handleCloseBottomSheet}
+                  style={styles.button}>
+                  <Text style={styles.buttonText}>Click Me</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleCloseBottomSheet}>
+                  <Text style={styles.modalAction}>Secondary Action</Text>
+                </TouchableOpacity>
+                <View style={styles.icon2}></View>
+              </View>
+            </TouchableOpacity>
           </Modal>
           <Text style={styles.centerText}>{`${greenPercentage}%`}spent</Text>
         </View>
@@ -264,7 +271,7 @@ const styles = StyleSheet.create({
   },
   icon2: {
     paddingHorizontal: ResponsiveSize(65),
-    paddingVertical: ResponsiveSize(4),
+    paddingVertical: ResponsiveSize(3),
     borderRadius: ResponsiveSize(10),
     backgroundColor: COLORS.black,
     marginTop: ResponsiveSize(20),
