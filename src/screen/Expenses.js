@@ -7,10 +7,20 @@ import {COLORS, FONTS} from '../utils/constants';
 
 const Expenses = props => {
   const data = {
-    labels: ['item', 'item', 'item', 'item', 'item', 'item'],
+    labels: ['item', 'item', 'item', 'item', 'item', 'item', 'item', 'item'],
     datasets: [
       {
-        data: [50, 45, 28, 80, 99, 43],
+        data: [99, 55, 99, 55, 99, 55, 99, 55],
+        colors: [
+          (opacity = 1) => COLORS.green,
+          (opacity = 1) => COLORS.dGreen,
+          (opacity = 1) => COLORS.green,
+          (opacity = 1) => COLORS.dGreen,
+          (opacity = 1) => COLORS.green,
+          (opacity = 1) => COLORS.dGreen,
+          (opacity = 1) => COLORS.green,
+          (opacity = 1) => COLORS.dGreen,
+        ],
       },
     ],
   };
@@ -24,6 +34,21 @@ const Expenses = props => {
     {id: '6', item: 'Item ', statistic: 'Statistic '},
     {id: '7', item: 'Item ', statistic: 'Statistic '},
     {id: '8', item: 'Item ', statistic: 'Statistic '},
+    {id: '9', item: 'Item ', statistic: 'Statistic '},
+    {id: '10', item: 'Item ', statistic: 'Statistic '},
+    {id: '11', item: 'Item ', statistic: 'Statistic '},
+    {id: '12', item: 'Item ', statistic: 'Statistic '},
+    {id: '13', item: 'Item ', statistic: 'Statistic '},
+    {id: '14', item: 'Item ', statistic: 'Statistic '},
+    {id: '15', item: 'Item ', statistic: 'Statistic '},
+    {id: '16', item: 'Item ', statistic: 'Statistic '},
+    {id: '17', item: 'Item ', statistic: 'Statistic '},
+    {id: '18', item: 'Item ', statistic: 'Statistic '},
+    {id: '19', item: 'Item ', statistic: 'Statistic '},
+    {id: '20', item: 'Item ', statistic: 'Statistic '},
+    {id: '21', item: 'Item ', statistic: 'Statistic '},
+    {id: '22', item: 'Item ', statistic: 'Statistic '},
+    {id: '23', item: 'Item ', statistic: 'Statistic '},
   ];
 
   const renderItem = ({item}) => (
@@ -41,8 +66,9 @@ const Expenses = props => {
   );
 
   const chartConfig = {
-    backgroundGradientFrom: COLORS.white,
-    backgroundGradientFromOpacity: COLORS.white,
+    backgroundColor: "transparent",
+
+    backgroundGradientFromOpacity:0,
     backgroundGradientTo: COLORS.white,
     color: () => COLORS.dGreen,
     fillShadowGradientOpacity: 1,
@@ -52,7 +78,7 @@ const Expenses = props => {
     propsForVerticalLabels: {
       fontSize: 10,
       fontWeight: '400',
-      fontFamily:FONTS.interRegular,
+      fontFamily: FONTS.interRegular,
     },
     propsForHorizontalLabels: {
       fontSize: 0,
@@ -83,6 +109,9 @@ const Expenses = props => {
           showBarTops={false}
           fromZero={true}
           segments={2}
+          flatColor={true}
+          withInnerLines={false}
+          withCustomBarColorFromData={true}
           verticalLabelRotation={120}
         />
       </View>
