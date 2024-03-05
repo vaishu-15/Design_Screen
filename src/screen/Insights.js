@@ -5,14 +5,12 @@ import {
   FlatList,
   Text,
   TouchableOpacity,
-  Dimensions,
   Modal,
 } from 'react-native';
 import Header from '../common/header';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 import PieChart from 'react-native-pie-chart';
-import Button from '../common/Button';
 
 const Insights = ({props}) => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
@@ -87,8 +85,11 @@ const Insights = ({props}) => {
             transparent={true}
             visible={isBottomSheetOpen}
             onRequestClose={handleCloseBottomSheet}>
-            <View style={[styles.bottomSheet, {height: ResponsiveSize(295)}]}>
-              <View style={styles.icon1}></View>
+              <View style={styles.modalBackground}>
+            <View style={[styles.bottomSheet, {height: ResponsiveSize(310)}]}>
+              <TouchableOpacity onPress={handleCloseBottomSheet}>
+                <View style={styles.icon1}></View>
+              </TouchableOpacity>
               <Text style={styles.modalHeading}>Drawer Header</Text>
               <Text style={styles.modalContent}>
                 Consequat velit qui adipisicing sunt do reprehenderit ad laborum
@@ -97,12 +98,13 @@ const Insights = ({props}) => {
               <TouchableOpacity
                 onPress={handleCloseBottomSheet}
                 style={styles.button}>
-                <Text style={styles.buttonText}>Click me</Text>
+                <Text style={styles.buttonText}>Click Me</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={handleCloseBottomSheet}>
                 <Text style={styles.modalAction}>Secondary Action</Text>
               </TouchableOpacity>
               <View style={styles.icon2}></View>
+            </View>
             </View>
           </Modal>
           <Text style={styles.centerText}>{`${greenPercentage}%`}spent</Text>
@@ -201,6 +203,16 @@ const styles = StyleSheet.create({
     color: COLORS.lGrey,
     fontFamily: FONTS.interRegular,
   },
+  modalBackground: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 1,
+    transition: 'all 0.3s ease',
+  },
   bottomSheet: {
     position: 'absolute',
     left: 0,
@@ -214,12 +226,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     bottom: 0,
     borderWidth: 1,
+    zIndex: 2,
   },
   icon1: {
-    paddingHorizontal: ResponsiveSize(10),
+    paddingHorizontal: ResponsiveSize(20),
     paddingVertical: ResponsiveSize(2),
     backgroundColor: COLORS.lGrey,
-    borderRadius:ResponsiveSize(10),
+    borderRadius: ResponsiveSize(10),
+    marginBottom: ResponsiveSize(20),
   },
   modalHeading: {
     color: COLORS.black,
@@ -236,20 +250,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   modalButton: {
-    marginTop: ResponsiveSize(40),
-    marginBottom: ResponsiveSize(20),
     backgroundColor: COLORS.green,
     width: ResponsiveSize(311),
     height: ResponsiveSize(51),
     borderRadius: 100,
     justifyContent: 'center',
-  },
-  btnText: {
-    color: COLORS.white,
-    fontSize: 16,
-    fontWeight: '600',
-    fontFamily: FONTS.interRegular,
-    alignSelf: 'center',
   },
   modalAction: {
     color: COLORS.green,
@@ -257,19 +262,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontFamily: FONTS.interBold,
   },
-  icon2:{
+  icon2: {
     paddingHorizontal: ResponsiveSize(65),
     paddingVertical: ResponsiveSize(4),
-    borderRadius:ResponsiveSize(10),
+    borderRadius: ResponsiveSize(10),
     backgroundColor: COLORS.black,
-    marginTop:ResponsiveSize(20),
-    marginBottom:ResponsiveSize(-15)
+    marginTop: ResponsiveSize(20),
+    marginBottom: ResponsiveSize(-15),
   },
   button: {
     backgroundColor: COLORS.green,
     padding: ResponsiveSize(16),
     paddingHorizontal: ResponsiveSize(130),
-    marginTop: ResponsiveSize(35),
+    marginTop: ResponsiveSize(20),
     margin: ResponsiveSize(11),
     borderRadius: 100,
   },
