@@ -34,6 +34,21 @@ const Expenses = props => {
     {id: '6', item: 'Item ', statistic: 'Statistic '},
     {id: '7', item: 'Item ', statistic: 'Statistic '},
     {id: '8', item: 'Item ', statistic: 'Statistic '},
+    {id: '9', item: 'Item ', statistic: 'Statistic '},
+    {id: '10', item: 'Item ', statistic: 'Statistic '},
+    {id: '11', item: 'Item ', statistic: 'Statistic '},
+    {id: '12', item: 'Item ', statistic: 'Statistic '},
+    {id: '13', item: 'Item ', statistic: 'Statistic '},
+    {id: '14', item: 'Item ', statistic: 'Statistic '},
+    {id: '15', item: 'Item ', statistic: 'Statistic '},
+    {id: '16', item: 'Item ', statistic: 'Statistic '},
+    {id: '17', item: 'Item ', statistic: 'Statistic '},
+    {id: '18', item: 'Item ', statistic: 'Statistic '},
+    {id: '19', item: 'Item ', statistic: 'Statistic '},
+    {id: '20', item: 'Item ', statistic: 'Statistic '},
+    {id: '21', item: 'Item ', statistic: 'Statistic '},
+    {id: '22', item: 'Item ', statistic: 'Statistic '},
+    {id: '23', item: 'Item ', statistic: 'Statistic '},
   ];
 
   const renderItem = ({item}) => (

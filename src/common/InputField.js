@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: '500',
     fontSize: 16,
+    color:COLORS.black,
     fontFamily: FONTS.interMedium,
     paddingLeft: ResponsiveSize(10),
   },
