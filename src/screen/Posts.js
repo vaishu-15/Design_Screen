@@ -33,7 +33,62 @@ const data = [
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
-  
+  {
+    id: '5',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '6',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '7',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '8',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '9',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '10',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '11',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '12',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
 ];
 
 const ChatItem = ({header, text, chatText}) => (
