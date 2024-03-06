@@ -63,7 +63,7 @@ const ContentItem = ({
             styles.bot,
             selectedButtonIndex === index
               ? {backgroundColor: COLORS.green}
-              : {backgroundColor: COLORS.white},
+              : {backgroundColor: COLORS.lGrey},
           ]}
           onPress={() => onPress(index)}
         />

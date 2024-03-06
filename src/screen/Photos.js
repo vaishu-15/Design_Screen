@@ -132,7 +132,7 @@ const ContentItem = ({
             styles.bot,
             selectedButtonIndex === index
               ? {backgroundColor: COLORS.green}
-              : {backgroundColor: COLORS.white},
+              : {backgroundColor: COLORS.lGrey},
           ]}
           onPress={() => onPress(index)}
         />
@@ -143,6 +143,13 @@ const ContentItem = ({
 
 const Photos = props => {
   const [contentData, setContentData] = useState(data);
+
+  const handlePress = (index, dataIndex) => {
+    const newData = [...contentData];
+    newData[dataIndex].selectedButtonIndex = index;
+    setContentData(newData);
+  };
+
   return (
       <FlatList
         data={contentData}
