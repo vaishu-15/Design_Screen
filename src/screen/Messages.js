@@ -5,7 +5,7 @@ import {Send, GiftedChat, InputToolbar, Bubble} from 'react-native-gifted-chat';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, IMAGES} from '../utils/constants';
 
-const Messages = ({props}) => {
+const Messages = (props) => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Messages = ({props}) => {
   };
 
   const handleChatBubblePress = (messages) => {
-    props.navigation.navigate('Compose',messages);
+    props.navigation.navigate('Compose', { messages });
   };
   console.log ("compose",props);
 
@@ -84,7 +84,7 @@ const Messages = ({props}) => {
         renderBubble={this.renderBubble}
         alwaysShowSend
         messages={messages}
-        onPress={(context,messages) => handleChatBubblePress(messages)}
+        onPress={(context, messages) => handleChatBubblePress(messages)}
         onSend={messages => onSend(messages)}
         user={{
           _id: 1,

@@ -46,22 +46,26 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: COLORS.black,
     fontFamily: FONTS.interSemi,
+    alignSelf:'center'
   },
   log: {
     fontSize: 16,
     fontFamily: FONTS.interMedium,
     fontWeight: '500',
     color: COLORS.green,
+    alignSelf:'center'
   },
   back: {
     fontSize: 16,
     fontWeight: '500',
     color: COLORS.green,
+    alignSelf:'center'
   },
   new: {
     fontSize: 16,
     fontWeight: '500',
     color: COLORS.green,
+    alignSelf:'center'
   },
 });
 

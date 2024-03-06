@@ -20,6 +20,7 @@ import Insights from '../screen/Insights';
 import InputField from '../common/InputField';
 import Calender from '../screen/Calender';
 import Compose from '../screen/Compose';
+import MarketVideo from '../screen/MarketVideo';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -101,6 +102,11 @@ const AuthStack = () => {
         name="Compose"
         options={{headerShown: false}}
         component={Compose}
+      />
+      <Stack.Screen
+        name="MarketVideo"
+        options={{headerShown: false}}
+        component={MarketVideo}
       />
     </Stack.Navigator>
   );

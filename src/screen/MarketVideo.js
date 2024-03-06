@@ -3,24 +3,13 @@ import {View, TextInput, StyleSheet} from 'react-native';
 import Header from '../common/header';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
-import Button from '../common/Button';
 
-const Compose = () => {
-  const [value, onChangeText] = useState('');
+const MarketVideo = () => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Compose'} show />
-      <View style={styles.messageTextCon}>
-        <TextInput
-          style={styles.messageText}
-          placeholder="Compose your message here..."
-          placeholderTextColor="#BDBDBD"
-          onChangeText={text => onChangeText(text)}
-          value={value}
-        />
-      </View>
-      <Button btnText={'Send'} />
+      <Header textThree={'Back'} textOne={'Market'} show />
+      
     </View>
   );
 };
@@ -40,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Compose;
+export default MarketVideo;
