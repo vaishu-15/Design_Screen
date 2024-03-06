@@ -1,11 +1,5 @@
 import {React, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 
@@ -151,23 +145,22 @@ const Photos = props => {
   };
 
   return (
-      <FlatList
-        data={contentData}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item, index}) => (
-          <TouchableOpacity onPress={() => props.navigation.navigate('Images')}>
-            <ContentItem
-              header={item.header}
-              text={item.text}
-              chatText={item.chatText}
-              selectedButtonIndex={item.selectedButtonIndex}
-              onPress={buttonIndex => handlePress(buttonIndex, index)}
-            />
-          </TouchableOpacity>
-        )}
-        keyExtractor={item => item.id}
-      />
-   
+    <FlatList
+      data={contentData}
+      showsVerticalScrollIndicator={false}
+      renderItem={({item, index}) => (
+        <TouchableOpacity onPress={() => props.navigation.navigate('Images')}>
+          <ContentItem
+            header={item.header}
+            text={item.text}
+            chatText={item.chatText}
+            selectedButtonIndex={item.selectedButtonIndex}
+            onPress={buttonIndex => handlePress(buttonIndex, index)}
+          />
+        </TouchableOpacity>
+      )}
+      keyExtractor={item => item.id}
+    />
   );
 };
 

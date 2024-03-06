@@ -8,9 +8,9 @@ const Images = (props) => {
   return (
     <View style={styles.container}>
       <Header
-        textThree={'Back'}
+        textThree={'Back'} 
         textOne={'Images'}
-        textFour={'Next'}
+        textFour={'Insights'}
         onPress={() => props.navigation.navigate('Insights')}
         new
         show

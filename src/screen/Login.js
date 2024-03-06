@@ -9,7 +9,7 @@ import { COLORS ,FONTS} from '../utils/constants';
 const Login = (props) => {
 
   const navigateToSignUp = () => {
-    props.navigation.navigate('SignUp'); 
+    props.navigation.navigate('SignUp');
   };
 
   const handleLogin = () => {
