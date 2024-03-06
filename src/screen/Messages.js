@@ -49,7 +49,6 @@ const Messages = (props) => {
   const handleChatBubblePress = (messages) => {
     props.navigation.navigate('Compose', { messages });
   };
-  console.log ("compose",props);
 
   renderInputToolbar = props => {
     return (
