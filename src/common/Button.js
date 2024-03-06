@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     padding: ResponsiveSize(16),
     marginTop: ResponsiveSize(35),
     margin: ResponsiveSize(11),
-    borderRadius: 100,
+    borderRadius: ResponsiveSize(100),
   },
   buttonText: {
     fontWeight: '600',
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     alignSelf: 'center',
     color: COLORS.white,
     fontFamily: FONTS.interSemi,
