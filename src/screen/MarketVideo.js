@@ -1,24 +1,46 @@
 import {React, useState} from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
-import Header from '../common/header';
+import {View, Text, StyleSheet} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
+import Deals from '../common/Deals';
+import Video from 'react-native-video';
 
-const MarketVideo = () => {
-
+const MarketVideo = (props) => {
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Market'} show />
-      
+      <View style={styles.firstContainer}>
+        <View style={styles.head}>
+          <Text onPress={() => props.navigation.goBack('')} style={styles.back}>Back</Text>
+          <Text style={styles.header}>Market</Text>
+
+        </View>
+        <Video
+          source={{uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}}
+          ref={ref => {
+            this.player = ref;
+          }}
+          onBuffer={this.onBuffer}
+          onError={this.videoError}
+          // paused={true}
+          style={styles.backgroundVideo}
+        />
+      </View>
+      <View style={styles.secContainer}>
+      <Deals dealOne={'Hot deals'} />
+      <Deals dealOne={'Trending'} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: ResponsiveSize(10),
     flex: 1,
     backgroundColor: COLORS.white,
+  },
+  firstContainer: {
+    padding: ResponsiveSize(10),
+    backgroundColor: COLORS.green,
   },
   messageTextCon: {
     padding: ResponsiveSize(10),
@@ -27,6 +49,34 @@ const styles = StyleSheet.create({
   messageText: {
     color: COLORS.black,
   },
+  backgroundVideo: {
+    height:ResponsiveSize(200),
+    backgroundColor:COLORS.white,
+    borderRadius:ResponsiveSize(12)
+  },
+  head: {
+    padding: ResponsiveSize(10),
+    flexDirection: 'row',
+    justifyContent: "",
+    alignItems: 'center',
+  },
+  back: {
+    fontSize: 16,
+    fontFamily: FONTS.interMedium,
+    fontWeight: '500',
+    color: COLORS.white,
+  },
+  header: {
+    fontSize: ResponsiveSize(30),
+    fontWeight: '600',
+    color: COLORS.white,
+    fontFamily: FONTS.interSemi,
+    textAlign: 'center',
+    paddingLeft:ResponsiveSize(100)
+  },
+  secContainer:{
+    padding: ResponsiveSize(10),
+  }
 });
 
 export default MarketVideo;

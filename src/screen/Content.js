@@ -47,7 +47,8 @@ const ContentItem = ({
   onPress,
 }) => (
   <View style={styles.contentCon}>
-    <View style={styles.imageCon}></View>
+    <TouchableOpacity style={styles.imageCon}>
+    </TouchableOpacity>
     <View style={styles.head}>
       <Text style={styles.headText}>{header}</Text>
     </View>
@@ -63,7 +64,7 @@ const ContentItem = ({
             styles.bot,
             selectedButtonIndex === index
               ? {backgroundColor: COLORS.green}
-              : {backgroundColor: COLORS.white},
+              : {backgroundColor: COLORS.lGrey},
           ]}
           onPress={() => onPress(index)}
         />
@@ -105,17 +106,15 @@ const Content = props => {
           data={contentData}
           showsVerticalScrollIndicator={false}
           renderItem={({item, index}) => (
-            <TouchableOpacity>
-              <ContentItem
-                header={item.header}
-                text={item.text}
-                chatText={item.chatText}
-                selectedButtonIndex={item.selectedButtonIndex}
-                onPress={buttonIndex => handlePress(buttonIndex, index)}
-              />
-            </TouchableOpacity>
+            <ContentItem
+              header={item.header}
+              text={item.text}
+              chatText={item.chatText}
+              selectedButtonIndex={item.selectedButtonIndex}
+              onPress={buttonIndex => handlePress(buttonIndex, index)}
+            />
           )}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
         />
       ) : (
         <FlatList

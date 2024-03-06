@@ -6,7 +6,7 @@ import InputField from '../common/InputField';
 import Deals from '../common/Deals';
 import { COLORS } from '../utils/constants';
 
-const Market = () => {
+const Market = (props) => {
   return (
     <View style={styles.container}>
       <Header
@@ -18,8 +18,8 @@ const Market = () => {
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>
-      <Deals dealOne={'Hot deals'} />
-      <Deals dealOne={'Trending'} />
+      <Deals dealOne={'Hot deals'} navigation={props.navigation}/>
+      <Deals dealOne={'Trending'} navigation={props.navigation}/>
     </View>
   );
 };
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   searchField: {
     marginTop: ResponsiveSize(20),
   },
-  
 });
 
 export default Market;
