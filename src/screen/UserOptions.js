@@ -38,7 +38,7 @@ const UserOptions = (props) => {
   
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'User Options'} textTwo={'Next'} show />
+      <Header textThree={'Back'} onPress={() => props.navigation.goBack('')} textOne={'User Options'} textTwo={'Next'} show />
       <FlatList
         data={userData}
         renderItem={({ item }) => (

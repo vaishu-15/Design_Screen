@@ -12,7 +12,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 import PieChart from 'react-native-pie-chart';
 
-const Insights = ({props}) => {
+const Insights = props => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
   const handleOpenBottomSheet = () => {
@@ -72,7 +72,12 @@ const Insights = ({props}) => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} textOne={'Insights'} show />
+      <Header
+        textThree={'Back'}
+        onPress={() => props.navigation.goBack('')}
+        textOne={'Insights'}
+        show
+      />
       <View style={styles.donutContainer}>
         <PieChart
           widthAndHeight={widthAndHeight}

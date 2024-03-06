@@ -80,7 +80,7 @@ const Feed = props => {
           Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
         }}>
-        <View style={styles.centeredView}>
+        <TouchableOpacity style={styles.centeredView} onPress={() => setModalVisible(!modalVisible)} >
           <View style={styles.modalView}>
             <Text style={styles.modalHeading}>Congratulations!</Text>
             <Text style={styles.modalContent}>
@@ -98,7 +98,7 @@ const Feed = props => {
               <Text style={styles.modalAction}>Secondary Action</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </TouchableOpacity>
       </Modal>
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
