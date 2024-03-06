@@ -5,27 +5,30 @@ import {COLORS, FONTS} from '../utils/constants';
 import Deals from '../common/Deals';
 import Video from 'react-native-video';
 
-const MarketVideo = () => {
+const MarketVideo = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.firstContainer}>
         <View style={styles.head}>
-          <Text style={styles.back}>Back</Text>
+          <Text onPress={() => props.navigation.goBack('')} style={styles.back}>Back</Text>
           <Text style={styles.header}>Market</Text>
-          <Text></Text>
+
         </View>
         <Video
-          source={{uri: 'https://youtu.be/64Baf8B6sYg'}}
+          source={{uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}}
           ref={ref => {
             this.player = ref;
           }}
           onBuffer={this.onBuffer}
           onError={this.videoError}
+          // paused={true}
           style={styles.backgroundVideo}
         />
       </View>
+      <View style={styles.secContainer}>
       <Deals dealOne={'Hot deals'} />
       <Deals dealOne={'Trending'} />
+      </View>
     </View>
   );
 };
@@ -47,16 +50,14 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   backgroundVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+    height:ResponsiveSize(200),
+    backgroundColor:COLORS.white,
+    borderRadius:ResponsiveSize(12)
   },
   head: {
     padding: ResponsiveSize(10),
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: "",
     alignItems: 'center',
   },
   back: {
@@ -70,8 +71,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: COLORS.white,
     fontFamily: FONTS.interSemi,
-   textAlign:'center'
+    textAlign: 'center',
+    paddingLeft:ResponsiveSize(100)
   },
+  secContainer:{
+    padding: ResponsiveSize(10),
+  }
 });
 
 export default MarketVideo;

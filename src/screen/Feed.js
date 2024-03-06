@@ -45,7 +45,7 @@ const data = [
 
 const ChatItem = ({header, text, chatText}) => (
   <View style={styles.chatCon}>
-    <View style={styles.avatr}></View>
+    <TouchableOpacity style={styles.avatr}></TouchableOpacity>
     <View style={styles.boxCon}>
       <View style={styles.head}>
         <Text style={styles.headText}>{header}</Text>
@@ -58,7 +58,7 @@ const ChatItem = ({header, text, chatText}) => (
   </View>
 );
 
-const Feed = (props) => {
+const Feed = props => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -93,9 +93,9 @@ const Feed = (props) => {
               style={styles.modalButton}
               onPress={() => setModalVisible(!modalVisible)}>
               <Text style={styles.btnText}>Click Me</Text>
-            </TouchableOpacity >
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-            <Text style={styles.modalAction}>Secondary Action</Text>
+              <Text style={styles.modalAction}>Secondary Action</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -107,13 +107,11 @@ const Feed = (props) => {
         data={data}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => (
-          <TouchableOpacity>
-            <ChatItem
-              header={item.header}
-              text={item.text}
-              chatText={item.chatText}
-            />
-          </TouchableOpacity>
+          <ChatItem
+            header={item.header}
+            text={item.text}
+            chatText={item.chatText}
+          />
         )}
         keyExtractor={item => item.id}
       />
@@ -125,7 +123,7 @@ const Feed = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     padding: ResponsiveSize(10),
     backgroundColor: COLORS.white,
   },
