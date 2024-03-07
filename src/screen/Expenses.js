@@ -139,9 +139,9 @@ const styles = StyleSheet.create({
   },
   graphContainer: {
     backgroundColor: COLORS.white,
-    borderWidth: 1,
+    borderWidth: ResponsiveSize(1),
     borderColor: COLORS.lGrey,
-    borderRadius: 4,
+    borderRadius: ResponsiveSize(4),
     margin: ResponsiveSize(10),
   },
   expenses: {
@@ -152,13 +152,13 @@ const styles = StyleSheet.create({
   },
   expenseText: {
     color: COLORS.black,
-    fontSize: 24,
+    fontSize: ResponsiveSize(24),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
   },
   expenseList: {
     borderBottomColor: COLORS.lGrey,
-    borderBottomWidth: 1,
+    borderBottomWidth: ResponsiveSize(1),
     margin: ResponsiveSize(10),
     paddingBottom: ResponsiveSize(10),
     flexDirection: 'row',
@@ -173,20 +173,20 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(15),
     height: ResponsiveSize(15),
     backgroundColor: COLORS.green,
-    borderRadius: 7,
+    borderRadius: ResponsiveSize(7),
   },
   expenseItem: {
     paddingLeft: ResponsiveSize(15),
   },
   expenseItemText: {
     color: COLORS.black,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
   },
   statText: {
     color: COLORS.black,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
   },

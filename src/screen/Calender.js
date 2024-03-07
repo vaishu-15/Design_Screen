@@ -37,7 +37,7 @@ const Calender = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => props.navigation.goBack('Expenses')}>
-        <Text style={{color: 'black', fontSize: 30, fontWeight: 'bold'}}>
+        <Text style={{color: 'black', fontSize: ResponsiveSize(30), fontWeight: 'bold'}}>
           &larr;
         </Text>
       </TouchableOpacity>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   expenseList: {
     marginHorizontal:ResponsiveSize(20),
     borderBottomColor: COLORS.lGrey,
-    borderBottomWidth: 1,
+    borderBottomWidth: ResponsiveSize(1),
     paddingBottom: ResponsiveSize(15),
     paddingTop: ResponsiveSize(15),
     flexDirection: 'row',
@@ -90,20 +90,20 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(15),
     height: ResponsiveSize(15),
     backgroundColor: COLORS.green,
-    borderRadius: 7,
+    borderRadius: ResponsiveSize(7),
   },
   expenseItem: {
     paddingLeft: ResponsiveSize(15),
   },
   expenseItemText: {
     color: COLORS.black,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
   },
   timeText: {
     color: COLORS.black,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
   },

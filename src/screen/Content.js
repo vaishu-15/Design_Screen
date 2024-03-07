@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   imageCon: {
     padding: ResponsiveSize(120),
-    borderRadius: 8,
+    borderRadius: ResponsiveSize(8),
     backgroundColor: COLORS.lWhite,
   },
   head: {
@@ -158,20 +158,20 @@ const styles = StyleSheet.create({
   },
   headText: {
     color: COLORS.black,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '700',
     fontFamily: FONTS.interSemi,
   },
   chatText: {
     color: COLORS.black,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
     paddingBottom: ResponsiveSize(5),
   },
   tText: {
     color: COLORS.grey,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
   },
@@ -183,18 +183,18 @@ const styles = StyleSheet.create({
   bot: {
     padding: ResponsiveSize(4),
     margin: ResponsiveSize(4),
-    borderRadius: 4,
+    borderRadius: ResponsiveSize(4),
   },
   searchCon: {
     margin: ResponsiveSize(10),
     paddingLeft: ResponsiveSize(10),
     paddingBottom: ResponsiveSize(10),
     borderBottomColor: COLORS.lGrey,
-    borderBottomWidth: 1,
+    borderBottomWidth: ResponsiveSize(1),
   },
   searchText: {
     color: COLORS.black,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
   },

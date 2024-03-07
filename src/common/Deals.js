@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   DealHeading: {
     color: COLORS.black,
-    fontSize: 24,
+    fontSize: ResponsiveSize(24),
     fontWeight: '600',
     fontFamily: FONTS.interRegular,
   },
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(110),
     height: ResponsiveSize(110),
     backgroundColor: COLORS.lWhite,
-    borderRadius: 8,
+    borderRadius: ResponsiveSize(8),
   },
   itemName: {
     width: ResponsiveSize(110),
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     color: COLORS.black,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
   },
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
   amountText: {
     color: COLORS.black,
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     fontWeight: '700',
     fontFamily: FONTS.interRegular,
   },

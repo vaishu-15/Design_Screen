@@ -45,14 +45,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: COLORS.lWhite,
-    borderWidth: 1,
+    borderWidth: ResponsiveSize(1),
     borderColor: COLORS.lGrey,
     margin: ResponsiveSize(10),
-    borderRadius: 10,
+    borderRadius: ResponsiveSize(10),
     padding: ResponsiveSize(5),
   },
   searchField: {
-    borderRadius: 100,
+    borderRadius: ResponsiveSize(100),
   },
   search: {
     paddingLeft: ResponsiveSize(15),
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   name: {
     flex: 1,
     fontWeight: '500',
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     color:COLORS.black,
     fontFamily: FONTS.interMedium,
     paddingLeft: ResponsiveSize(10),

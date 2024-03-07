@@ -69,22 +69,22 @@ const styles = StyleSheet.create({
     margin: ResponsiveSize(10),
     paddingBottom: ResponsiveSize(19),
     borderBottomColor: COLORS.lGrey,
-    borderBottomWidth: 1,
+    borderBottomWidth: ResponsiveSize(1),
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   details: {
     color: COLORS.grey,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
   },
   radioBtn: {
     width: ResponsiveSize(16),
     height: ResponsiveSize(16),
-    borderRadius: 8,
+    borderRadius: ResponsiveSize(8),
     borderColor: COLORS.grey,
-    borderWidth: 2,
+    borderWidth: ResponsiveSize(2),
   },
 });
 

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   back: {
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontFamily: FONTS.interMedium,
     fontWeight: '500',
     color: COLORS.white,
