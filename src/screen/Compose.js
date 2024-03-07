@@ -40,4 +40,5 @@ const styles = StyleSheet.create({
   },
 });
 
+// changes
 export default Compose;
