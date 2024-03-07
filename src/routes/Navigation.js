@@ -13,7 +13,7 @@ import Expenses from '../screen/Expenses';
 import { COLORS } from '../utils/constants';
 import UserOptions from '../screen/UserOptions';
 import Messages from '../screen/Messages';
-import PostPage from '../screen/PostPage';
+import PostPage from '../screen/postPage';
 import Photos from '../screen/Photos';
 import Images from '../screen/Images';
 import Insights from '../screen/Insights';
