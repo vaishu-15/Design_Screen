@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 import Deals from '../common/Deals';
+import Video from 'react-native-video';
 
 const MarketVideo = (props) => {
   return (
@@ -13,7 +14,7 @@ const MarketVideo = (props) => {
           <Text style={styles.header}>Market</Text>
 
         </View>
-        {/* <Video
+        <Video
           source={{uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}}
           ref={ref => {
             this.player = ref;
@@ -22,7 +23,7 @@ const MarketVideo = (props) => {
           onError={this.videoError}
           // paused={true}
           style={styles.backgroundVideo}
-        /> */}
+        />
       </View>
       <View style={styles.secContainer}>
       <Deals dealOne={'Hot deals'} />
