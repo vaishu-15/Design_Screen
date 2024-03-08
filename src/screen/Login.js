@@ -52,15 +52,15 @@ const styles = StyleSheet.create({
   fgText: {
     fontFamily: FONTS.interSemi,
     color: COLORS.dGrey,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '600',
   },
   signUpBtn: {
     fontFamily: FONTS.interSemi,
     color: COLORS.green,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '600',
-    marginLeft: 5,
+    marginLeft: ResponsiveSize(5),
   },
 });
 

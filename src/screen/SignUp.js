@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     width: ResponsiveSize(16),
     height: ResponsiveSize(16),
     backgroundColor: COLORS.lGrey,
-    borderRadius: 4,
+    borderRadius: ResponsiveSize(4),
     marginRight: ResponsiveSize(5),
     marginTop: ResponsiveSize(3),
   },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.interRegular,
     color: COLORS.dGrey,
     fontWeight: '400',
-    fontSize: 14,
+    fontSize: ResponsiveSize(14),
     marginRight: ResponsiveSize(8),
   },
   forgot: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   fgText: {
     fontFamily: FONTS.interSemi,
     color: COLORS.green,
-    fontSize: 16,
+    fontSize: ResponsiveSize(16),
     fontWeight: '600',
     alignSelf: 'center',
   },
