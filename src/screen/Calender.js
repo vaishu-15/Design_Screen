@@ -36,7 +36,7 @@ const Calender = props => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => props.navigation.goBack('Expenses')}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('MainStack')}>
         <Text style={{color: 'black', fontSize: ResponsiveSize(30), fontWeight: 'bold'}}>
           &larr;
         </Text>

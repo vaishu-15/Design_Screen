@@ -43,7 +43,7 @@ const SignUp = props => {
         </Text>
       </View>
 
-      <Button onPress={navigateToLogin} btnText={'Sign Up'} />
+      <Button btn={navigateToLogin} btnText={'Sign Up'} />
       <View style={styles.forgot}>
         <Text style={styles.fgText}>Forgot your password?</Text>
       </View>

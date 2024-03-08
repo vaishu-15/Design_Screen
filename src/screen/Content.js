@@ -93,7 +93,11 @@ const Content = props => {
 
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'} onPress={() => props.navigation.goBack('')} textOne={'Content'} textTwo={'Filter'} show />
+      <Header textThree={'Back'} 
+      back={() => props.navigation.goBack('')} 
+      textOne={'Content'} 
+      textTwo={'Filter'}
+      show />
       <View style={styles.searchField}>
         <InputField
           field={'Search'}

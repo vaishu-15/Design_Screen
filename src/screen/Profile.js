@@ -98,7 +98,9 @@ const Profile = props => {
           </TouchableOpacity>
 
           <Text style={styles.profile}>Profile</Text>
+          <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
           <Text style={styles.logOut}>Logout</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.image}>
           <TouchableOpacity onPress={handleCameraLaunch}>

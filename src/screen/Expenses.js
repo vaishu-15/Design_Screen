@@ -94,6 +94,7 @@ const Expenses = props => {
     <View style={styles.container}>
       <Header
         textThree={'Back'} 
+        back={() => props.navigation.goBack('')}
         textOne={'Expenses'}
         textFour={'New'}
         onPress={() => props.navigation.navigate('Calender')}

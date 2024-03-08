@@ -67,7 +67,7 @@ const Feed = props => {
         textThree={'Back'}
         textOne={'Feed'}
         textTwo={'Filter'}
-        onPress={() => {
+        filter={() => {
           setModalVisible(true);
         }}
         show
