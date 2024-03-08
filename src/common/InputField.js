@@ -9,7 +9,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import React, {useState} from 'react';
 import {COLORS, FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField, onPress}) => {
+const InputField = ({field, state, isSearchField, select}) => {
   const [isHidden, setIsHidden] = useState(true);
   const [value, onChangeText] = useState('');
 
@@ -28,7 +28,7 @@ const InputField = ({field, state, isSearchField, onPress}) => {
         maxLength={40}
         numberOfLines={1}
         secureTextEntry={state ? isHidden : false}
-        onPress={onPress}
+        onPress={select}
       />
       {state && (
         <TouchableOpacity onPress={toggleVisibility}>

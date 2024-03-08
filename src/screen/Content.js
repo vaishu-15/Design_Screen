@@ -102,7 +102,7 @@ const Content = props => {
         <InputField
           field={'Search'}
           isSearchField={true}
-          onPress={handleSearchClick}
+          select={handleSearchClick}
         />
       </View>
       {!isSearching ? (
