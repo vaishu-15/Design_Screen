@@ -70,6 +70,7 @@ const Messages = (props) => {
     <View style={styles.container}>
       <Header
         textThree={'Back'}
+        back={()=>props.navigation.navigate('MainStack')}
         textOne={'Messages'}
         textTwo={'Filter'}
         show

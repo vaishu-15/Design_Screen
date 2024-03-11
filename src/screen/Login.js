@@ -23,7 +23,7 @@ const Login = (props) => {
         <InputField field={'Email'} />
         <InputField field={'Password'} state/>
       </View>
-      <Button onPress={handleLogin} btnText={'Log In'} />
+      <Button btn={handleLogin} btnText={'Log In'} />
       <View style={styles.forgot}>
         <Text style={styles.fgText}>Forgot your password? </Text>
         <TouchableOpacity onPress={navigateToSignUp}>

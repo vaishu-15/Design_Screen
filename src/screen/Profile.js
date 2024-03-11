@@ -98,7 +98,9 @@ const Profile = props => {
           </TouchableOpacity>
 
           <Text style={styles.profile}>Profile</Text>
+          <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
           <Text style={styles.logOut}>Logout</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.image}>
           <TouchableOpacity onPress={handleCameraLaunch}>
@@ -225,19 +227,22 @@ const styles = StyleSheet.create({
   },
   toggle: {
     flexDirection: 'row',
-    width: ResponsiveSize(343),
+    justifyContent:'space-between',
+    width: ResponsiveSize(345),
     height: ResponsiveSize(51),
     margin: ResponsiveSize(20),
     backgroundColor: COLORS.lGrey,
     borderRadius: ResponsiveSize(100),
     alignSelf: 'center',
     alignItems: 'center',
+    padding:ResponsiveSize(4)
   },
   toggleOption: {
-    flex: 1,
-    height: ResponsiveSize(46),
+    width:ResponsiveSize(169),
+    height: ResponsiveSize(44),
     borderRadius: ResponsiveSize(100),
     justifyContent: 'center',
+    alignContent:'center'
   },
   activeOption: {
     backgroundColor: COLORS.white,

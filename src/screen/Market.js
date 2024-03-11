@@ -10,7 +10,7 @@ const Market = (props) => {
   return (
     <View style={styles.container}>
       <Header
-        textThree={'Back'} onPress={() => props.navigation.goBack('')}
+        textThree={'Back'} back={() => props.navigation.goBack('')}
         textOne={'Market'}
         textTwo={'Filter'}
         show
@@ -20,6 +20,8 @@ const Market = (props) => {
       </View>
       <Deals dealOne={'Hot deals'} navigation={props.navigation}/>
       <Deals dealOne={'Trending'} navigation={props.navigation}/>
+      <Deals dealOne={'Trends'} navigation={props.navigation}/>
+      <Deals dealOne={'Deals'} navigation={props.navigation}/>
     </View>
   );
 };

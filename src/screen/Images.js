@@ -9,6 +9,7 @@ const Images = (props) => {
     <View style={styles.container}>
       <Header
         textThree={'Back'} 
+        back={() => props.navigation.navigate('MainStack')}
         textOne={'Images'}
         textFour={'Insights'}
         onPress={() => props.navigation.navigate('Insights')}
@@ -28,6 +29,11 @@ const Images = (props) => {
       <View style={styles.col5}></View>
       <View style={styles.col6}></View>
      </View>
+     <View style={styles.row4}>
+      <View style={styles.col5}></View>
+      <View style={styles.col6}></View>
+     </View>
+     <View style={styles.row2}></View>
     </View>
   );
 };

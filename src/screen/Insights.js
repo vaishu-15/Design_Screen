@@ -74,7 +74,7 @@ const Insights = props => {
     <View style={styles.container}>
       <Header
         textThree={'Back'}
-        onPress={() => props.navigation.goBack('')}
+        back={() => props.navigation.navigate('MainStack')}
         textOne={'Insights'}
         show
       />

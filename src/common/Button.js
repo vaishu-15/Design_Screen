@@ -2,10 +2,10 @@ import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 
-const Button = ({btnText, onPress, navigation}) => {
+const Button = ({btnText, btn}) => {
   return (
     <View>
-      <TouchableOpacity onPress={onPress} style={styles.button}>
+      <TouchableOpacity onPress={btn} style={styles.button}>
         <Text style={styles.buttonText}>{btnText}</Text>
       </TouchableOpacity>
     </View>

@@ -4,13 +4,16 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 import Deals from '../common/Deals';
 import Video from 'react-native-video';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const MarketVideo = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.firstContainer}>
         <View style={styles.head}>
-          <Text onPress={() => props.navigation.goBack('')} style={styles.back}>Back</Text>
+          <TouchableOpacity onPress = {() => props.navigation.navigate('MainStack')}>
+          <Text style={styles.back}>Back</Text>
+          </TouchableOpacity>
           <Text style={styles.header}>Market</Text>
 
         </View>

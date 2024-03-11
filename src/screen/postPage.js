@@ -7,7 +7,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 const PostPage = props => {
   return (
     <View style={Styles.container}>
-      <TouchableOpacity onPress={() => props.navigation.goBack('Content')}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('MainStack')}>
         <Text style={{color: 'black', fontSize: 30, fontWeight: 'bold'}}>
           &larr;
         </Text>
@@ -16,7 +16,7 @@ const PostPage = props => {
       <View style={Styles.postContent}>
         <Text style={Styles.postTitle}>Post Title Here...</Text>
         <Text style={Styles.postAuthor}>Author</Text>
-<ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={Styles.postData}>
           Labore sunt veniam amet est. Minim nisi dolor eu ad incididunt cillum
           elit ex ut. Dolore exercitation nulla tempor consequat aliquip

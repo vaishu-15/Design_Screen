@@ -38,7 +38,11 @@ const UserOptions = (props) => {
   
   return (
     <View style={styles.container}>
-      <Header textThree={'Back'}  textOne={'User Options'} textTwo={'Next'} show />
+      <Header textThree={'Back'} 
+      back={() => props.navigation.navigate('MainStack')} 
+      textOne={'User Options'} 
+      textTwo={'Next'} 
+      show />
       <FlatList
         data={userData}
         renderItem={({ item }) => (
@@ -51,7 +55,7 @@ const UserOptions = (props) => {
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.FlatList}
       />
-      <Button btnText={'I Love it!'} />
+      <Button btnText={'I Love it!'} btn={() => props.navigation.navigate('MainStack')}/>
     </View>
   );
 };
