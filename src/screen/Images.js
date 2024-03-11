@@ -3,10 +3,12 @@ import {View, StyleSheet} from 'react-native';
 import Header from '../common/header';
 import ResponsiveSize from '../utils/responsivesSize';
 import { COLORS,FONTS } from '../utils/constants';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Images = (props) => {
   return (
     <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Header
         textThree={'Back'} 
         back={() => props.navigation.navigate('MainStack')}
@@ -29,11 +31,19 @@ const Images = (props) => {
       <View style={styles.col5}></View>
       <View style={styles.col6}></View>
      </View>
+     <View style={styles.row3}>
+      <View style={styles.col3}></View>
+      <View style={styles.col4}></View>
+     </View>
      <View style={styles.row4}>
       <View style={styles.col5}></View>
       <View style={styles.col6}></View>
      </View>
-     <View style={styles.row2}></View>
+     <View style={styles.row3}>
+      <View style={styles.col3}></View>
+      <View style={styles.col4}></View>
+     </View>
+     </ScrollView>
     </View>
   );
 };

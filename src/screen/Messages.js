@@ -78,6 +78,7 @@ const Messages = (props) => {
       <GiftedChat
         renderAvatar={() => null}
         placeholder="Message here..."
+        placeholderTextColor='#BDBDBD'
         renderTime={()=>null}
         renderSend={this.renderSend}
         renderInputToolbar={this.renderInputToolbar}

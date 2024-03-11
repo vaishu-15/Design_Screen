@@ -15,7 +15,6 @@ const MarketVideo = (props) => {
           <Text style={styles.back}>Back</Text>
           </TouchableOpacity>
           <Text style={styles.header}>Market</Text>
-
         </View>
         <Video
           source={{uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}}
@@ -23,7 +22,7 @@ const MarketVideo = (props) => {
             this.player = ref;
           }}
           onBuffer={this.onBuffer}
-          onError={this.videoError}
+          onError={(err) => alert(JSON.stringify(err))}
           // paused={true}
           style={styles.backgroundVideo}
         />
