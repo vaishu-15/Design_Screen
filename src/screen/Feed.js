@@ -11,6 +11,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import {COLORS, FONTS} from '../utils/constants';
+import { ResponsiveSizeTablet } from '../utils/responsivesSize';
 
 const data = [
   {
@@ -243,7 +244,7 @@ const styles = StyleSheet.create({
   modalContent: {
     color: COLORS.dGrey,
     marginTop: ResponsiveSize(20),
-    fontSize: ResponsiveSize(16),
+    fontSize:ResponsiveSize(16),
     fontWeight: '500',
     fontFamily: FONTS.interMedium,
     textAlign: 'center',

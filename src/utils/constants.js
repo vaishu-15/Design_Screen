@@ -1,7 +1,8 @@
 export const IMAGES = {
     cross: require("../../assets/images/cross.png"),
     profilePic: require("../../assets/images/profilePic.png"),
-    send: require("../../assets/images/arrow.png")
+    send: require("../../assets/images/arrow.png"),
+    play: require("../../assets/images/play.png"),
 }
 
 export const FONTS ={
