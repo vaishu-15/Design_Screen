@@ -41,6 +41,41 @@ const data = [
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
+  {
+    id: '5',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '6',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '7',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '8',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
+  {
+    id: '9',
+    header: 'Header',
+    text: '8m ago',
+    chatText:
+      "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+  },
 ];
 
 const ChatItem = ({header, text, chatText}) => (
@@ -64,7 +99,6 @@ const Feed = props => {
   return (
     <View style={styles.container}>
       <Header
-        textThree={'Back'}
         textOne={'Feed'}
         textTwo={'Filter'}
         filter={() => {
@@ -123,7 +157,7 @@ const Feed = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
     padding: ResponsiveSize(10),
     backgroundColor: COLORS.white,
   },
@@ -131,21 +165,20 @@ const styles = StyleSheet.create({
     marginTop: ResponsiveSize(20),
   },
   chatCon: {
+    flex:1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: ResponsiveSize(10),
   },
   avatr: {
     padding:ResponsiveSize(35),
-    paddingBottom:ResponsiveSize(35),
     backgroundColor: COLORS.lWhite,
     borderRadius: ResponsiveSize(8),
   },
   boxCon: {
+    flex:1,
     padding: ResponsiveSize(7),
-    paddingLeft: ResponsiveSize(10),
-    marginRight: ResponsiveSize(60),
+    margin:ResponsiveSize(5),
     borderBottomWidth: ResponsiveSize(1),
     borderBottomColor: COLORS.lGrey,
   },
@@ -173,7 +206,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: ResponsiveSize(14),
     fontFamily: FONTS.interRegular,
-    marginBottom: ResponsiveSize(10),
   },
   img: {
     flex: 1,

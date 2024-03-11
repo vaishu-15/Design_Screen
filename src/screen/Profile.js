@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   toggleOption: {
     width:ResponsiveSize(169),
-    height: ResponsiveSize(44),
+    height: ResponsiveSize(45),
     borderRadius: ResponsiveSize(100),
     justifyContent: 'center',
     alignContent:'center'

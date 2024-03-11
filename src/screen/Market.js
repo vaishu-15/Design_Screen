@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Modal, TouchableOpacity, Text} from 'react-native';
+import {View, StyleSheet, Modal, TouchableOpacity, Text,ScrollView} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
@@ -9,6 +9,7 @@ import { COLORS } from '../utils/constants';
 const Market = (props) => {
   return (
     <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Header
         textThree={'Back'} back={() => props.navigation.goBack('')}
         textOne={'Market'}
@@ -22,6 +23,7 @@ const Market = (props) => {
       <Deals dealOne={'Trending'} navigation={props.navigation}/>
       <Deals dealOne={'Trends'} navigation={props.navigation}/>
       <Deals dealOne={'Deals'} navigation={props.navigation}/>
+      </ScrollView>
     </View>
   );
 };
@@ -30,7 +32,9 @@ const styles = StyleSheet.create({
   container: {
     padding: ResponsiveSize(10),
     flex: 1,
+    flexDirection:'column',
     backgroundColor:COLORS.white,
+    
   },
   searchField: {
     marginTop: ResponsiveSize(20),

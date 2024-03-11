@@ -134,20 +134,18 @@ const styles = StyleSheet.create({
   chatCon: {
     flex:1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingLeft: ResponsiveSize(20),
-    overflow: 'hidden',
+    paddingHorizontal:ResponsiveSize(20)
   },
   avatr: {
-    width: ResponsiveSize(60),
-    height: ResponsiveSize(60),
+    padding:ResponsiveSize(35),
     backgroundColor: COLORS.lWhite,
     borderRadius: ResponsiveSize(8),
   },
   boxCon: {
+    flex:1,
     padding: ResponsiveSize(7),
-    marginRight: ResponsiveSize(60),
+    margin:ResponsiveSize(5),
     borderBottomWidth: ResponsiveSize(1),
     borderBottomColor: COLORS.lGrey,
   },
@@ -175,7 +173,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: ResponsiveSize(14),
     fontFamily: FONTS.interRegular,
-    marginBottom: ResponsiveSize(10),
   },
 });
 export default Posts;

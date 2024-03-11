@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Text, StyleSheet, FlatList,Dimensions} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
@@ -66,14 +66,9 @@ const Expenses = props => {
   );
 
   const chartConfig = {
-    backgroundColor: "transparent",
-
     backgroundGradientFromOpacity:0,
     backgroundGradientTo: COLORS.white,
     color: () => COLORS.dGreen,
-    fillShadowGradientOpacity: 1,
-    fillShadowGradientFrom: COLORS.dGreen,
-    fillShadowGradientTo: COLORS.dGreen,
     labelColor: () => COLORS.black,
     propsForVerticalLabels: {
       fontSize: 10,
@@ -104,7 +99,7 @@ const Expenses = props => {
       <View style={styles.graphContainer}>
         <BarChart
           data={data}
-          width={350}
+          width={Dimensions.get("window").width }
           height={240}
           chartConfig={chartConfig}
           showBarTops={false}
@@ -113,7 +108,13 @@ const Expenses = props => {
           flatColor={true}
           withInnerLines={false}
           withCustomBarColorFromData={true}
-          verticalLabelRotation={120}
+          verticalLabelRotation={-45}
+          style={{
+            marginVertical: ResponsiveSize(10),
+            marginHorizontal:ResponsiveSize(-50),
+            alignContent:'center',
+            
+          }}
         />
       </View>
       <View style={styles.expenses}>

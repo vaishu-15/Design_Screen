@@ -36,6 +36,7 @@ const SignUp = props => {
           onValueChange={newValue => setToggleCheckBox(newValue)}
           tintColor='#BDBDBD'
           onFillColor='#5DB075'
+          style={styles.checkBox}
         />
         <Text style={styles.unText}>
           I would like to receive your newsletter and other promotional
@@ -61,16 +62,8 @@ const styles = StyleSheet.create({
     margin: ResponsiveSize(9),
     marginTop: ResponsiveSize(25),
   },
-  checkBoxContainer: {
-    flexDirection: 'row',
-  },
-  checkBox: {
-    width: ResponsiveSize(16),
-    height: ResponsiveSize(16),
-    backgroundColor: COLORS.lGrey,
-    borderRadius: ResponsiveSize(4),
-    marginRight: ResponsiveSize(5),
-    marginTop: ResponsiveSize(3),
+  checkBox:{
+  marginTop:ResponsiveSize(-1),
   },
   unText: {
     fontFamily: FONTS.interRegular,
