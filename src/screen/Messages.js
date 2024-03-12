@@ -1,5 +1,5 @@
 import {React, useState, useEffect, useCallback} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image,Button} from 'react-native';
 import Header from '../common/header';
 import {Send, GiftedChat, InputToolbar, Bubble} from 'react-native-gifted-chat';
 import ResponsiveSize from '../utils/responsivesSize';
@@ -36,10 +36,16 @@ const Messages = (props) => {
           right: {
             backgroundColor: COLORS.green,
             color: COLORS.white,
+            marginBottom: ResponsiveSize(10),
+            border:1,
+            padding:ResponsiveSize(10),
+            
           },
           left: {
             backgroundColor: COLORS.lGrey,
             color: COLORS.darkGrey,
+            marginBottom: ResponsiveSize(10),
+            padding:ResponsiveSize(10)
           },
         }}
       />
@@ -53,7 +59,8 @@ const Messages = (props) => {
   renderInputToolbar = props => {
     return (
     <InputToolbar {...props} 
-    containerStyle={styles.inputToolbar} >
+    containerStyle={styles.inputToolbar} 
+    >
     </InputToolbar>
     );
   };
@@ -84,12 +91,15 @@ const Messages = (props) => {
         renderInputToolbar={this.renderInputToolbar}
         renderBubble={this.renderBubble}
         alwaysShowSend
+        renderDay={()=>null}
         messages={messages}
         onPress={(context, messages) => handleChatBubblePress(messages)}
         onSend={messages => onSend(messages)}
         user={{
           _id: 1,
         }}
+        // renderMessage={(data) => { console.log(data, "skdhsjadghjshd")  
+        // return <View style={{ backgroundColor:"red", borderWidth:1, width: '50%', height: 100}}/>}}
       />
     </View>
   );
@@ -108,6 +118,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.lGrey,
     borderRadius: ResponsiveSize(25),
     backgroundColor: COLORS.lWhite,
+    color:COLORS.black
   },
   send: {
     width: ResponsiveSize(60),

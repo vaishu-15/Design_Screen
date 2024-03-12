@@ -6,6 +6,7 @@ import {
   Image,
   Modal,
   TouchableOpacity,
+  ScrollView
 } from 'react-native';
 import {launchCamera} from 'react-native-image-picker';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
@@ -102,6 +103,7 @@ const Profile = props => {
           <Text style={styles.logOut}>Logout</Text>
           </TouchableOpacity>
         </View>
+        </View>
         <View style={styles.image}>
           <TouchableOpacity onPress={handleCameraLaunch}>
             {selectedImage ? (
@@ -116,7 +118,6 @@ const Profile = props => {
             )}
           </TouchableOpacity>
         </View>
-      </View>
       <View style={styles.secondContainer}>
         <View style={styles.profileDetails}>
           <Text style={styles.profileName}>Victoria Robertson</Text>
@@ -149,7 +150,7 @@ const Profile = props => {
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={{flex:1}}>
           {showPosts && <Posts navigation={props.navigation} />}
           {!showPosts && <Photos navigation={props.navigation} />}
         </View>
@@ -163,6 +164,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: COLORS.white,
+    overflow:'scroll'
   },
   firstContainer: {
     padding: ResponsiveSize(10),
@@ -178,6 +180,8 @@ const styles = StyleSheet.create({
   image: {
     alignSelf: 'center',
     padding: ResponsiveSize(10),
+    position:'absolute',
+    paddingTop:ResponsiveSize(90)
   },
   profile: {
     fontSize: ResponsiveSize(30),
@@ -238,6 +242,7 @@ const styles = StyleSheet.create({
     padding:ResponsiveSize(4)
   },
   toggleOption: {
+    
     width:ResponsiveSize(169),
     height: ResponsiveSize(45),
     borderRadius: ResponsiveSize(100),
@@ -245,15 +250,18 @@ const styles = StyleSheet.create({
     alignContent:'center'
   },
   activeOption: {
+    
     backgroundColor: COLORS.white,
   },
   optionText: {
+   
     fontSize: ResponsiveSize(16),
     fontWeight: '600',
     fontFamily: FONTS.interSemi,
     textAlign: 'center',
   },
   activeText: {
+    
     color: COLORS.green,
     alignSelf: 'center',
     justifyContent: 'center',

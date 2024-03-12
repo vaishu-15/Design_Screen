@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, FlatList, TouchableOpacity,Image} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 
@@ -8,6 +8,7 @@ const data = [
     id: '1',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=66',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -16,6 +17,7 @@ const data = [
     id: '2',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=65',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -24,6 +26,7 @@ const data = [
     id: '3',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=64',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -32,6 +35,7 @@ const data = [
     id: '4',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=63',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -40,6 +44,7 @@ const data = [
     id: '5',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=62',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -48,6 +53,7 @@ const data = [
     id: '6',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=61',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -56,6 +62,7 @@ const data = [
     id: '7',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=60',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -64,6 +71,7 @@ const data = [
     id: '8',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=55',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -72,6 +80,7 @@ const data = [
     id: '9',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=57',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -80,6 +89,7 @@ const data = [
     id: '10',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=56',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -88,6 +98,7 @@ const data = [
     id: '11',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=43',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -96,6 +107,7 @@ const data = [
     id: '12',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/2000x2000?sig=7',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
     selectedButtonIndex: null,
@@ -108,9 +120,12 @@ const ContentItem = ({
   chatText,
   selectedButtonIndex,
   onPress,
+  image
 }) => (
   <View style={styles.contentCon}>
-    <View style={styles.imageCon}></View>
+     <Image style={styles.imageCon}   source={{
+            uri: image,
+          }}/>
     <View style={styles.head}>
       <Text style={styles.headText}>{header}</Text>
     </View>
@@ -154,6 +169,7 @@ const Photos = props => {
             header={item.header}
             text={item.text}
             chatText={item.chatText}
+            image={item.image}
             selectedButtonIndex={item.selectedButtonIndex}
             onPress={buttonIndex => handlePress(buttonIndex, index)}
           />

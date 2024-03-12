@@ -1,8 +1,18 @@
 import {React, useState} from 'react';
 import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
-import CalendarPicker from 'react-native-calendar-picker';
+import {Calendar, LocaleConfig} from 'react-native-calendars';
 import {COLORS, FONTS} from '../utils/constants';
 import ResponsiveSize from '../utils/responsivesSize';
+
+LocaleConfig.locales['fr'] = {
+  monthNames: [
+    'January','February','March','April','May','June','July','August','September','October','November','December'
+  ],
+  dayNames: ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ],
+  dayNamesShort: ['Su','Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+};
+
+LocaleConfig.defaultLocale = 'fr';
 
 const expenseData = [
   {id: '1', item: 'Item', time: '30min.'},
@@ -26,38 +36,74 @@ const renderItem = ({item}) => (
 );
 
 const Calender = props => {
-  const [selectedStartDate, setSelectedStartDate] = useState(null);
-
-  const onDateChange = date => {
-    setSelectedStartDate(date);
-  };
-
-  const startDate = selectedStartDate ? selectedStartDate.toString() : '';
+    
+const [selected, setSelected] = useState('');
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => props.navigation.navigate('MainStack')}>
-        <Text style={{color: 'black', fontSize: ResponsiveSize(30), fontWeight: 'bold'}}>
+        <Text style={{color: 'black', fontSize: ResponsiveSize(30), fontWeight: 'bold',backgroundColor:COLORS.green}}>
           &larr;
         </Text>
       </TouchableOpacity>
-      <CalendarPicker
-        weekdays={['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']}
-        previousTitle="&larr;"
-        nextTitle="&rarr;"
-        todayBackgroundColor='white'
-        yearTitleStyle={{fontFamily:FONTS.interSemi,fontWeight:'600'}}
-        textStyle={{color:COLORS.black, fontFamily:FONTS.interRegular,fontWeight:'400'}}
-        todayTextStyle={{color:COLORS.green, fontFamily:FONTS.interSemi}}
-        monthYearHeaderWrapperStyle={styles.header}
-        monthTitleStyle={{fontSize:40}}
-        selectYearTitle={false}
-        previousTitleStyle={{color: COLORS.green}}
-        nextTitleStyle={{color: COLORS.green}}
-        startFromMonday={true}
-        showDayStragglers={true}
-        onDateChange={onDateChange}
-      />
+      <Calendar
+      onDayPress={day => {
+        setSelected(day.dateString);
+      }}
+      renderHeader={(date) => {
+        const headerText = LocaleConfig.locales['fr'].monthNames[date.getMonth()];
+        return (
+          <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>{headerText}</Text>
+          </View>
+        );
+      }}
+      enableSwipeMonths={true}
+      hideArrows={true}
+      firstDay={1}
+      markedDates={{
+        [selected]: { selected: true, disableTouchEvent: true }
+      }}
+      current={'2024-03-11'}
+      style={{
+        margin:ResponsiveSize(-10)
+      }}
+      theme={{
+        calendarBackground: COLORS.white,
+        textSectionTitleColor:COLORS.white ,
+        selectedDayBackgroundColor:COLORS.green ,
+        selectedDayTextColor: COLORS.white,
+        selectedTextColor: COLORS.green,
+        todayTextColor: COLORS.green,
+        textDayFontWeight:'400',
+        textDayFontSize:ResponsiveSize(14),
+        textDayFontFamily:FONTS.interRegular,
+        textMonthFontWeight:'600',
+        textMonthFontFamily:FONTS.interSemi,
+        textMonthFontSize:ResponsiveSize(30),
+        textDisabledColor:COLORS.grey,
+        textDayHeaderFontWeight:'400',
+        textDayHeaderFontSize:ResponsiveSize(14),
+        textDayHeaderFontFamily:FONTS.interRegular,
+        monthTextColor: COLORS.white,
+        'stylesheet.calendar.header': {
+          header: {
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: COLORS.green,
+            color:COLORS.white
+          },
+          week: {
+            paddingTop: ResponsiveSize(20),
+            paddingBottom:ResponsiveSize(10),
+            flexDirection: 'row',
+            justifyContent:'space-around',
+            backgroundColor: COLORS.green,
+          }
+        },
+      }}
+    />
       <FlatList
         data={expenseData}
         renderItem={renderItem}
@@ -65,7 +111,7 @@ const Calender = props => {
       />
     </View>
   );
-};
+    }
 
 const styles = StyleSheet.create({
   container: {
@@ -107,8 +153,11 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontFamily: FONTS.interRegular,
   },
-  header:{
-    
+  headerText:{
+    fontFamily:FONTS.interSemi,
+    fontSize:ResponsiveSize(30),
+    color:COLORS.white,
+    fontWeight:'600'
   }
 });
 

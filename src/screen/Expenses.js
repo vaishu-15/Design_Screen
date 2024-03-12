@@ -4,6 +4,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
 import {COLORS, FONTS} from '../utils/constants';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Expenses = props => {
   const data = {
@@ -99,8 +100,8 @@ const Expenses = props => {
       <View style={styles.graphContainer}>
         <BarChart
           data={data}
-          width={Dimensions.get("window").width }
-          height={240}
+          width={Dimensions.get("window").width}
+          height={ResponsiveSize(231)}
           chartConfig={chartConfig}
           showBarTops={false}
           fromZero={true}
@@ -113,7 +114,6 @@ const Expenses = props => {
             marginVertical: ResponsiveSize(10),
             marginHorizontal:ResponsiveSize(-50),
             alignContent:'center',
-            
           }}
         />
       </View>
@@ -128,12 +128,14 @@ const Expenses = props => {
           keyExtractor={item => item.id}
         />
       </View>
+      
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    overflow:'scroll',
     padding: ResponsiveSize(10),
     flex: 1,
     backgroundColor: COLORS.white,

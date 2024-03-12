@@ -8,14 +8,14 @@ import { COLORS } from '../utils/constants';
 
 const Market = (props) => {
   return (
-    <View style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={styles.container}> 
       <Header
         textThree={'Back'} back={() => props.navigation.goBack('')}
         textOne={'Market'}
         textTwo={'Filter'}
         show
       />
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.searchField}>
         <InputField field={'Search'} isSearchField={true} />
       </View>

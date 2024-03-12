@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity,ScrollView} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, IMAGES, FONTS} from '../utils/constants';
@@ -16,7 +16,7 @@ const SignUp = props => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <View>
         <Header
           image={IMAGES.cross}
@@ -24,6 +24,7 @@ const SignUp = props => {
           textOne={'Sign Up'}
         />
       </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.field}>
         <InputField field={'Name'} />
         <InputField field={'Email'} />
@@ -48,6 +49,7 @@ const SignUp = props => {
       <View style={styles.forgot}>
         <Text style={styles.fgText}>Forgot your password?</Text>
       </View>
+      </ScrollView>
     </View>
   );
 };
@@ -64,6 +66,7 @@ const styles = StyleSheet.create({
   },
   checkBox:{
   marginTop:ResponsiveSize(-1),
+  alignSelf:'center'
   },
   unText: {
     fontFamily: FONTS.interRegular,
@@ -71,6 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: ResponsiveSize(14),
     marginRight: ResponsiveSize(8),
+    alignSelf:'center'
   },
   forgot: {
     padding: ResponsiveSize(4),
