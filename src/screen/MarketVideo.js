@@ -1,10 +1,9 @@
 import {React, useState,useRef} from 'react';
-import {View, Text, StyleSheet,Dimensions} from 'react-native';
+import {View, Text, StyleSheet,Dimensions,Image,TouchableOpacity} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import Deals from '../common/Deals';
 import Video from 'react-native-video';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,7 +14,6 @@ const MarketVideo = (props) => {
   const togglePause = () => {
     setPaused(prevPaused => !prevPaused);
   };
-
 
   return (
     <View style={styles.container}>
@@ -35,10 +33,10 @@ const MarketVideo = (props) => {
           onError={err => alert(JSON.stringify(err))}
           style={styles.backgroundVideo}
           paused={paused}
-        />
-        <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
-        
-      </TouchableOpacity>     
+        />  
+         <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
+        <Image source={IMAGES.play} style={styles.playBtn}></Image>
+        </TouchableOpacity>   
       </View>
       <View style={styles.secContainer}>
       <Deals dealOne={'Hot deals'} />
@@ -67,13 +65,13 @@ const styles = StyleSheet.create({
   backgroundVideo: {
     height:ResponsiveSize(200),
     backgroundColor:COLORS.white,
-    borderRadius:ResponsiveSize(12)
+    borderRadius:ResponsiveSize(12),
+    marginHorizontal:ResponsiveSize(10),
+    marginVertical:ResponsiveSize(20),
   },
- 
   head: {
     padding: ResponsiveSize(10),
     flexDirection: 'row',
-    justifyContent: "",
     alignItems: 'center',
   },
   back: {
@@ -89,6 +87,16 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.interSemi,
     textAlign: 'center',
     paddingLeft:ResponsiveSize(100)
+  },
+  pauseButton:{
+    alignSelf:'center',
+    paddingTop:ResponsiveSize(100),
+    position: 'absolute',
+    top:'20%'
+  },
+  playBtn:{
+    width:ResponsiveSize(74),
+    height:ResponsiveSize(74)
   },
   secContainer:{
     padding: ResponsiveSize(10),
