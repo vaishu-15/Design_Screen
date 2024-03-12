@@ -36,10 +36,12 @@ const Messages = (props) => {
           right: {
             backgroundColor: COLORS.green,
             color: COLORS.white,
+            placeholderTextColor:COLORS.black
           },
           left: {
             backgroundColor: COLORS.lGrey,
             color: COLORS.darkGrey,
+            placeholderTextColor:COLORS.black
           },
         }}
       />

@@ -149,7 +149,7 @@ const Profile = props => {
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={{flex:1}}>
           {showPosts && <Posts navigation={props.navigation} />}
           {!showPosts && <Photos navigation={props.navigation} />}
         </View>
@@ -238,6 +238,7 @@ const styles = StyleSheet.create({
     padding:ResponsiveSize(4)
   },
   toggleOption: {
+    
     width:ResponsiveSize(169),
     height: ResponsiveSize(45),
     borderRadius: ResponsiveSize(100),
@@ -245,15 +246,18 @@ const styles = StyleSheet.create({
     alignContent:'center'
   },
   activeOption: {
+    
     backgroundColor: COLORS.white,
   },
   optionText: {
+   
     fontSize: ResponsiveSize(16),
     fontWeight: '600',
     fontFamily: FONTS.interSemi,
     textAlign: 'center',
   },
   activeText: {
+    
     color: COLORS.green,
     alignSelf: 'center',
     justifyContent: 'center',
