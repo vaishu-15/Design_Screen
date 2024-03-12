@@ -6,12 +6,12 @@ import {
   FlatList,
   Modal,
   TouchableOpacity,
+  Image
 } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import InputField from '../common/InputField';
 import {COLORS, FONTS} from '../utils/constants';
-import { ResponsiveSizeTablet } from '../utils/responsivesSize';
 
 const data = [
   {
@@ -20,6 +20,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish.",
+    image: 'https://source.unsplash.com/random/200x200?sig=7'
   },
   {
     id: '2',
@@ -27,6 +28,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=9'
   },
   {
     id: '3',
@@ -34,6 +36,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=10'
   },
   {
     id: '4',
@@ -41,6 +44,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=11'
   },
   {
     id: '5',
@@ -48,6 +52,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=8'
   },
   {
     id: '6',
@@ -55,6 +60,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=12'
   },
   {
     id: '7',
@@ -62,6 +68,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=13'
   },
   {
     id: '8',
@@ -69,6 +76,7 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=14'
   },
   {
     id: '9',
@@ -76,12 +84,15 @@ const data = [
     text: '8m ago',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
+      image: 'https://source.unsplash.com/random/200x200?sig=15'
   },
 ];
 
-const ChatItem = ({header, text, chatText}) => (
+const ChatItem = ({header, text, chatText,image}) => (
   <View style={styles.chatCon}>
-    <TouchableOpacity style={styles.avatr}></TouchableOpacity>
+    <Image style={styles.avatr}  source={{
+            uri: image,
+          }}/>
     <View style={styles.boxCon}>
       <View style={styles.head}>
         <Text style={styles.headText}>{header}</Text>
@@ -146,12 +157,15 @@ const Feed = props => {
             header={item.header}
             text={item.text}
             chatText={item.chatText}
+            image={item.image}
           />
         )}
         keyExtractor={item => item.id}
       />
 
-      <View style={styles.img}></View>
+    <Image style={styles.img}   source={{
+            uri: "https://source.unsplash.com/random/6000x6000?sig=4",
+          }}/>
     </View>
   );
 };
@@ -170,10 +184,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: ResponsiveSize(10),
+    height:ResponsiveSize(100)
   },
   avatr: {
     padding:ResponsiveSize(35),
-    backgroundColor: COLORS.lWhite,
     borderRadius: ResponsiveSize(8),
   },
   boxCon: {
@@ -211,7 +225,6 @@ const styles = StyleSheet.create({
   img: {
     flex: 1,
     padding: ResponsiveSize(70),
-    backgroundColor: COLORS.bGrey,
     borderRadius: ResponsiveSize(8),
     margin: ResponsiveSize(10),
   },

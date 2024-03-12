@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, FlatList, TouchableOpacity,Image} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS} from '../utils/constants';
 
@@ -8,6 +8,7 @@ const data = [
     id: '1',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=10',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -15,6 +16,7 @@ const data = [
     id: '2',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=9',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
 
@@ -23,6 +25,7 @@ const data = [
     id: '3',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=8',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -30,6 +33,7 @@ const data = [
     id: '4',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=7',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -37,6 +41,7 @@ const data = [
     id: '5',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=6',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -44,6 +49,7 @@ const data = [
     id: '6',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=5',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -51,6 +57,7 @@ const data = [
     id: '7',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=4',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -58,6 +65,7 @@ const data = [
     id: '8',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=3',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -65,6 +73,7 @@ const data = [
     id: '9',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=2',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -72,6 +81,7 @@ const data = [
     id: '10',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=1',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -79,6 +89,7 @@ const data = [
     id: '11',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=12',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
@@ -86,14 +97,17 @@ const data = [
     id: '12',
     header: 'Header',
     text: '8m ago',
+    image: 'https://source.unsplash.com/random/200x200?sig=13',
     chatText:
       "He'll want to use your yacht, and I don't want this thing smelling like fish. ",
   },
 ];
 
-const ChatItem = ({header, text, chatText}) => (
+const ChatItem = ({header, text, chatText,image}) => (
   <View style={styles.chatCon}>
-    <View style={styles.avatr}></View>
+    <Image style={styles.avatr}   source={{
+            uri: image,
+          }}/>
     <View style={styles.boxCon}>
       <View style={styles.head}>
         <Text style={styles.headText}>{header}</Text>
@@ -122,6 +136,7 @@ return(
             header={item.header}
             text={item.text}
             chatText={item.chatText}
+            image={item.image}
           />
         </TouchableOpacity>
       )}

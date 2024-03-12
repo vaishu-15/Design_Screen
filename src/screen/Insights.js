@@ -237,7 +237,6 @@ const styles = StyleSheet.create({
     paddingVertical: ResponsiveSize(23),
     paddingHorizontal: ResponsiveSize(25),
     bottom: 0,
-    borderWidth: ResponsiveSize(1),
     zIndex: ResponsiveSize(2),
   },
   icon1: {
@@ -245,7 +244,7 @@ const styles = StyleSheet.create({
     paddingVertical: ResponsiveSize(2),
     backgroundColor: COLORS.lGrey,
     borderRadius: ResponsiveSize(10),
-    marginBottom: ResponsiveSize(20),
+    marginBottom: ResponsiveSize(15),
   },
   modalHeading: {
     color: COLORS.black,

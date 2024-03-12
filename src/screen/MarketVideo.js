@@ -4,6 +4,7 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {COLORS, FONTS, IMAGES} from '../utils/constants';
 import Deals from '../common/Deals';
 import Video from 'react-native-video';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { width, height } = Dimensions.get('window');
 
@@ -17,15 +18,17 @@ const MarketVideo = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.firstContainer}>
-        <View style={styles.head}>
+       <View style={styles.head}>
           <TouchableOpacity onPress = {() => props.navigation.navigate('MainStack')}>
           <Text style={styles.back}>Back</Text>
           </TouchableOpacity>
           <Text style={styles.header}>Market</Text>
+          <Text></Text>
         </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.firstContainer}>
         <Video
-          source={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
+          source={{ uri: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
           ref={ref => {
             this.player = ref;
           }}
@@ -33,15 +36,17 @@ const MarketVideo = (props) => {
           onError={err => alert(JSON.stringify(err))}
           style={styles.backgroundVideo}
           paused={paused}
+          
         />  
          <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
         <Image source={IMAGES.play} style={styles.playBtn}></Image>
         </TouchableOpacity>   
       </View>
       <View style={styles.secContainer}>
-      <Deals dealOne={'Hot deals'} />
-      <Deals dealOne={'Trending'} />
+      <Deals dealOne={'Hot deals'} navigation={props.navigation}/>
+      <Deals dealOne={'Trending'} navigation={props.navigation}/>
       </View>
+      </ScrollView>
     </View>
   );
 };
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   firstContainer: {
-    padding: ResponsiveSize(10),
+    paddingHorizontal: ResponsiveSize(10),
     backgroundColor: COLORS.green,
   },
   messageTextCon: {
@@ -63,16 +68,19 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   backgroundVideo: {
-    height:ResponsiveSize(200),
+    height:ResponsiveSize(260),
     backgroundColor:COLORS.white,
     borderRadius:ResponsiveSize(12),
     marginHorizontal:ResponsiveSize(10),
     marginVertical:ResponsiveSize(20),
   },
   head: {
-    padding: ResponsiveSize(10),
+    backgroundColor: COLORS.green,
+    paddingHorizontal: ResponsiveSize(20),
+    paddingVertical:ResponsiveSize(10),
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent:'space-between'
   },
   back: {
     fontSize: ResponsiveSize(16),
@@ -86,13 +94,13 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontFamily: FONTS.interSemi,
     textAlign: 'center',
-    paddingLeft:ResponsiveSize(100)
+    paddingRight:ResponsiveSize(40)
   },
   pauseButton:{
     alignSelf:'center',
     paddingTop:ResponsiveSize(100),
     position: 'absolute',
-    top:'20%'
+    top:'5%'
   },
   playBtn:{
     width:ResponsiveSize(74),

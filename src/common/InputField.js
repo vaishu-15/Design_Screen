@@ -9,10 +9,10 @@ import ResponsiveSize from '../utils/responsivesSize';
 import React, {useState} from 'react';
 import {COLORS, FONTS} from '../utils/constants';
 
-const InputField = ({field, state, isSearchField, select}) => {
+const InputField = ({field, state, isSearchField, select ,handleSubmit ,value,onChangeText}) => {
   const [isHidden, setIsHidden] = useState(true);
-  const [value, onChangeText] = useState('');
-
+ 
+  
   const toggleVisibility = () => {
     setIsHidden(!isHidden);
   };
@@ -29,12 +29,15 @@ const InputField = ({field, state, isSearchField, select}) => {
         numberOfLines={1}
         secureTextEntry={state ? isHidden : false}
         onPress={select}
+        autoCapitalize='none'
+        autoFocus={false}
       />
       {state && (
         <TouchableOpacity onPress={toggleVisibility}>
           <Text style={styles.hidenText}>{isHidden ? 'Show' : 'Hide'}</Text>
         </TouchableOpacity>
       )}
+    
     </View>
   );
 };

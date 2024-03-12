@@ -31,3 +31,8 @@ export const COLORS = {
     yellow:'#FFB84E',
     blue:'#262483'
   }
+
+  export const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
