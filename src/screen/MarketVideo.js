@@ -36,7 +36,8 @@ const MarketVideo = (props) => {
           onError={err => alert(JSON.stringify(err))}
           style={styles.backgroundVideo}
           paused={paused}
-          
+          resizeMode="cover" 
+          fullscreen={true}
         />  
          <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
         <Image source={IMAGES.play} style={styles.playBtn}></Image>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   backgroundVideo: {
-    height:ResponsiveSize(260),
+    height:ResponsiveSize(260), 
     backgroundColor:COLORS.white,
     borderRadius:ResponsiveSize(12),
     marginHorizontal:ResponsiveSize(10),
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   head: {
     backgroundColor: COLORS.green,
     paddingHorizontal: ResponsiveSize(20),
-    paddingVertical:ResponsiveSize(10),
+    paddingVertical:ResponsiveSize(20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'space-between'

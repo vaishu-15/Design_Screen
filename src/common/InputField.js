@@ -31,8 +31,8 @@ const InputField = ({field, state, isSearchField, select ,handleSubmit ,value,on
         autoCapitalize='none'
         autoFocus={false}
       />
-      {state && (
-        <TouchableOpacity onPress={toggleVisibility}>
+      {state && value.trim().length > 0 && (
+        <TouchableOpacity onPressIn={toggleVisibility}>
           <Text style={styles.hidenText}>{isHidden ? 'Show' : 'Hide'}</Text>
         </TouchableOpacity>
       )}

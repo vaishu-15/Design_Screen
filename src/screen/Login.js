@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Text, View, StyleSheet, TouchableOpacity ,ScrollView,Alert} from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
@@ -18,6 +18,8 @@ const Login = (props) => {
   const handleSubmit = () => {
     if (validateEmail(email)) {
       props.navigation.navigate("MainStack");
+      setEmail('');
+      setPassword('');
     } 
     else {
       Alert.alert( 'Please enter a valid email');

@@ -29,6 +29,10 @@ const Profile = props => {
     setShowPosts(value === 'Posts');
   };
 
+  const handleLogout = () => {
+    props.navigation.navigate('Login');
+  };
+
   const handleCameraLaunch = () => {
     const options = {
       mediaType: 'photo',
@@ -99,7 +103,7 @@ const Profile = props => {
           </TouchableOpacity>
 
           <Text style={styles.profile}>Profile</Text>
-          <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
+          <TouchableOpacity onPress={handleLogout}>
           <Text style={styles.logOut}>Logout</Text>
           </TouchableOpacity>
         </View>
