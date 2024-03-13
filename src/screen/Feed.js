@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: ResponsiveSize(10),
-    height:ResponsiveSize(100)
+    // height:ResponsiveSize(100)
   },
   avatr: {
     padding:ResponsiveSize(35),

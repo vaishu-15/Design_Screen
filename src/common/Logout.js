@@ -45,6 +45,8 @@ const styles = StyleSheet.create({
   },
   modalText: {
     textAlign: 'center',
+    color:COLORS.black,
+    margin:ResponsiveSize(30)
   },
   buttonContainer: {
     flexDirection: 'row',

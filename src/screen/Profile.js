@@ -18,21 +18,22 @@ import LogoutConfirmationModal from '../common/Logout';
 
 const Profile = props => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showPosts, setShowPosts] = useState(true);
 
   const handleLogout = () => {
-    // setModalVisible(true);
-    props.navigation.navigate('Login');
+    setIsModalVisible(true);
+    // props.navigation.navigate('Login');
   };
 
   const handleCloseModal = () => {
-    setModalVisible(false);
+    setIsModalVisible(false);
   };
 
   const handleConfirmLogout = () => {
     props.navigation.navigate('Login');
-    setModalVisible(false);
+    setIsModalVisible(false);
   };
 
   const handleUserOptions = () => {
@@ -117,11 +118,11 @@ const Profile = props => {
           <TouchableOpacity onPress={handleLogout}>
         <Text style={styles.logOut}>Logout</Text>
       </TouchableOpacity>
-      {/* <LogoutConfirmationModal
-        isVisible={modalVisible}
+      <LogoutConfirmationModal
+        isVisible={isModalVisible}
         onClose={handleCloseModal}
         onLogout={handleConfirmLogout}
-      /> */}
+      />
         </View>
         </View>
         <View style={styles.image}>
