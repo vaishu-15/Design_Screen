@@ -151,28 +151,27 @@ const Content = props => {
       {!isSearching ? (
         <FlatList
           data={contentData}
-          showsVerticalScrollIndicator={false}
-          renderItem={({item, index}) => (
+          renderItem={({ item, index }) => (
             <ContentItem
               header={item.header}
               text={item.text}
               chatText={item.chatText}
               image={item.image}
               selectedButtonIndex={item.selectedButtonIndex}
-              onPress={buttonIndex => handlePress(buttonIndex, index)}
+              onPress={(buttonIndex) => handlePress(buttonIndex, index)}
             />
           )}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       ) : (
         <FlatList
           data={searchData}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <TouchableOpacity onPress={navigateToPostPage}>
               <SearchItem result={item.result} />
             </TouchableOpacity>
           )}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       )}
     </View>

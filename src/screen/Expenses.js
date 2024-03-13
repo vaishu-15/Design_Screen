@@ -1,17 +1,33 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList,Dimensions} from 'react-native';
+import {View, Text, StyleSheet, FlatList,useWindowDimensions } from 'react-native';
 import ResponsiveSize from '../utils/responsivesSize';
 import Header from '../common/header';
 import {BarChart} from 'react-native-chart-kit';
 import {COLORS, FONTS} from '../utils/constants';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Expenses = props => {
+  const { width } = useWindowDimensions();
+
   const data = {
     labels: ['item', 'item', 'item', 'item', 'item', 'item', 'item', 'item'],
     datasets: [
       {
-        data: [99, 55, 99, 55, 99, 55, 99, 55],
+        data: [99, 99, 99, 99, 99, 99, 99,99],
+        colors:  [
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+                (opacity = 1) => COLORS.grey,
+              ], 
+      },
+      {
+        data: [44, 33 ,44, 33, 44, 33, 66, 33],
         colors: [
           (opacity = 1) => COLORS.green,
           (opacity = 1) => COLORS.dGreen,
@@ -67,14 +83,14 @@ const Expenses = props => {
   );
 
   const chartConfig = {
-    backgroundGradientFromOpacity:0,
-    backgroundGradientTo: COLORS.white,
-    color: () => COLORS.dGreen,
-    labelColor: () => COLORS.black,
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientTo: 'white',
+    color: () => 'white',
+    labelColor: () => COLORS.black, 
     propsForVerticalLabels: {
       fontSize: 10,
       fontWeight: '400',
-      fontFamily: FONTS.interRegular,
+      fontFamily: 'Inter-Regular',
     },
     propsForHorizontalLabels: {
       fontSize: 0,
@@ -85,6 +101,7 @@ const Expenses = props => {
       strokeWidth: 0,
     },
   };
+
 
   return (
     <View style={styles.container}>
@@ -98,24 +115,53 @@ const Expenses = props => {
         show
       />
       <View style={styles.graphContainer}>
-        <BarChart
-          data={data}
-          width={Dimensions.get("window").width}
-          height={ResponsiveSize(231)}
-          chartConfig={chartConfig}
-          showBarTops={false}
-          fromZero={true}
-          segments={2}
-          flatColor={true}
-          withInnerLines={false}
-          withCustomBarColorFromData={true}
-          verticalLabelRotation={-45}
-          style={{
-            marginVertical: ResponsiveSize(10),
-            marginHorizontal:ResponsiveSize(-50),
-            alignContent:'center',
-          }}
-        />
+      <BarChart
+        data={{
+          labels: data.labels,
+          datasets: [data.datasets[0]],
+          color: [data.datasets[0].colors]
+        }}
+        width={width}
+        height={231}
+        chartConfig={chartConfig}
+        showBarTops={false}
+        fromZero={true}
+        flatColor={true}
+        withInnerLines={false}
+        withCustomBarColorFromData={true}
+        verticalLabelRotation={-45}
+        style={{
+          marginVertical: ResponsiveSize(10),
+          marginLeft: ResponsiveSize(-20),
+          marginRight: ResponsiveSize(-20),
+          alignContent: 'center',
+        }}
+      />
+      <BarChart
+        data={{
+          labels: data.labels,
+          datasets: [data.datasets[1]],
+          color: [data.datasets[1].colors]
+        }}
+        width={width}
+        height={231}
+        chartConfig={chartConfig}
+        showBarTops={false}
+        fromZero={true}
+        flatColor={true}
+        withInnerLines={false}
+        withCustomBarColorFromData={true}
+        verticalLabelRotation={-45}
+        style={{
+          marginVertical: ResponsiveSize(10),
+          marginLeft: ResponsiveSize(-20),
+          marginRight: ResponsiveSize(-20),
+          alignContent: 'center',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        }}
+      />
       </View>
       <View style={styles.expenses}>
         <View style={styles.expenseHead}>
@@ -135,7 +181,6 @@ const Expenses = props => {
 
 const styles = StyleSheet.create({
   container: {
-    overflow:'scroll',
     padding: ResponsiveSize(10),
     flex: 1,
     backgroundColor: COLORS.white,

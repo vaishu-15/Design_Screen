@@ -3,6 +3,7 @@ export const IMAGES = {
     profilePic: require("../../assets/images/profilePic.png"),
     send: require("../../assets/images/arrow.png"),
     play: require("../../assets/images/play.png"),
+    pause: require("../../assets/images/pause.png"),
 }
 
 export const FONTS ={

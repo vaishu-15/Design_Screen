@@ -9,11 +9,18 @@ import { ScrollView } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 
 const MarketVideo = (props) => {
-  const [paused, setPaused] = useState(true); 
+  const [paused, setPaused] = useState(true);
+  const [showButton, setShowButton] = useState(true);
+
   const playerRef = useRef(null);
 
   const togglePause = () => {
     setPaused(prevPaused => !prevPaused);
+    setShowButton(true); 
+  };
+
+  const handleVideoTouch = () => {
+    setShowButton(!showButton); 
   };
 
   return (
@@ -38,9 +45,19 @@ const MarketVideo = (props) => {
           paused={paused}
           resizeMode="cover" 
           fullscreen={true}
+          onTouchStart={handleVideoTouch}
+          onPress={togglePause}
         />  
          <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
-        <Image source={IMAGES.play} style={styles.playBtn}></Image>
+         {showButton && ( 
+        <>
+      {paused ? (
+        <Image source={IMAGES.play} style={styles.playBtn} />
+      ) : (
+        <Image source={IMAGES.pause} style={styles.pauseBtn} />
+      )}
+      </>
+      )}
         </TouchableOpacity>   
       </View>
       <View style={styles.secContainer}>
@@ -104,6 +121,10 @@ const styles = StyleSheet.create({
     top:'5%'
   },
   playBtn:{
+    width:ResponsiveSize(74),
+    height:ResponsiveSize(74)
+  },
+  pauseBtn:{
     width:ResponsiveSize(74),
     height:ResponsiveSize(74)
   },

@@ -10,20 +10,27 @@ const Login = (props) => {
   
   const [password,setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showPasswordError, setShowPasswordError] = useState(false);
 
   const navigateToSignUp = () => {
     props.navigation.navigate('SignUp');
   };
 
   const handleSubmit = () => {
+    if (!email || !password) {
+      setShowEmailError(!email);
+      setShowPasswordError(!password);
+      return;
+    }
+
     if (validateEmail(email)) {
       props.navigation.navigate("MainStack");
       setEmail('');
       setPassword('');
+      setShowEmailError(false);
+      setShowPasswordError(false);
     } 
-    else {
-      Alert.alert( 'Please enter a valid email');
-    }
   };
 
   return (
@@ -32,7 +39,10 @@ const Login = (props) => {
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.Field}>
         <InputField field={'Email'} handleSubmit={handleSubmit} value={email} onChangeText={setEmail} />
+        {showEmailError && <Text style={{color:'red',marginLeft:ResponsiveSize(10)}}>Please Enter a Valid Email</Text>}
         <InputField field={'Password'} state value={password} onChangeText={setPassword}/>
+        {showPasswordError && <Text style={{color:'red',marginLeft:ResponsiveSize(10)}}>Please Enter the Password</Text>}
+
       </View>
       <Button btn={handleSubmit} btnText={'Log In'} handleLogin/>
       <View style={styles.forgot}>
@@ -40,7 +50,7 @@ const Login = (props) => {
         <TouchableOpacity onPress={navigateToSignUp}>
           <Text style={styles.signUpBtn}>Signup</Text>
         </TouchableOpacity>
-      </View>
+      </View> 
       </ScrollView>
     </View>
   );

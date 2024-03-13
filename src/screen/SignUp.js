@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   checkBox:{
   marginTop:ResponsiveSize(-1),
-  alignSelf:'center'
+  alignSelf:'center',
   },
   unText: {
     fontFamily: FONTS.interRegular,
