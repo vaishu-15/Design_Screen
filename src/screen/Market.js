@@ -7,6 +7,8 @@ import Deals from '../common/Deals';
 import { COLORS } from '../utils/constants';
 
 const Market = (props) => {
+  const [search, setSearch] = useState('');
+  
   return (
     <View style={styles.container}> 
       <Header
@@ -17,7 +19,7 @@ const Market = (props) => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.searchField}>
-        <InputField field={'Search'} isSearchField={true} />
+        <InputField field={'Search'} isSearchField={true} value={search} onChangeText={setSearch}/>
       </View>
       <Deals dealOne={'Hot deals'} navigation={props.navigation}/>
       <Deals dealOne={'Trending'} navigation={props.navigation}/>

@@ -116,6 +116,7 @@ const ContentItem = ({
 const Content = props => {
   const [contentData, setContentData] = useState(data);
   const [isSearching, setIsSearching] = useState(false);
+  const [search, setSearch] = useState('');
 
   const handleSearchClick = () => {
     setIsSearching(true);
@@ -143,6 +144,8 @@ const Content = props => {
           field={'Search'}
           isSearchField={true}
           select={handleSearchClick}
+          value={search}
+          onChangeText={setSearch}
         />
       </View>
       {!isSearching ? (

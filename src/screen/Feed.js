@@ -107,6 +107,7 @@ const ChatItem = ({header, text, chatText,image}) => (
 
 const Feed = props => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [search, setSearch] = useState('');
 
   return (
     <View style={styles.container}>
@@ -147,7 +148,7 @@ const Feed = props => {
         </TouchableOpacity>
       </Modal>
       <View style={styles.searchField}>
-        <InputField field={'Search'} isSearchField={true} />
+        <InputField field={'Search'} isSearchField={true} value={search} onChangeText={setSearch}/>
       </View>
       <FlatList
         data={data}

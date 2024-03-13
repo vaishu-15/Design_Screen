@@ -18,7 +18,7 @@ const Header = props => {
       )}
       <Text style={styles.header}>{props.textOne}</Text>
       {!props.new && (
-        <TouchableOpacity onPress={props.filter}>
+        <TouchableOpacity disabled={true} onPress={props.filter}>
           <Text style={styles.log}>{props.textTwo}</Text>
         </TouchableOpacity>
       )}

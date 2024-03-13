@@ -22,6 +22,7 @@ const Compose = (props) => {
           placeholderTextColor= '#BDBDBD'
           onChangeText={text => onChangeText(text)}
           value={value}
+          multiline
         />
       </View>
       <Button btnText={'Send'} btn={() => props.navigation.navigate('MainStack')}/>

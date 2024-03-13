@@ -12,7 +12,6 @@ import {COLORS, FONTS} from '../utils/constants';
 const InputField = ({field, state, isSearchField, select ,handleSubmit ,value,onChangeText}) => {
   const [isHidden, setIsHidden] = useState(true);
  
-  
   const toggleVisibility = () => {
     setIsHidden(!isHidden);
   };

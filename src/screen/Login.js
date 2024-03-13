@@ -7,18 +7,20 @@ import Button from '../common/Button';
 import { COLORS ,FONTS, validateEmail} from '../utils/constants';
 
 const Login = (props) => {
-
-  const [value, onChangeText] = useState('');
+  
+  const [password,setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const navigateToSignUp = () => {
     props.navigation.navigate('SignUp');
   };
 
   const handleSubmit = () => {
-    if (validateEmail(value)) {
+    if (validateEmail(email)) {
       props.navigation.navigate("MainStack");
-    } else {
-      Alert.alert('Error', 'Please enter a valid email');
+    } 
+    else {
+      Alert.alert( 'Please enter a valid email');
     }
   };
 
@@ -27,8 +29,8 @@ const Login = (props) => {
       <Header textOne={'Log In'}/>
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.Field}>
-        <InputField field={'Email'} handleSubmit={handleSubmit} value={value} onChangeText={onChangeText} />
-        <InputField field={'Password'} state/>
+        <InputField field={'Email'} handleSubmit={handleSubmit} value={email} onChangeText={setEmail} />
+        <InputField field={'Password'} state value={password} onChangeText={setPassword}/>
       </View>
       <Button btn={handleSubmit} btnText={'Log In'} handleLogin/>
       <View style={styles.forgot}>
