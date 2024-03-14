@@ -131,9 +131,11 @@ const Deals = props => {
   const DealsList = ({name, price, image}) => {
 
   return  <View style={styles.product}>
+    <TouchableOpacity onPress={navigateToVideo}>
       <Image style={styles.prodImg}   source={{
             uri: image,
           }}/>
+          </TouchableOpacity>
       <View style={styles.itemName}>
         <Text style={styles.itemText}>{name}</Text>
       </View>
@@ -155,9 +157,12 @@ const Deals = props => {
       <FlatList
         data={data}
         renderItem={({item}) => (
-          <TouchableOpacity onPress={navigateToVideo}>
-            <DealsList name={item.name} price={item.price} image={item.image} />
-          </TouchableOpacity>
+          
+            <DealsList name={item.name} 
+            price={item.price} 
+            image={item.image} 
+            />
+          // </TouchableOpacity>
         )}
         keyExtractor={item => item.id}
         horizontal={true}

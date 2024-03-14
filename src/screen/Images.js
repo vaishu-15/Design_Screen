@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet,Image} from 'react-native';
 import Header from '../common/header';
 import ResponsiveSize from '../utils/responsivesSize';
 import { COLORS,FONTS } from '../utils/constants';
@@ -19,29 +19,29 @@ const Images = (props) => {
         show
       />
      <View style={styles.row1}>
-      <View style={styles.col1}></View>
-      <View style={styles.col2}></View>
+      <Image style={styles.col1}/>
+      <Image style={styles.col2}/>
      </View>
-     <View style={styles.row2}></View>
+     <Image style={styles.row2}/>
      <View style={styles.row3}>
-      <View style={styles.col3}></View>
-      <View style={styles.col4}></View>
+     <Image style={styles.col3}/>
+     <Image style={styles.col4}/>
      </View>
      <View style={styles.row4}>
-      <View style={styles.col5}></View>
-      <View style={styles.col6}></View>
+     <Image style={styles.col5}/>
+     <Image style={styles.col6}/>
      </View>
      <View style={styles.row3}>
-      <View style={styles.col3}></View>
-      <View style={styles.col4}></View>
+     <Image style={styles.col3}/>
+     <Image style={styles.col4}/>
      </View>
      <View style={styles.row4}>
-      <View style={styles.col5}></View>
-      <View style={styles.col6}></View>
+     <Image style={styles.col5}/>
+     <Image style={styles.col6}/>
      </View>
      <View style={styles.row3}>
-      <View style={styles.col3}></View>
-      <View style={styles.col4}></View>
+     <Image style={styles.col3}/>
+     <Image style={styles.col4}/>
      </View>
      </ScrollView>
     </View>

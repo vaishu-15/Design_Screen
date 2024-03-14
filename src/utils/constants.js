@@ -3,6 +3,7 @@ export const IMAGES = {
     profilePic: require("../../assets/images/profilePic.png"),
     send: require("../../assets/images/arrow.png"),
     play: require("../../assets/images/play.png"),
+    pause: require("../../assets/images/pause.png"),
 }
 
 export const FONTS ={
@@ -36,3 +37,7 @@ export const COLORS = {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  // export const password = (password) =>{
+  // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={};':"|,.<>?`~[\]\\\/-]).{8,}$/;
+// }

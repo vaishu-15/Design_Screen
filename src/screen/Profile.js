@@ -14,11 +14,27 @@ import ResponsiveSize from '../utils/responsivesSize';
 import {AirbnbRating} from 'react-native-ratings';
 import Posts from './Posts';
 import Photos from './Photos';
+import LogoutConfirmationModal from '../common/Logout';
 
 const Profile = props => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showPosts, setShowPosts] = useState(true);
+
+  const handleLogout = () => {
+    setIsModalVisible(true);
+    // props.navigation.navigate('Login');
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleConfirmLogout = () => {
+    props.navigation.navigate('Login');
+    setIsModalVisible(false);
+  };
 
   const handleUserOptions = () => {
     setModalVisible(false);
@@ -99,9 +115,14 @@ const Profile = props => {
           </TouchableOpacity>
 
           <Text style={styles.profile}>Profile</Text>
-          <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
-          <Text style={styles.logOut}>Logout</Text>
-          </TouchableOpacity>
+          <TouchableOpacity onPress={handleLogout}>
+        <Text style={styles.logOut}>Logout</Text>
+      </TouchableOpacity>
+      <LogoutConfirmationModal
+        isVisible={isModalVisible}
+        onClose={handleCloseModal}
+        onLogout={handleConfirmLogout}
+      />
         </View>
         </View>
         <View style={styles.image}>

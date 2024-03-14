@@ -9,7 +9,12 @@ import Button from '../common/Button';
 import {useState} from 'react';
 
 const SignUp = props => {
+
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
+  const [password,setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [name,setName] =useState('');
 
   const navigateToLogin = () => {
     props.navigation.navigate('Login');
@@ -26,9 +31,9 @@ const SignUp = props => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.field}>
-        <InputField field={'Name'} />
-        <InputField field={'Email'} />
-        <InputField field={'Password'} state />
+        <InputField field={'Name'} value={name} onChangeText={setName}/>
+        <InputField field={'Email'} value={email} onChangeText={setEmail} />
+        <InputField field={'Password'} state value={password} onChangeText={setPassword}/>
       </View>
       <View style={styles.textCon}>
         <CheckBox
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
   },
   checkBox:{
   marginTop:ResponsiveSize(-1),
-  alignSelf:'center'
+  alignSelf:'center',
   },
   unText: {
     fontFamily: FONTS.interRegular,

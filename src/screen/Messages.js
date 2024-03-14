@@ -90,7 +90,7 @@ const Messages = (props) => {
         renderSend={this.renderSend}
         renderInputToolbar={this.renderInputToolbar}
         renderBubble={this.renderBubble}
-        alwaysShowSend
+        // alwaysShowSend
         renderDay={()=>null}
         messages={messages}
         onPress={(context, messages) => handleChatBubblePress(messages)}
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     color:COLORS.black
   },
   send: {
-    width: ResponsiveSize(60),
-    height: ResponsiveSize(60),
+    width: (60),
+    height: (60),
     margin:ResponsiveSize(-10)
   },
 });

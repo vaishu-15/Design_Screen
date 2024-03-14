@@ -9,11 +9,18 @@ import { ScrollView } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 
 const MarketVideo = (props) => {
-  const [paused, setPaused] = useState(true); 
+  const [paused, setPaused] = useState(true);
+  const [showButton, setShowButton] = useState(true);
+
   const playerRef = useRef(null);
 
   const togglePause = () => {
     setPaused(prevPaused => !prevPaused);
+    setShowButton(true); 
+  };
+
+  const handleVideoTouch = () => {
+    setShowButton(!showButton); 
   };
 
   return (
@@ -36,10 +43,21 @@ const MarketVideo = (props) => {
           onError={err => alert(JSON.stringify(err))}
           style={styles.backgroundVideo}
           paused={paused}
-          
+          resizeMode="cover" 
+          fullscreen={true}
+          onTouchStart={handleVideoTouch}
+          onPress={togglePause}
         />  
          <TouchableOpacity style={styles.pauseButton} onPress={togglePause}>
-        <Image source={IMAGES.play} style={styles.playBtn}></Image>
+         {showButton && ( 
+        <>
+      {paused ? (
+        <Image source={IMAGES.play} style={styles.playBtn} />
+      ) : (
+        <Image source={IMAGES.pause} style={styles.pauseBtn} />
+      )}
+      </>
+      )}
         </TouchableOpacity>   
       </View>
       <View style={styles.secContainer}>
@@ -68,7 +86,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   backgroundVideo: {
-    height:ResponsiveSize(260),
+    height:ResponsiveSize(260), 
     backgroundColor:COLORS.white,
     borderRadius:ResponsiveSize(12),
     marginHorizontal:ResponsiveSize(10),
@@ -77,7 +95,7 @@ const styles = StyleSheet.create({
   head: {
     backgroundColor: COLORS.green,
     paddingHorizontal: ResponsiveSize(20),
-    paddingVertical:ResponsiveSize(10),
+    paddingVertical:ResponsiveSize(20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'space-between'
@@ -103,6 +121,10 @@ const styles = StyleSheet.create({
     top:'5%'
   },
   playBtn:{
+    width:ResponsiveSize(74),
+    height:ResponsiveSize(74)
+  },
+  pauseBtn:{
     width:ResponsiveSize(74),
     height:ResponsiveSize(74)
   },
